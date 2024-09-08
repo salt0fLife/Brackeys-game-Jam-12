@@ -6,12 +6,37 @@ var JUMP_VELOCITY = Settings.playerJump
 var MouseSensitivity = Settings.mouseSensitivity
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
+
 #items and combat
+var bufferedInput = ""
+var actionState = false
+
 var HeldItem = 1 # 1 = sword, 2 = paxel, 3 = bow
+
+#sword
+#info = [damage, heavy attack type, [tags], 3dFilePath, 2dFilePath]
+var swordInfo = ItemHandler.defaultSword
+
+#paxel
+#info = [mining power, ability type, [tags], 3dFilePath, 2dFilePath]
+var paxelInfo = ItemHandler.defaultPaxel
+
+#bow
+#info = [damage, drawSpeed, [tags], 3dFilePath, 2dFilePath]
+var bowInfo = ItemHandler.defaultBow
+
+
+
+
 
 #node paths
 @onready var CameraHandler = $Graphics/CameraHandler
 @onready var graphics = $Graphics
+@onready var ItemGraphicsHandler = $Graphics/CameraHandler/ItemGraphicsHandler
+@onready var chRay = $Graphics/CameraHandler/CrosshairRay
+
+#preloads (arrows particles and such)
+@onready var hitMarker = preload("res://effects/particles/damage_indicator.tscn")
 
 func update_values_from_settings():
 	SPEED = Settings.playerSpeed
@@ -21,10 +46,154 @@ func update_values_from_settings():
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	update_heldItem_graphics()
 	pass
 
+func use_item():
+	print("used item of int " + str(HeldItem))
+	if HeldItem == 1:
+		use_sword()
+	elif HeldItem == 2:
+		use_paxel()
+	else:
+		use_bow()
+	pass
+
+func heavy_use_item():
+	printerr("cannot use item of int " + str(HeldItem) + " as heavy item")
+	pass
+
+func use_sword():
+	var itemGraphics = ItemGraphicsHandler.get_child(0, false)
+	itemGraphics.get_child(0, true).play("Attack1")
+	actionState = true
+	check_for_hit()
+	await get_tree().create_timer(0.5).timeout
+	if bufferedInput == "UseItem":
+		bufferedInput = ""
+		sword_attack_2()
+	else:
+		bufferedInput = ""
+		actionState = false
+		itemGraphics.get_child(0, true).play("idle")
+	pass
+
+func sword_attack_2():
+	print("sword attack 2")
+	var itemGraphics = ItemGraphicsHandler.get_child(0, false)
+	itemGraphics.get_child(0, true).play("Attack2")
+	check_for_hit()
+	await get_tree().create_timer(0.5).timeout
+	if bufferedInput == "UseItem":
+		bufferedInput = ""
+		sword_attack_3()
+	else:
+		bufferedInput = ""
+		actionState = false
+		itemGraphics.get_child(0, true).play("idle")
+	pass
+
+func sword_attack_3():
+	print("sword attack 3")
+	var itemGraphics = ItemGraphicsHandler.get_child(0, false)
+	itemGraphics.get_child(0, true).play("Attack3")
+	check_for_hit()
+	await get_tree().create_timer(0.5).timeout
+	bufferedInput = ""
+	actionState = false
+	itemGraphics.get_child(0, true).play("idle")
+	pass
+
+func use_paxel():
+	actionState = true
+	var itemGraphics = ItemGraphicsHandler.get_child(0, false)
+	itemGraphics.get_child(0, true).play("use")
+	check_for_hit()
+	await get_tree().create_timer(0.51).timeout
+	actionState = false
+	itemGraphics.get_child(0, true).play("idle")
+	pass
+
+func use_bow():
+	printerr("bow not implemented")
+	pass
+
+func check_for_hit():
+	if HeldItem == 1:
+		if chRay.is_colliding():
+			var poi = chRay.get_collision_point()
+			var hit = chRay.get_collider()
+			if hit.has_method("take_damage") and hit != self:
+				var damage = swordInfo[0]
+				hit.take_damage(swordInfo, 1)
+				var hm = hitMarker.instantiate()
+				hm.set_value(damage)
+				hit.add_child(hm)
+				hm.global_position = poi
+				pass
+	elif HeldItem == 2:
+		if chRay.is_colliding():
+			var hit = chRay.get_collider()
+			if hit.has_method("take_damage") and hit != self:
+				hit.take_damage(paxelInfo[1], 2)
+				pass
+	else:
+		printerr("bow does not deal damage like this")
+	pass
+
+func update_heldItem_graphics():
+	if ItemGraphicsHandler.get_child_count(false) > 0:
+		for item in ItemGraphicsHandler.get_children(false):
+			item.queue_free()
+	if HeldItem == 1:
+		var sword = load(swordInfo[3]).instantiate()
+		ItemGraphicsHandler.add_child(sword)
+		pass
+	elif HeldItem == 2:
+		var paxel = load(paxelInfo[3]).instantiate()
+		ItemGraphicsHandler.add_child(paxel)
+		pass
+	elif HeldItem == 3:
+		var bow = load(bowInfo[3]).instantiate()
+		ItemGraphicsHandler.add_child(bow)
+		pass
 
 func _input(event):
+	if Input.is_action_just_pressed("sword"):
+		if HeldItem != 1:
+			if actionState:
+				bufferedInput = "sword"
+			else:
+				HeldItem = 1
+				update_heldItem_graphics()
+	if Input.is_action_just_pressed("paxel"):
+		if HeldItem != 2:
+			if actionState:
+				bufferedInput = "paxel"
+			else:
+				HeldItem = 2
+				update_heldItem_graphics()
+	if Input.is_action_just_pressed("bow"):
+		if HeldItem != 3:
+			if actionState:
+				bufferedInput = "bow"
+			else:
+				HeldItem = 3
+				update_heldItem_graphics()
+	
+	if Input.is_action_just_pressed("UseItem"):
+		if !actionState:
+			use_item()
+		else:
+			bufferedInput = "UseItem"
+	if Input.is_action_just_pressed("HeavyUseItem"):
+		if !actionState:
+			heavy_use_item()
+		else:
+			bufferedInput = "HeavyUseItem"
+	
+	
+	
 	if event is InputEventMouseMotion and is_multiplayer_authority():
 		var TempRotation = rotation.x - event.relative.y /1000 * MouseSensitivity
 		CameraHandler.rotation.x += TempRotation

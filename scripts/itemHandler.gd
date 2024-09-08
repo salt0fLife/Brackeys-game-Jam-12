@@ -1,11 +1,5 @@
 extends Node
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+const defaultSword = [2,0,["vanilla"], "res://player/items/DefaultSword/default_sword.tscn"]
+const defaultPaxel = [1,0,["vanilla"], "res://player/items/DefaultPaxel/default_paxel.tscn"]
+const defaultBow = [1,1,["vanilla"], "res://player/items/DefaultBow/default_bow.tscn"]
