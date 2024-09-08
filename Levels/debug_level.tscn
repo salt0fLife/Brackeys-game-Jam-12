@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://dcede0qqm4gi8"]
+[gd_scene load_steps=10 format=3 uid="uid://dcede0qqm4gi8"]
 
+[ext_resource type="PackedScene" uid="uid://ble8cirkaq864" path="res://creatures/punching_bag.tscn" id="1_kgxjm"]
 [ext_resource type="Texture2D" uid="uid://cj2tfo0qsi5ga" path="res://textures/DebuggTexture.png" id="1_ulmlh"]
 [ext_resource type="PackedScene" uid="uid://cxffo1r8ltcio" path="res://player/player.tscn" id="2_x21wh"]
 
@@ -30,6 +31,9 @@ size = Vector2(500, 500)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="lighting"]
 environment = SubResource("Environment_1cl2g")
+
+[node name="PunchingBag" parent="lighting/WorldEnvironment" instance=ExtResource("1_kgxjm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
 
 [node name="sun" type="DirectionalLight3D" parent="lighting"]
 transform = Transform3D(1, 0, 0, 0, 0.737041, 0.675848, 0, -0.675848, 0.737041, 0, 0, 0)

@@ -3,6 +3,7 @@ var playingGame = false
 var paused = false
 
 func play_game():
+	print_rich("[color=GREEN][i]now playing game[/i]")
 	#printerr("play not implemented")
 	$MainMenu.hide()
 	var lev = load(Settings.mainLevel).instantiate()
@@ -26,6 +27,7 @@ func pause_game():
 	pass
 
 func return_to_main_menu():
+	print_rich("[color=GREEN][i]returning to Main Menu[/i]")
 	for child in $sceneHandler.get_children(false):
 		child.queue_free()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
@@ -46,6 +48,7 @@ func _on_quit_button_down():
 
 
 func quit():
+	print_rich("[color=GREEN][i]quit the right way[/i]")
 	get_tree().quit(3)
 
 

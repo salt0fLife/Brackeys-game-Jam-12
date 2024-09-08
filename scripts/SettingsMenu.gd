@@ -24,6 +24,6 @@ func _on_save_and_exit_button_down():
 	pass # Replace with function body.
 
 
-func _on_mouse_sensitivity_drag_ended(value_changed):
+func _on_mouse_sensitivity_drag_ended(_value_changed):
 	$CategoryHandler/Level1/MouseSensDisplay.text = str($CategoryHandler/Level1/MouseSensitivity.value)
 	pass # Replace with function body.
