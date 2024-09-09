@@ -6,7 +6,6 @@ var JUMP_VELOCITY = Settings.playerJump
 var MouseSensitivity = Settings.mouseSensitivity
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-
 #items and combat
 var bufferedInput = ""
 var actionState = false
@@ -14,19 +13,19 @@ var actionState = false
 var HeldItem = 1 # 1 = sword, 2 = paxel, 3 = bow
 
 #sword
-#info = [damage, heavy attack type, [tags], 3dFilePath, 2dFilePath]
-var swordInfo = ItemHandler.defaultSword
+#info = [identityINT, name, damage, heavy attack type, [tags], 3dFilePath, 2dFilePath]
+var swordInfo = ItemHandler.equippedSword
 
 #paxel
-#info = [mining power, ability type, [tags], 3dFilePath, 2dFilePath]
-var paxelInfo = ItemHandler.defaultPaxel
+#info = [identityINT, name, mining power, ability type, [tags], 3dFilePath, 2dFilePath]
+var paxelInfo = ItemHandler.equippedpaxel
 
 #bow
-#info = [damage, drawSpeed, [tags], 3dFilePath, 2dFilePath]
-var bowInfo = ItemHandler.defaultBow
+#info = [identityINT, name, damage, drawSpeed, [tags], 3dFilePath, 2dFilePath]
+var bowInfo = ItemHandler.equippedBow
 
-
-
+#inventory
+@onready var localInv = ItemHandler.inventory
 
 
 #node paths
@@ -34,6 +33,8 @@ var bowInfo = ItemHandler.defaultBow
 @onready var graphics = $Graphics
 @onready var ItemGraphicsHandler = $Graphics/CameraHandler/ItemGraphicsHandler
 @onready var chRay = $Graphics/CameraHandler/CrosshairRay
+@onready var inventoryList = $Inventory/inventoryList
+
 
 #preloads (arrows particles and such)
 @onready var hitMarker = preload("res://effects/particles/damage_indicator.tscn")
@@ -47,6 +48,7 @@ func update_values_from_settings():
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	update_heldItem_graphics()
+	update_Inventory_graphics()
 	pass
 
 func use_item():
@@ -124,8 +126,8 @@ func check_for_hit():
 			var poi = chRay.get_collision_point()
 			var hit = chRay.get_collider()
 			if hit.has_method("take_damage") and hit != self:
-				var damage = swordInfo[0]
-				hit.take_damage(swordInfo, 1)
+				var damage = swordInfo[2]
+				hit.take_damage(damage, 1)
 				var hm = hitMarker.instantiate()
 				hm.set_value(damage)
 				hit.add_child(hm)
@@ -135,7 +137,7 @@ func check_for_hit():
 		if chRay.is_colliding():
 			var hit = chRay.get_collider()
 			if hit.has_method("take_damage") and hit != self:
-				hit.take_damage(paxelInfo[1], 2)
+				hit.take_damage(paxelInfo[2], 2)
 				pass
 	else:
 		printerr("bow does not deal damage like this")
@@ -146,15 +148,15 @@ func update_heldItem_graphics():
 		for item in ItemGraphicsHandler.get_children(false):
 			item.queue_free()
 	if HeldItem == 1:
-		var sword = load(swordInfo[3]).instantiate()
+		var sword = load(swordInfo[5]).instantiate()
 		ItemGraphicsHandler.add_child(sword)
 		pass
 	elif HeldItem == 2:
-		var paxel = load(paxelInfo[3]).instantiate()
+		var paxel = load(paxelInfo[5]).instantiate()
 		ItemGraphicsHandler.add_child(paxel)
 		pass
 	elif HeldItem == 3:
-		var bow = load(bowInfo[3]).instantiate()
+		var bow = load(bowInfo[5]).instantiate()
 		ItemGraphicsHandler.add_child(bow)
 		pass
 
@@ -191,7 +193,9 @@ func _input(event):
 			heavy_use_item()
 		else:
 			bufferedInput = "HeavyUseItem"
-	
+	if Input.is_action_just_pressed("inventory"):
+		pickup_item([0, "twig", "twig", 1, 2])
+		pass
 	
 	
 	if event is InputEventMouseMotion and is_multiplayer_authority():
@@ -200,7 +204,6 @@ func _input(event):
 		CameraHandler.rotation.x = clamp(CameraHandler.rotation.x, -1.5, 1.5)
 		graphics.rotation.y -= event.relative.x /1000 * MouseSensitivity
 	pass
-
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -223,3 +226,30 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+
+func pickup_item(itemData = [-1]):
+	if itemData[0] == 0:
+		var Reference = itemData[2]
+		var stacked = false
+		for item in localInv:
+			if item[2] == Reference:
+				item[3] += itemData[3]
+				stacked = true
+				push_inventory_changes()
+				update_Inventory_graphics()
+				return
+		if !stacked:
+			localInv += [itemData]
+		push_inventory_changes()
+		update_Inventory_graphics()
+	pass
+
+func push_inventory_changes():
+	ItemHandler.set_inventory(localInv)
+
+func update_Inventory_graphics():
+	inventoryList.text = ""
+	for item in localInv:
+		inventoryList.text += item[1] + " : " + str(item[3]) + "\n"
+		pass
+	pass

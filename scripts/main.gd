@@ -24,6 +24,8 @@ func pause_game():
 		$PauseMenu.visible = true
 		get_tree().paused = true
 		pass
+	elif playingGame and paused:
+		_on_return_to_game_button_down()
 	pass
 
 func return_to_main_menu():
@@ -66,3 +68,11 @@ func _on_quit_to_main_menu_button_down():
 	$PauseMenu.hide()
 	paused = false
 	pass # Replace with function body.
+
+func load_new_scene(path = ""):
+	if $sceneHandler.get_child_count(false) > 0:
+		for scene in $sceneHandler.get_children(false):
+			scene.queue_free()
+	var newScene = load(path).instantiate()
+	$sceneHandler.add_child(newScene)
+	pass

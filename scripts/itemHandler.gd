@@ -1,5 +1,22 @@
 extends Node
 
-const defaultSword = [2,0,["vanilla"], "res://player/items/DefaultSword/default_sword.tscn"]
-const defaultPaxel = [1,0,["vanilla"], "res://player/items/DefaultPaxel/default_paxel.tscn"]
-const defaultBow = [1,1,["vanilla"], "res://player/items/DefaultBow/default_bow.tscn"]
+#weapons
+#data = [IdentityINT, name, info1, info2, [tags], 3dScenepath]
+const defaultSword = [1, "default sword", 2,0,["vanilla", "sword"], "res://player/items/DefaultSword/default_sword.tscn"]
+const defaultPaxel = [2, "default paxel", 1,0,["vanilla", "paxel"], "res://player/items/DefaultPaxel/default_paxel.tscn"]
+const defaultBow = [3, "default bow", 1,1,["vanilla", "bow"], "res://player/items/DefaultBow/default_bow.tscn"]
+
+#materials
+#data = [IdentityINT, displayName, internalReference, count, worth gb]
+const twig = [0, "twig", "twig", 1, 2]
+const iron = [0, "iron ore", "iron", 1, 25]
+
+#inventory and player
+var inventory = [[0, "twig", "twig", 1, 2]]
+
+var equippedSword = defaultSword
+var equippedpaxel = defaultPaxel
+var equippedBow = defaultBow
+
+func set_inventory(newInv):
+	inventory = newInv
