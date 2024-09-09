@@ -13,3 +13,5 @@ const mainLevel = "res://Levels/debug_level.tscn"
 
 func set_mouseSensitivity(newVal):
 	mouseSensitivity = newVal
+
+

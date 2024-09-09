@@ -6,7 +6,7 @@
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_p6l6r"]
 blend_mode = 3
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" groups=["Main"]]
 script = ExtResource("1_nb6d7")
 
 [node name="MainMenu" type="Control" parent="."]
