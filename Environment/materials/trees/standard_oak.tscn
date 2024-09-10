@@ -64,7 +64,7 @@ height = 4.0
 [node name="StandardOak" type="StaticBody3D"]
 script = ExtResource("1_qlvua")
 health = 10
-item = [0, "Oak Wood", "Wood", 0, 8]
+item = [0, "Oak Wood", "Oak Wood", 0, 8]
 dropMin = 3
 dropMax = 9
 
@@ -78,7 +78,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.53583, 0)
 shape = SubResource("CylinderShape3D_r83c5")
 
 [node name="graphics" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="graphics"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.42453, 0)

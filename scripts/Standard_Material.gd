@@ -5,7 +5,7 @@ extends StaticBody3D
 @export var dropMax := 2
 @onready var hitpoints = health
 
-func take_damage(amount, type):
+func take_damage(amount, type, _knockback):
 	if type == 2:
 		if hitpoints - amount > 0:
 			$AnimationPlayer.play("takeDamage")

@@ -36,6 +36,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 target_position = Vector3(0, 0, -5)
 collision_mask = 173
 
+[node name="CrosshairRay2" type="RayCast3D" parent="Graphics/CameraHandler"]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 0, 0, 0)
+target_position = Vector3(0, 0, -5)
+collision_mask = 173
+
+[node name="CrosshairRay3" type="RayCast3D" parent="Graphics/CameraHandler"]
+transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 0, 0, 0)
+target_position = Vector3(0, 0, -5)
+collision_mask = 173
+
 [node name="Inventory" type="Control" parent="."]
 visible = false
 layout_mode = 3
@@ -216,3 +226,5 @@ anchor_bottom = 1.0
 offset_right = -0.544006
 grow_horizontal = 2
 grow_vertical = 2
+
+[connection signal="button_down" from="Inventory/SelectedWeaponInfo/Equip Selected Weapon" to="." method="_on_equip_selected_weapon_button_down"]

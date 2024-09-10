@@ -34,7 +34,7 @@ var bowInfo = ItemHandler.equippedBow
 @onready var localInv = ItemHandler.inventory
 @onready var localWeaponsInv = ItemHandler.weaponsInv
 var selectedWeaponIndex = -1
-
+var bufferingUse = false
 
 #node paths
 @onready var CameraHandler = $Graphics/CameraHandler
@@ -104,15 +104,17 @@ func sword_special_attack():
 		elif tag == "leaping":
 			sword_leaping_attack()
 			return
+		else:
+			actionState = false
 	pass
 
 func sword_heavy_attack():
 	var itemGraphics = ItemGraphicsHandler.get_child(0, false)
 	itemGraphics.get_child(0, true).play("Attack3")
 	actionState = true
-	await get_tree().create_timer(0.5).timeout
-	check_for_hit(true)
-	await get_tree().create_timer(0.5).timeout
+	var damage = swordInfo[2] * 2
+	check_for_hit(damage)
+	await get_tree().create_timer(0.75).timeout
 	if bufferedInput == "UseItem":
 		bufferedInput = ""
 		use_sword()
@@ -176,9 +178,17 @@ func sword_attack_3():
 	itemGraphics.get_child(0, true).play("Attack3")
 	check_for_hit()
 	await get_tree().create_timer(0.5).timeout
-	bufferedInput = ""
-	actionState = false
-	itemGraphics.get_child(0, true).play("idle")
+	if bufferedInput == "UseItem":
+		bufferedInput = ""
+		use_sword()
+	elif bufferedInput == "HeavyUseItem":
+		bufferedInput = ""
+		sword_special_attack()
+		pass
+	else:
+		bufferedInput = ""
+		actionState = false
+		itemGraphics.get_child(0, true).play("idle")
 	pass
 
 func use_paxel():
@@ -195,31 +205,58 @@ func use_bow():
 	printerr("bow not implemented")
 	pass
 
-func check_for_hit(crit = false):
+func check_for_hit(damage = swordInfo[2], crit = false):
 	if HeldItem == 1:
 		if chRay.is_colliding():
 			var poi = chRay.get_collision_point()
 			var hit = chRay.get_collider()
-			if hit.has_method("take_damage") and hit != self:
-				var damage = swordInfo[2]
-				if crit:
-					damage = damage * 2
-				if randi_range(1, 10) == 10:
-					damage = damage * 2
-				hit.take_damage(damage, 1)
-				var hm = hitMarker.instantiate()
-				hm.set_value(damage)
-				hit.add_child(hm)
-				hm.global_position = poi
-				pass
+			deal_damage(damage, hit, poi, false)
+		elif $Graphics/CameraHandler/CrosshairRay2.is_colliding():
+			var poi = $Graphics/CameraHandler/CrosshairRay2.get_collision_point()
+			var hit = $Graphics/CameraHandler/CrosshairRay2.get_collider()
+			deal_damage(damage, hit, poi, false)
+		elif $Graphics/CameraHandler/CrosshairRay3.is_colliding():
+			var poi = $Graphics/CameraHandler/CrosshairRay3.get_collision_point()
+			var hit = $Graphics/CameraHandler/CrosshairRay3.get_collider()
+			deal_damage(damage, hit, poi, false)
 	elif HeldItem == 2:
 		if chRay.is_colliding():
 			var hit = chRay.get_collider()
 			if hit.has_method("take_damage") and hit != self:
-				hit.take_damage(paxelInfo[2], 2)
+				hit.take_damage(paxelInfo[2], 2, Vector3(0,0,0))
 				pass
 	else:
 		printerr("bow does not deal damage like this")
+	pass
+
+func deal_damage(damage, hit, poi, crit = false):
+	if hit.has_method("take_damage") and hit != self:
+		var knockback = 3
+		for tag in swordInfo[4]:
+			if tag == "critical":
+				crit = true
+			if tag == "heavyHanded":
+				knockback = knockback * 2
+			if tag == "flaming":
+				printerr("flaming not implemented yet")
+			pass
+		if randi_range(1, 10) == 10:
+			crit = true
+		if crit:
+			damage = damage * 2
+		
+		#knockback vector
+		var kbVector = global_position - poi
+		kbVector.x = -(kbVector.x / abs(kbVector.x)) * knockback
+		kbVector.y = -(kbVector.y / abs(kbVector.y)) * knockback
+		kbVector.z = -(kbVector.z / abs(kbVector.z)) * knockback
+		
+		hit.take_damage(damage, 1, kbVector)
+		var hm = hitMarker.instantiate()
+		hm.set_value(damage)
+		hit.add_child(hm)
+		hm.global_position = poi
+		pass
 	pass
 
 func update_heldItem_graphics():
@@ -280,10 +317,14 @@ func _input(event):
 				update_heldItem_graphics()
 	
 	if Input.is_action_just_pressed("UseItem"):
+		bufferingUse = true
 		if !actionState:
 			use_item()
 		else:
 			bufferedInput = "UseItem"
+	if Input.is_action_just_released("UseItem"):
+		bufferingUse = false
+		pass
 	if Input.is_action_just_pressed("HeavyUseItem"):
 		if !actionState:
 			heavy_use_item()
@@ -374,6 +415,11 @@ func pickup_item(itemData = [-1]):
 			localInv += [itemData]
 		push_inventory_changes()
 		update_Inventory_graphics()
+	else:
+		localWeaponsInv += [itemData]
+		push_inventory_changes()
+		update_Inventory_graphics()
+		pass
 	pass
 
 func push_inventory_changes():
@@ -417,4 +463,49 @@ func die():
 
 func die_boss():
 	
+	pass
+
+func _on_equip_selected_weapon_button_down():
+	if selectedWeaponIndex >= localWeaponsInv.size():
+		selectedWeaponIndex = -1
+		printerr("ERROR: cannot equip item : invalid selectedWeaponIndex")
+	
+	if selectedWeaponIndex != -1:
+		var weaponinQuestion = localWeaponsInv[selectedWeaponIndex]
+		if weaponinQuestion[0] == 1:
+			var temp = swordInfo
+			swordInfo = weaponinQuestion
+			localWeaponsInv[selectedWeaponIndex] = temp
+			push_inventory_changes()
+			update_Inventory_graphics()
+			update_heldItem_graphics()
+			pass
+		elif weaponinQuestion[0] == 2:
+			var temp = paxelInfo
+			paxelInfo = weaponinQuestion
+			localWeaponsInv[selectedWeaponIndex] = temp
+			push_inventory_changes()
+			update_Inventory_graphics()
+			update_heldItem_graphics()
+			pass
+		elif weaponinQuestion[0] == 3:
+			var temp = bowInfo
+			bowInfo = weaponinQuestion
+			localWeaponsInv[selectedWeaponIndex] = temp
+			push_inventory_changes()
+			update_Inventory_graphics()
+			update_heldItem_graphics()
+			pass
+		else:
+			printerr("ERROR: cannot equip item of type " + str(weaponinQuestion[0]))
+		
+		pass
+	pass # Replace with function body.
+
+func _process(_delta):
+	if bufferingUse:
+		if HeldItem == 2:
+			if !actionState:
+				use_paxel()
+		bufferedInput = "UseItem"
 	pass

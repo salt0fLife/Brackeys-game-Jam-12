@@ -70,3 +70,13 @@ func load_new_scene(path = ""):
 	var newScene = load(path).instantiate()
 	$sceneHandler.add_child(newScene)
 	pass
+
+
+func _on_debug_scene_button_down():
+	print_rich("[color=GREEN][i]now debugging game[/i]")
+	#printerr("play not implemented")
+	$MainMenu.hide()
+	var lev = load("res://Levels/debug_level.tscn").instantiate()
+	$sceneHandler.add_child(lev)
+	playingGame = true
+	pass # Replace with function body.

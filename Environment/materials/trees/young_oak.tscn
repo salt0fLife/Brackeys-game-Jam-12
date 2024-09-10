@@ -86,7 +86,7 @@ height = 2.0
 [node name="youngOak" type="StaticBody3D"]
 script = ExtResource("1_kbaf3")
 health = 4
-item = [0, "Oak Wood", "Wood", 0, 8]
+item = [0, "Oak Wood", "Oak Wood", 0, 8]
 dropMin = 2
 dropMax = 5
 

@@ -3,6 +3,7 @@
 [sub_resource type="Animation" id="Animation_sivlh"]
 resource_name = "Attack1"
 length = 0.5
+step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -10,10 +11,10 @@ tracks/0/path = NodePath("MeshInstance3D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(1, 0, -1), Vector3(-0.917688, 0, -1.12045)]
+"values": [Vector3(1, 0, -1), Vector3(-0.917688, 0, -1.12045), Vector3(-0.903652, 0, -1.07518)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -22,10 +23,68 @@ tracks/1/path = NodePath("MeshInstance3D:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(1.15073e-09, 1.04165, -1.28835), Vector3(-2.78374e-08, 2.19002, -1.28835)]
+"values": [Vector3(0, 0, 0), Vector3(1.15073e-09, 1.04165, -1.28835), Vector3(-2.78374e-08, 2.19002, -1.28835), Vector3(-3.55519e-08, 2.28898, -1.28835)]
+}
+
+[sub_resource type="Animation" id="Animation_jnwh2"]
+resource_name = "Attack2"
+length = 0.5
+step = 0.025
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.025, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-1, 0, -1), Vector3(-1.03441, 0.237605, -0.840388), Vector3(1, -0.201357, -1), Vector3(1, -0.201357, -0.939545)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.025, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-9.20212e-09, -0.720926, 1.44248), Vector3(-0.0497809, -0.305314, 1.28589), Vector3(-0.32179, -2.4081, 1.77998), Vector3(-0.32179, -2.49889, 1.77998)]
+}
+
+[sub_resource type="Animation" id="Animation_d1osb"]
+resource_name = "Attack3"
+length = 0.5
+step = 0.025
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.075, 0.125, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-2.46892e-08, -2.35281, 1.44248), Vector3(0.203388, -2.77095, 0.336425), Vector3(-0.0568364, 3.1361, 0.254005), Vector3(1.44645, 3.09735, 0.209794), Vector3(1.08587, 0.0117674, -2.87749)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.075, 0.125, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 0, -1), Vector3(0.434264, 0.724477, -0.706099), Vector3(0.419582, 1.20974, -0.725102), Vector3(0.169997, 0.141235, -1.04815), Vector3(0.169997, -0.355309, -1.04815)]
 }
 
 [sub_resource type="Animation" id="Animation_j0rfm"]
@@ -53,62 +112,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_jnwh2"]
-resource_name = "Attack2"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-1, 0, -1), Vector3(1, 0, -1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("MeshInstance3D:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-9.20212e-09, -0.720926, 1.44248), Vector3(-2.46892e-08, -2.35281, 1.44248)]
-}
-
-[sub_resource type="Animation" id="Animation_d1osb"]
-resource_name = "Attack3"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MeshInstance3D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(-2.46892e-08, -2.35281, 1.44248), Vector3(0.203388, -2.77095, 0.336425), Vector3(1.17165, -1.75001, 1.3769)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("MeshInstance3D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(1, 0, -1), Vector3(0.434264, 0.724477, -0.706099), Vector3(0.169997, 0.141235, -1.04815)]
 }
 
 [sub_resource type="Animation" id="Animation_gvqil"]
@@ -152,6 +155,7 @@ _data = {
 size = Vector3(0.12, 1.5, 0.25)
 
 [node name="DefaultSword" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.264277, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -161,3 +165,26 @@ libraries = {
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
 mesh = SubResource("BoxMesh_quox0")
+
+[node name="screenOverlay" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="crosshair" type="ColorRect" parent="screenOverlay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0980392, 0.0980392, 0.0980392, 1)

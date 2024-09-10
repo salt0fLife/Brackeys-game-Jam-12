@@ -1,12 +1,17 @@
-[gd_scene load_steps=14 format=3 uid="uid://dcede0qqm4gi8"]
+[gd_scene load_steps=19 format=3 uid="uid://dcede0qqm4gi8"]
 
 [ext_resource type="PackedScene" uid="uid://ble8cirkaq864" path="res://creatures/punching_bag.tscn" id="1_kgxjm"]
 [ext_resource type="Texture2D" uid="uid://cj2tfo0qsi5ga" path="res://textures/DebuggTexture.png" id="1_ulmlh"]
 [ext_resource type="PackedScene" uid="uid://ds7esrbelu0af" path="res://Environment/transporter_arch.tscn" id="2_oigs4"]
 [ext_resource type="PackedScene" uid="uid://cxffo1r8ltcio" path="res://player/player.tscn" id="2_x21wh"]
+[ext_resource type="PackedScene" uid="uid://cfbsb16oupec4" path="res://creatures/enemies/blue_slime.tscn" id="4_ql8dg"]
 [ext_resource type="PackedScene" uid="uid://c5wqllcfmcef2" path="res://Environment/materials/ores/copper_ore.tscn" id="5_prh66"]
 [ext_resource type="PackedScene" uid="uid://cj0jlajxl27pj" path="res://Environment/materials/trees/young_birch.tscn" id="6_y0dma"]
 [ext_resource type="PackedScene" uid="uid://c8r47hrentfr6" path="res://Environment/materials/trees/young_oak.tscn" id="7_ndm2a"]
+[ext_resource type="PackedScene" uid="uid://bguuma0i7f3ll" path="res://Environment/materials/trees/standard_birch.tscn" id="8_1d7kl"]
+[ext_resource type="PackedScene" uid="uid://dskels2a1y5c7" path="res://Environment/materials/trees/old_birch.tscn" id="9_2ebvs"]
+[ext_resource type="PackedScene" uid="uid://cj8m4fyqakn53" path="res://Environment/materials/trees/standard_oak.tscn" id="10_2l5a1"]
+[ext_resource type="PackedScene" uid="uid://cqwi5b1kq0u00" path="res://Environment/materials/trees/old_oak.tscn" id="11_7hua2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lxmof"]
 sky_top_color = Color(0.345098, 0.627451, 0.886275, 1)
@@ -44,7 +49,7 @@ transform = Transform3D(1, 0, 0, 0, 0.737041, 0.675848, 0, -0.675848, 0.737041, 
 
 [node name="TransporterArch" parent="lighting" instance=ExtResource("2_oigs4")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13, 0, -1)
-pathToLoad = "res://Levels/island_hub.tscn"
+pathToLoad = "res://Levels/debug_level.tscn"
 
 [node name="floor" type="Node" parent="."]
 
@@ -66,8 +71,28 @@ skeleton = NodePath("../..")
 [node name="CopperOre" parent="resources" instance=ExtResource("5_prh66")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9266, 0, 4.53706)
 
-[node name="youngBirch" parent="." instance=ExtResource("6_y0dma")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.10743, 0, 7.73623)
+[node name="youngBirch" parent="resources" instance=ExtResource("6_y0dma")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1074, 0, 9.73623)
 
-[node name="youngOak" parent="." instance=ExtResource("7_ndm2a")]
+[node name="youngOak" parent="resources" instance=ExtResource("7_ndm2a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.31039, 0, 9.69964)
+
+[node name="StandardBirch" parent="resources" instance=ExtResource("8_1d7kl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 13)
+
+[node name="OldBirch" parent="resources" instance=ExtResource("9_2ebvs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 18)
+
+[node name="StandardOak" parent="resources" instance=ExtResource("10_2l5a1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 13)
+
+[node name="OldOak" parent="resources" instance=ExtResource("11_7hua2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 18)
+
+[node name="entities" type="Node" parent="."]
+
+[node name="blueSlime" parent="entities" instance=ExtResource("4_ql8dg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -8)
+
+[node name="blueSlime2" parent="entities" instance=ExtResource("4_ql8dg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -11)

@@ -85,7 +85,7 @@ height = 2.0
 
 [node name="youngBirch" type="StaticBody3D"]
 script = ExtResource("1_qycj4")
-item = [0, "Birch Wood", "Wood", 0, 10]
+item = [0, "Birch Wood", "Birch Wood", 0, 10]
 dropMin = 2
 dropMax = 5
 
