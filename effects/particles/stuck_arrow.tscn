@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://8gc4vscaevuc"]
+
+[ext_resource type="Script" path="res://scripts/stuck_arrow.gd" id="1_6hdq4"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_o860a"]
+top_radius = 0.05
+bottom_radius = 0.1
+
+[node name="StuckArrow" type="Node3D"]
+script = ExtResource("1_6hdq4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CylinderMesh_o860a")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

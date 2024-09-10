@@ -1,0 +1,146 @@
+[gd_scene load_steps=12 format=3 uid="uid://6ab1mh7ne8yi"]
+
+[ext_resource type="Script" path="res://scripts/chest.gd" id="1_4t8su"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t56ne"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wxro1"]
+albedo_color = Color(0.231373, 0.156863, 0.0509804, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_p1fk8"]
+material = SubResource("StandardMaterial3D_wxro1")
+size = Vector3(1, 0.25, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3qssa"]
+albedo_color = Color(0.278431, 0.309804, 0.352941, 1)
+metallic = 1.0
+roughness = 0.6
+
+[sub_resource type="BoxMesh" id="BoxMesh_kl28t"]
+material = SubResource("StandardMaterial3D_3qssa")
+size = Vector3(0.1, 0.2, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k0pg3"]
+albedo_color = Color(0.392157, 0.298039, 0.152941, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8mhsw"]
+material = SubResource("StandardMaterial3D_k0pg3")
+size = Vector3(1, 0.75, 1)
+
+[sub_resource type="Animation" id="Animation_1sdlv"]
+resource_name = "open"
+length = 0.6
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("graphics:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.03, 0.07, 0.11),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.0798488, -9.61311e-10, 0.128971), Vector3(0, 0, -0.107739), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("graphics:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.03, 0.07, 0.11),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.0765889, 0), Vector3(0, 0.0613819, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("graphics/chestLid:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.11, 0.14, 0.22, 0.27, 0.53),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.824136, -0.029118, 0.012728), Vector3(-0.903006, -0.0319373, 0.0164339), Vector3(-0.780364, -0.0278284, 0.0109346), Vector3(-0.741515, -0.026865, 0.00951295), Vector3(-0.713024, -0.0261921, 0.00850092), Vector3(-0.739666, -0.0268196, 0.00944568)]
+}
+
+[sub_resource type="Animation" id="Animation_q3qtx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("graphics:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("graphics:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("graphics/chestLid:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jlt8l"]
+_data = {
+"RESET": SubResource("Animation_q3qtx"),
+"open": SubResource("Animation_1sdlv")
+}
+
+[node name="Chest" type="StaticBody3D"]
+collision_layer = 132
+collision_mask = 0
+script = ExtResource("1_4t8su")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_t56ne")
+
+[node name="graphics" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="chestLid" type="Node3D" parent="graphics"]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -2.24099e-09, 0.749999, -0.5)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="graphics/chestLid"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0.5)
+mesh = SubResource("BoxMesh_p1fk8")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="graphics/chestLid"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+mesh = SubResource("BoxMesh_kl28t")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="graphics"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.375, 0)
+mesh = SubResource("BoxMesh_8mhsw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jlt8l")
+}

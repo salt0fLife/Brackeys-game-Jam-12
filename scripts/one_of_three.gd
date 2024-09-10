@@ -1,6 +1,6 @@
 extends StaticBody3D
 @export var identityInt := 1
-
+@export var teleport = true
 
 func take_damage(amount = 1, type = -1, _kb = Vector3(0,0,0)):
 	unlock()
@@ -25,5 +25,6 @@ func unlock():
 			pass
 		pass
 	Settings.unlockGatePart(identityInt)
-	main.load_new_scene(sceneToLoad)
+	if teleport:
+		main.load_new_scene(sceneToLoad)
 	pass

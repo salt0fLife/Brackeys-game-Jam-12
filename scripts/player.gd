@@ -5,12 +5,21 @@ extends CharacterBody3D
 
 #general
 var debugMode = Settings.debugMode
-var SPEED = Settings.playerSpeed
-var JUMP_VELOCITY = Settings.playerJump
+var MaxSPEED = Settings.playerSpeed
+var MaxJUMP_VELOCITY = Settings.playerJump
 var MouseSensitivity = Settings.mouseSensitivity
+var HealthDefault = Settings.playerHealth
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var disabled = false
 var inInventory = false
+
+var SPEED = MaxSPEED
+var JUMP_VELOCITY = MaxJUMP_VELOCITY
+var maxHealth = HealthDefault
+var health = maxHealth
+
+var regenCooldownTimer = 0
+
 
 #items and combat
 var bufferedInput = ""
@@ -42,18 +51,29 @@ var bufferingUse = false
 @onready var ItemGraphicsHandler = $Graphics/CameraHandler/ItemGraphicsHandler
 @onready var chRay = $Graphics/CameraHandler/CrosshairRay
 @onready var inventoryList = $inventoryList
+@onready var BowRay = $Graphics/CameraHandler/CrossBowRay
 
 
 #preloads (arrows particles and such)
 @onready var hitMarker = preload("res://effects/particles/damage_indicator.tscn")
+@onready var arrow = preload("res://effects/particles/stuck_arrow.tscn")
 
 func update_stats_from_item_tags():
+	SPEED = MaxSPEED
+	JUMP_VELOCITY = MaxJUMP_VELOCITY
+	maxHealth = HealthDefault
 	var swordTags = swordInfo[4]
 	var paxelTags = paxelInfo[4]
 	var bowTags = bowInfo[4]
 	
-	
-	
+	for tag in swordTags:
+		if tag == "speedy":
+			SPEED = SPEED * 1.5
+			pass
+		if tag == "lightFooted":
+			JUMP_VELOCITY = JUMP_VELOCITY * 1.5
+		if tag == "healthy":
+			maxHealth = maxHealth * 1.5
 	pass
 
 func set_disabled(data = true):
@@ -71,6 +91,9 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	update_heldItem_graphics()
 	update_Inventory_graphics()
+	update_stats_from_item_tags()
+	health = maxHealth
+	update_health_graphics()
 	pass
 
 func use_item():
@@ -202,7 +225,38 @@ func use_paxel():
 	pass
 
 func use_bow():
-	printerr("bow not implemented")
+	actionState = true
+	var itemGraphics = ItemGraphicsHandler.get_child(0, false)
+	itemGraphics.get_child(0, true).play("shoot")
+	if BowRay.is_colliding():
+		var poi = BowRay.get_collision_point()
+		var hit = BowRay.get_collider()
+		if hit.has_method("take_damage") and hit != self:
+			var knockback = bowInfo[3]
+			var damage = bowInfo[2]
+			var kbVector = global_position - poi
+			kbVector.x = -(kbVector.x / abs(kbVector.x)) * knockback
+			kbVector.y = -(kbVector.y / abs(kbVector.y)) * knockback
+			kbVector.z = -(kbVector.z / abs(kbVector.z)) * knockback
+			
+			hit.take_damage(knockback, 3, kbVector)
+			
+			var arGraphic = arrow.instantiate()
+			hit.add_child(arGraphic)
+			arGraphic.global_rotation = CameraHandler.global_rotation
+			arGraphic.global_position = poi
+			
+			var hm = hitMarker.instantiate()
+			hm.set_value(damage)
+			hit.add_child(hm)
+			hm.global_position = poi
+			pass
+	await get_tree().create_timer(1).timeout
+	actionState = false
+	itemGraphics.get_child(0, true).play("idle")
+	
+	
+	#printerr("bow not implemented")
 	pass
 
 func check_for_hit(damage = swordInfo[2], crit = false):
@@ -379,11 +433,7 @@ func _physics_process(delta):
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor() and !disabled:
-		if !debugMode:
-			velocity.y = JUMP_VELOCITY
-		else:
-			velocity.y = JUMP_VELOCITY * 2
-			pass
+		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -459,6 +509,8 @@ func _on_weapon_button_pressed(Index = -1):
 
 func die():
 	position = Vector3(0,0,0)
+	health = maxHealth
+	update_health_graphics()
 	pass
 
 func die_boss():
@@ -479,6 +531,7 @@ func _on_equip_selected_weapon_button_down():
 			push_inventory_changes()
 			update_Inventory_graphics()
 			update_heldItem_graphics()
+			update_stats_from_item_tags()
 			pass
 		elif weaponinQuestion[0] == 2:
 			var temp = paxelInfo
@@ -487,6 +540,7 @@ func _on_equip_selected_weapon_button_down():
 			push_inventory_changes()
 			update_Inventory_graphics()
 			update_heldItem_graphics()
+			update_stats_from_item_tags()
 			pass
 		elif weaponinQuestion[0] == 3:
 			var temp = bowInfo
@@ -495,6 +549,7 @@ func _on_equip_selected_weapon_button_down():
 			push_inventory_changes()
 			update_Inventory_graphics()
 			update_heldItem_graphics()
+			update_stats_from_item_tags()
 			pass
 		else:
 			printerr("ERROR: cannot equip item of type " + str(weaponinQuestion[0]))
@@ -502,10 +557,33 @@ func _on_equip_selected_weapon_button_down():
 		pass
 	pass # Replace with function body.
 
-func _process(_delta):
+func _process(delta):
+	if regenCooldownTimer > 0:
+		regenCooldownTimer -= delta
+	elif health != maxHealth:
+		health += delta * 10
+		if health > maxHealth:
+			health = maxHealth
+		update_health_graphics()
+	
 	if bufferingUse:
 		if HeldItem == 2:
 			if !actionState:
 				use_paxel()
 		bufferedInput = "UseItem"
+	pass
+
+func update_health_graphics():
+	$HUD/healthDisplay.text = str(health)
+	pass
+
+func take_damage(amount, tag, knockback):
+	if health - amount > 0:
+		health -= amount
+		regenCooldownTimer = 5.0
+		$screenOverlay/damageAnimations.play("take_damage")
+		update_health_graphics()
+		pass
+	else:
+		die()
 	pass

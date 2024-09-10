@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dcede0qqm4gi8"]
+[gd_scene load_steps=21 format=3 uid="uid://dcede0qqm4gi8"]
 
 [ext_resource type="PackedScene" uid="uid://ble8cirkaq864" path="res://creatures/punching_bag.tscn" id="1_kgxjm"]
 [ext_resource type="Texture2D" uid="uid://cj2tfo0qsi5ga" path="res://textures/DebuggTexture.png" id="1_ulmlh"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://dskels2a1y5c7" path="res://Environment/materials/trees/old_birch.tscn" id="9_2ebvs"]
 [ext_resource type="PackedScene" uid="uid://cj8m4fyqakn53" path="res://Environment/materials/trees/standard_oak.tscn" id="10_2l5a1"]
 [ext_resource type="PackedScene" uid="uid://cqwi5b1kq0u00" path="res://Environment/materials/trees/old_oak.tscn" id="11_7hua2"]
+[ext_resource type="PackedScene" uid="uid://fvrqly6gk72l" path="res://Environment/one_of_three.tscn" id="13_va5w2"]
+[ext_resource type="PackedScene" uid="uid://6ab1mh7ne8yi" path="res://Environment/chest.tscn" id="14_ayw2o"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lxmof"]
 sky_top_color = Color(0.345098, 0.627451, 0.886275, 1)
@@ -96,3 +98,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -8)
 
 [node name="blueSlime2" parent="entities" instance=ExtResource("4_ql8dg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -11)
+
+[node name="OneOfThree" parent="." instance=ExtResource("13_va5w2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -14)
+identityInt = 2
+
+[node name="Chest" parent="." instance=ExtResource("14_ayw2o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -12)

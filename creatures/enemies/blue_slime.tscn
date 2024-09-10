@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfbsb16oupec4"]
+[gd_scene load_steps=7 format=3 uid="uid://cfbsb16oupec4"]
 
 [ext_resource type="Script" path="res://scripts/blue_slime.gd" id="1_c4n35"]
 
@@ -12,6 +12,12 @@ anisotropy = -0.5
 
 [sub_resource type="SphereMesh" id="SphereMesh_wdwo4"]
 material = SubResource("StandardMaterial3D_br8fu")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_pg3xb"]
+radius = 0.383145
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_akqqt"]
+size = Vector3(33, 6, 33)
 
 [node name="blueSlime" type="CharacterBody3D"]
 collision_layer = 44
@@ -27,3 +33,23 @@ shape = SubResource("BoxShape3D_hibxa")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 mesh = SubResource("SphereMesh_wdwo4")
 skeleton = NodePath("../..")
+
+[node name="attackArea" type="Area3D" parent="."]
+collision_layer = 64
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="attackArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("SphereShape3D_pg3xb")
+
+[node name="activationArea" type="Area3D" parent="."]
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="activationArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+shape = SubResource("BoxShape3D_akqqt")
+
+[connection signal="body_entered" from="attackArea" to="." method="_on_attack_area_body_entered"]
+[connection signal="body_entered" from="activationArea" to="." method="_on_activation_area_body_entered"]
+[connection signal="body_exited" from="activationArea" to="." method="_on_activation_area_body_exited"]
