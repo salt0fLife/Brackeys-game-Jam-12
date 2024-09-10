@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://cl8tkoh21qbxm"]
+
+[ext_resource type="PackedScene" uid="uid://dvdclym3wtvrt" path="res://imports/smallBridge/WoodenBridge1.glb" id="1_d51bo"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_2bsc6"]
+height = 4.30309
+radius = 9.42558
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5yjvp"]
+size = Vector3(0.473389, 4, 8)
+
+[node name="smallBridge" type="Node3D"]
+
+[node name="WoodenBridge1" parent="." instance=ExtResource("1_d51bo")]
+transform = Transform3D(0.85, 0, 0, 0, 0.85, 0, 0, 0, 0.85, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, -4.4614, -8)
+shape = SubResource("CylinderShape3D_2bsc6")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.23925, 4.81653, -8.5)
+shape = SubResource("BoxShape3D_5yjvp")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.31391, 4.81653, -8.5)
+shape = SubResource("BoxShape3D_5yjvp")

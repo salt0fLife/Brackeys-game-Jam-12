@@ -1,0 +1,149 @@
+[gd_scene load_steps=6 format=3 uid="uid://dvroebkhp87cf"]
+
+[ext_resource type="Script" path="res://scripts/lumber_jack.gd" id="1_7m8qf"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6lahp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mhymu"]
+albedo_color = Color(0.490196, 0.192157, 0.121569, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_gmttv"]
+material = SubResource("StandardMaterial3D_mhymu")
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nft2k"]
+blend_mode = 3
+
+[node name="LumberJack" type="StaticBody3D" groups=["ShopKeeper"]]
+collision_layer = 129
+script = ExtResource("1_7m8qf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_6lahp")
+
+[node name="graphics" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="graphics"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_gmttv")
+
+[node name="nameTag" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.13761, 0)
+billboard = 1
+text = "Stanford"
+
+[node name="shop" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="multiplyPlane" type="ColorRect" parent="shop"]
+material = SubResource("CanvasItemMaterial_nft2k")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.278431, 0.239216, 0.215686, 1)
+
+[node name="shopLabel" type="Label" parent="shop"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -73.0
+offset_right = 73.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.6, 0.752941, 0.933333, 1)
+theme_override_colors/font_outline_color = Color(0.294118, 0.0431373, 0.0901961, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 66
+text = "LumberJack's Shop"
+horizontal_alignment = 1
+
+[node name="shopButtons" type="Control" parent="shop"]
+layout_mode = 1
+anchor_left = 0.026
+anchor_top = 0.14
+anchor_right = 0.968
+anchor_bottom = 0.952
+offset_left = 0.0480003
+offset_top = 0.279999
+offset_right = -0.136108
+offset_bottom = 0.104004
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ShopBackdrop" type="ColorRect" parent="shop/shopButtons"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.298039, 0.25098, 0.211765, 1)
+
+[node name="closeShop" type="Button" parent="shop/shopButtons"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -91.0
+offset_top = -31.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "close Shop"
+
+[node name="playerItems" type="RichTextLabel" parent="shop/shopButtons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.226
+anchor_bottom = 1.0
+offset_right = 0.789993
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ItemsForSale" type="Control" parent="shop/shopButtons"]
+layout_mode = 1
+anchor_left = 0.227
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -0.295013
+offset_right = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="shop/shopButtons/ItemsForSale"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="selectedRecipe" type="Control" parent="shop/shopButtons"]
+layout_mode = 1
+anchor_left = 0.5
+anchor_right = 0.916
+anchor_bottom = 1.0
+offset_left = 0.5
+offset_right = 0.139954
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="selectedRecipeDisplay" type="RichTextLabel" parent="shop/shopButtons/selectedRecipe"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="button_down" from="shop/shopButtons/closeShop" to="." method="_on_close_shop_button_down"]

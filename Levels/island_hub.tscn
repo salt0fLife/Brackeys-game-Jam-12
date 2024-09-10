@@ -1,0 +1,188 @@
+[gd_scene load_steps=13 format=3 uid="uid://oak3cmybw46b"]
+
+[ext_resource type="PackedScene" uid="uid://dlh2ponw23gil" path="res://Environment/grassy_island_piece.tscn" id="1_wgqij"]
+[ext_resource type="PackedScene" uid="uid://cxffo1r8ltcio" path="res://player/player.tscn" id="2_yo555"]
+[ext_resource type="PackedScene" uid="uid://hmgkxaj1obj7" path="res://Environment/locations/black_smiths_house.tscn" id="3_7c2fq"]
+[ext_resource type="PackedScene" uid="uid://qpwafib1h67o" path="res://Environment/locations/gate_of_the_storm.tscn" id="4_1npfw"]
+[ext_resource type="PackedScene" uid="uid://ds7esrbelu0af" path="res://Environment/transporter_arch.tscn" id="5_fjdn5"]
+[ext_resource type="PackedScene" uid="uid://ble8cirkaq864" path="res://creatures/punching_bag.tscn" id="6_lca4l"]
+[ext_resource type="PackedScene" uid="uid://cj0jlajxl27pj" path="res://Environment/materials/trees/young_birch.tscn" id="7_22sfe"]
+[ext_resource type="PackedScene" uid="uid://c8r47hrentfr6" path="res://Environment/materials/trees/young_oak.tscn" id="8_fgne5"]
+[ext_resource type="PackedScene" uid="uid://dvroebkhp87cf" path="res://creatures/characters/lumber_jack.tscn" id="9_rxs44"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mgau6"]
+sky_top_color = Color(0.345098, 0.627451, 0.886275, 1)
+
+[sub_resource type="Sky" id="Sky_0usoo"]
+sky_material = SubResource("ProceduralSkyMaterial_mgau6")
+
+[sub_resource type="Environment" id="Environment_nw8q3"]
+background_mode = 2
+sky = SubResource("Sky_0usoo")
+
+[node name="IslandHub" type="Node3D"]
+
+[node name="grassyPatch" type="Node3D" parent="."]
+
+[node name="grassyIslandPiece" parent="grassyPatch" instance=ExtResource("1_wgqij")]
+
+[node name="grassyIslandPiece2" parent="grassyPatch" instance=ExtResource("1_wgqij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="grassyIslandPiece3" parent="grassyPatch" instance=ExtResource("1_wgqij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
+
+[node name="grassyIslandPiece16" parent="grassyPatch" instance=ExtResource("1_wgqij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 19)
+
+[node name="grassyIslandPiece25" parent="grassyPatch" instance=ExtResource("1_wgqij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, 19)
+
+[node name="grassyIslandPiece4" parent="grassyPatch" instance=ExtResource("1_wgqij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 10)
+
+[node name="grassyIslandPiece27" parent="grassyPatch" instance=ExtResource("1_wgqij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 15)
+
+[node name="grassyIslandPiece5" parent="grassyPatch" instance=ExtResource("1_wgqij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 5)
+
+[node name="grassyIslandPiece6" parent="grassyPatch" instance=ExtResource("1_wgqij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+
+[node name="grassyIslandPiece17" parent="grassyPatch" instance=ExtResource("1_wgqij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 0)
+
+[node name="grassyIslandPiece26" parent="grassyPatch" instance=ExtResource("1_wgqij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, -1, -1)
+
+[node name="grassyIslandPiece7" parent="grassyPatch" instance=ExtResource("1_wgqij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -5)
+
+[node name="grassyIslandPiece9" parent="grassyPatch" instance=ExtResource("1_wgqij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 10)
+
+[node name="grassyIslandPiece23" parent="grassyPatch" instance=ExtResource("1_wgqij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 10)
+
+[node name="grassyIslandPiece24" parent="grassyPatch" instance=ExtResource("1_wgqij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 2, 11)
+
+[node name="grassyIslandPiece10" parent="grassyPatch" instance=ExtResource("1_wgqij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 5)
+
+[node name="grassyIslandPiece11" parent="grassyPatch" instance=ExtResource("1_wgqij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+
+[node name="grassyIslandPiece19" parent="grassyPatch" instance=ExtResource("1_wgqij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+
+[node name="grassyIslandPiece20" parent="grassyPatch" instance=ExtResource("1_wgqij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -9)
+
+[node name="grassyIslandPiece21" parent="grassyPatch" instance=ExtResource("1_wgqij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 1, -9)
+
+[node name="grassyIslandPiece22" parent="grassyPatch" instance=ExtResource("1_wgqij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1, -13)
+
+[node name="grassyIslandPiece12" parent="grassyPatch" instance=ExtResource("1_wgqij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -5)
+
+[node name="grassyIslandPiece8" parent="grassyPatch" instance=ExtResource("1_wgqij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+
+[node name="grassyIslandPiece13" parent="grassyPatch" instance=ExtResource("1_wgqij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -10)
+
+[node name="grassyIslandPiece14" parent="grassyPatch" instance=ExtResource("1_wgqij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -10)
+
+[node name="grassyIslandPiece15" parent="grassyPatch" instance=ExtResource("1_wgqij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+
+[node name="grassyIslandPiece18" parent="grassyPatch" instance=ExtResource("1_wgqij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -18)
+
+[node name="playerHandler" type="Node" parent="."]
+
+[node name="Player" parent="playerHandler" instance=ExtResource("2_yo555")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+initialRotDegrees = 270
+
+[node name="locations" type="Node" parent="."]
+
+[node name="BlackSmithsHouse" parent="locations" instance=ExtResource("3_7c2fq")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 9.64475, 2, 20.2964)
+
+[node name="LumberJacksHouse" parent="locations" instance=ExtResource("3_7c2fq")]
+transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -12.7379, 2, 13.427)
+
+[node name="TheCollectorsHouse" parent="locations" instance=ExtResource("3_7c2fq")]
+transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, -9.21212, 2, -16.8844)
+
+[node name="GateOfTheStorm" parent="locations" instance=ExtResource("4_1npfw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 11, 3, 0)
+
+[node name="gateways" type="Node" parent="."]
+
+[node name="TransporterArch" parent="gateways" instance=ExtResource("5_fjdn5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -12, 2.51079, 0)
+pathToLoad = "res://Levels/logger_island_1.tscn"
+
+[node name="lighting" type="Node" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="lighting"]
+environment = SubResource("Environment_nw8q3")
+
+[node name="PunchingBag" parent="lighting/WorldEnvironment" instance=ExtResource("6_lca4l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
+
+[node name="sun" type="DirectionalLight3D" parent="lighting"]
+transform = Transform3D(1, 0, 0, 0, 0.737041, 0.675848, 0, -0.675848, 0.737041, 0, 0, 0)
+
+[node name="Materials" type="Node" parent="."]
+
+[node name="youngBirch" parent="Materials" instance=ExtResource("7_22sfe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.529251, 2.5, 18.6876)
+
+[node name="youngBirch2" parent="Materials" instance=ExtResource("7_22sfe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.76791, 1.5, 19.0796)
+
+[node name="youngBirch3" parent="Materials" instance=ExtResource("7_22sfe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.11025, 2.5, -10.3591)
+
+[node name="youngBirch4" parent="Materials" instance=ExtResource("7_22sfe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.76259, 2.5, -5.40737)
+
+[node name="youngBirch5" parent="Materials" instance=ExtResource("7_22sfe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5775, 3.5, -14.2228)
+
+[node name="youngBirch6" parent="Materials" instance=ExtResource("7_22sfe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5284, 3.5, -7.21358)
+
+[node name="youngBirch7" parent="Materials" instance=ExtResource("7_22sfe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8136, 4.5, 11.9602)
+
+[node name="youngBirch8" parent="Materials" instance=ExtResource("7_22sfe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.916809, 2.5, -17.6831)
+
+[node name="youngOak" parent="Materials" instance=ExtResource("8_fgne5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.28574, 2.5, -18.886)
+
+[node name="youngOak2" parent="Materials" instance=ExtResource("8_fgne5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.45276, 2.5, -11.2737)
+
+[node name="youngOak3" parent="Materials" instance=ExtResource("8_fgne5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9828, 3.5, -10.9887)
+
+[node name="youngOak4" parent="Materials" instance=ExtResource("8_fgne5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7273, 2.5, 5.08417)
+
+[node name="youngOak5" parent="Materials" instance=ExtResource("8_fgne5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.75373, 2.5, 12.0204)
+
+[node name="characters" type="Node" parent="."]
+
+[node name="LumberJack" parent="characters" instance=ExtResource("9_rxs44")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.14548, 2.98205, 15.8084)
