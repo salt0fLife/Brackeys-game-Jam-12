@@ -64,7 +64,7 @@ height = 4.0
 [node name="StandardBirch" type="StaticBody3D"]
 script = ExtResource("1_thf8q")
 health = 10
-item = [0, "Birch Wood", "Wood", 0, 10]
+item = [0, "Birch Wood", "Birch Wood", 0, 10]
 dropMin = 4
 dropMax = 10
 
@@ -78,7 +78,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.53583, 0)
 shape = SubResource("CylinderShape3D_oq6vc")
 
 [node name="graphics" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="graphics"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.42453, 0)

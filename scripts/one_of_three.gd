@@ -2,7 +2,7 @@ extends StaticBody3D
 @export var identityInt := 1
 
 
-func take_damage(amount = 1, type = -1):
+func take_damage(amount = 1, type = -1, _kb = Vector3(0,0,0)):
 	unlock()
 	pass
 

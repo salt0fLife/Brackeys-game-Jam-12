@@ -35,10 +35,12 @@ func _on_debug_mode_button_down():
 	if currentmode == true:
 		$CategoryHandler/Level1/debugMode.text = "false"
 		Settings.debugMode = false
+		$"../MainMenu/ButtonBox/DebugScene".visible = false
 		pass
 	else:
 		$CategoryHandler/Level1/debugMode.text = "true"
 		Settings.debugMode = true
+		$"../MainMenu/ButtonBox/DebugScene".visible = true
 		pass
 	pass # Replace with function body.
 

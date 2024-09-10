@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfbsb16oupec4"]
+
+[ext_resource type="Script" path="res://scripts/blue_slime.gd" id="1_c4n35"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hibxa"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_br8fu"]
+albedo_color = Color(0.121569, 0.313726, 0.427451, 1)
+roughness = 0.2
+anisotropy_enabled = true
+anisotropy = -0.5
+
+[sub_resource type="SphereMesh" id="SphereMesh_wdwo4"]
+material = SubResource("StandardMaterial3D_br8fu")
+
+[node name="blueSlime" type="CharacterBody3D"]
+collision_layer = 44
+script = ExtResource("1_c4n35")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_hibxa")
+
+[node name="graphics" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="graphics"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("SphereMesh_wdwo4")
+skeleton = NodePath("../..")
