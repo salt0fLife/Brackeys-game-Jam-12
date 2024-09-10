@@ -1,0 +1,494 @@
+[gd_scene load_steps=6 format=3 uid="uid://chuabdhcd2v8k"]
+
+[ext_resource type="PackedScene" uid="uid://cxffo1r8ltcio" path="res://player/player.tscn" id="1_ami73"]
+[ext_resource type="PackedScene" uid="uid://6xamiee4w237" path="res://Environment/stony_island_piece.tscn" id="2_tmf08"]
+[ext_resource type="PackedScene" uid="uid://ds7esrbelu0af" path="res://Environment/transporter_arch.tscn" id="3_nl5gt"]
+[ext_resource type="PackedScene" uid="uid://cfbsb16oupec4" path="res://creatures/enemies/blue_slime.tscn" id="4_1xl1u"]
+
+[sub_resource type="Environment" id="Environment_qoprv"]
+background_energy_multiplier = 0.0
+ambient_light_energy = 0.0
+
+[node name="MineIsland1" type="Node3D"]
+
+[node name="PlayerHandler" type="Node3D" parent="."]
+
+[node name="Player" parent="PlayerHandler" instance=ExtResource("1_ami73")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="PlayerHandler/Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+light_energy = 4.0
+omni_range = 55.9893
+
+[node name="stonyPatch" type="Node3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+
+[node name="StonyIslandPiece" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.48482, 0)
+
+[node name="StonyIslandPiece2" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.48482, -5)
+
+[node name="StonyIslandPiece3" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.48482, -10)
+
+[node name="StonyIslandPiece4" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.48482, -14.75)
+
+[node name="StonyIslandPiece8" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.73482, -19.75)
+
+[node name="StonyIslandPiece9" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -2.98482, -19.75)
+
+[node name="StonyIslandPiece10" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -3.23482, -23.5)
+
+[node name="StonyIslandPiece15" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, -3.48482, -24.75)
+
+[node name="StonyIslandPiece16" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, -3.48482, -29.75)
+
+[node name="StonyIslandPiece17" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -3.48482, -28.5)
+
+[node name="StonyIslandPiece18" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, -3.23482, -28.5)
+
+[node name="StonyIslandPiece19" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -3.48482, -33.5)
+
+[node name="StonyIslandPiece20" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, -3.48482, -34.75)
+
+[node name="StonyIslandPiece21" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, -3.48482, -33.5)
+
+[node name="StonyIslandPiece41" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.25, -3.48482, -33.5)
+
+[node name="StonyIslandPiece42" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, -3.48482, -33.5)
+
+[node name="StonyIslandPiece43" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5, -3.73482, -33.5)
+
+[node name="StonyIslandPiece44" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.5, -3.73482, -33.5)
+
+[node name="StonyIslandPiece45" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5, -3.73482, -37)
+
+[node name="StonyIslandPiece46" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.25, -3.73482, -38)
+
+[node name="StonyIslandPiece47" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, -3.73482, -37.5)
+
+[node name="StonyIslandPiece48" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.75, -3.73482, -32.75)
+
+[node name="StonyIslandPiece49" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.25, -3.73482, -29.5)
+
+[node name="StonyIslandPiece50" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.75, -3.73482, -30.75)
+
+[node name="StonyIslandPiece51" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.25, -3.73482, -31.5)
+
+[node name="StonyIslandPiece22" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -3.48482, -38.5)
+
+[node name="StonyIslandPiece27" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -3.48482, -43.5)
+
+[node name="StonyIslandPiece31" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -3.23482, -48.25)
+
+[node name="StonyIslandPiece32" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -2.98482, -53.25)
+
+[node name="StonyIslandPiece33" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -2.73482, -55.5)
+
+[node name="StonyIslandPiece34" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -2.48482, -57)
+
+[node name="StonyIslandPiece35" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -2.23482, -58)
+
+[node name="StonyIslandPiece36" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -1.98482, -60.25)
+
+[node name="StonyIslandPiece37" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -1.73482, -61.75)
+
+[node name="StonyIslandPiece38" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -1.48482, -63.25)
+
+[node name="StonyIslandPiece39" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -1.23482, -65.5)
+
+[node name="StonyIslandPiece40" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, -0.984822, -67)
+
+[node name="StonyIslandPiece28" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, -3.48482, -44.25)
+
+[node name="StonyIslandPiece29" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, -2.98482, -43.25)
+
+[node name="StonyIslandPiece23" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, -3.23482, -38.5)
+
+[node name="StonyIslandPiece24" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.25, -3.23482, -39.5)
+
+[node name="StonyIslandPiece30" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.25, -2.98482, -39.5)
+
+[node name="StonyIslandPiece25" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, -0.734822, -24)
+
+[node name="StonyIslandPiece26" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.75, 0.265178, -27.5)
+
+[node name="StonyIslandPiece11" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1.51518, -23.5)
+
+[node name="StonyIslandPiece94" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.26518, 0)
+
+[node name="StonyIslandPiece95" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.26518, -5)
+
+[node name="StonyIslandPiece96" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.26518, -10)
+
+[node name="StonyIslandPiece97" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.26518, -14.75)
+
+[node name="StonyIslandPiece98" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.01518, -19.75)
+
+[node name="StonyIslandPiece99" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 5.76518, -19.75)
+
+[node name="StonyIslandPiece135" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 5.76518, -15.5)
+
+[node name="StonyIslandPiece136" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.75, 5.76518, -12.25)
+
+[node name="StonyIslandPiece137" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 5.76518, -14)
+
+[node name="StonyIslandPiece100" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 5.51518, -23.5)
+
+[node name="StonyIslandPiece101" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 5.26518, -24.75)
+
+[node name="StonyIslandPiece102" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 5.26518, -29.75)
+
+[node name="StonyIslandPiece103" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 5.26518, -28.5)
+
+[node name="StonyIslandPiece104" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 5.51518, -28.5)
+
+[node name="StonyIslandPiece105" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 5.26518, -33.5)
+
+[node name="StonyIslandPiece106" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 5.26518, -34.75)
+
+[node name="StonyIslandPiece107" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 5.26518, -33.5)
+
+[node name="StonyIslandPiece108" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.25, 5.26518, -33.5)
+
+[node name="StonyIslandPiece109" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 5.26518, -33.5)
+
+[node name="StonyIslandPiece110" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5, 5.01518, -33.5)
+
+[node name="StonyIslandPiece111" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.5, 5.01518, -33.5)
+
+[node name="StonyIslandPiece112" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5, 5.01518, -37)
+
+[node name="StonyIslandPiece113" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.25, 5.01518, -38)
+
+[node name="StonyIslandPiece114" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 5.01518, -37.5)
+
+[node name="StonyIslandPiece115" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.75, 5.01518, -32.75)
+
+[node name="StonyIslandPiece116" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.25, 5.01518, -29.5)
+
+[node name="StonyIslandPiece117" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.75, 5.01518, -30.75)
+
+[node name="StonyIslandPiece118" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.25, 5.01518, -31.5)
+
+[node name="StonyIslandPiece119" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 5.26518, -38.5)
+
+[node name="StonyIslandPiece120" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 5.26518, -43.5)
+
+[node name="StonyIslandPiece121" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 5.51518, -48.25)
+
+[node name="StonyIslandPiece122" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 5.76518, -53.25)
+
+[node name="StonyIslandPiece123" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 6.01518, -55.5)
+
+[node name="StonyIslandPiece124" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 6.26518, -57)
+
+[node name="StonyIslandPiece125" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 6.51518, -58)
+
+[node name="StonyIslandPiece126" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 6.76518, -60.25)
+
+[node name="StonyIslandPiece127" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 7.01518, -61.75)
+
+[node name="StonyIslandPiece128" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 7.26518, -63.25)
+
+[node name="StonyIslandPiece129" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 7.51518, -65.5)
+
+[node name="StonyIslandPiece130" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 7.76518, -67)
+
+[node name="StonyIslandPiece131" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 5.26518, -44.25)
+
+[node name="StonyIslandPiece132" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 5.76518, -43.25)
+
+[node name="StonyIslandPiece133" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 5.51518, -38.5)
+
+[node name="StonyIslandPiece134" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.25, 5.51518, -39.5)
+
+[node name="StonyIslandPiece138" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.25, 5.51518, -39.5)
+
+[node name="StonyIslandPiece12" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.51518, -19)
+
+[node name="StonyIslandPiece13" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.51518, -14)
+
+[node name="StonyIslandPiece52" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.51518, -9)
+
+[node name="StonyIslandPiece53" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.51518, -4)
+
+[node name="StonyIslandPiece54" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.51518, 0.75)
+
+[node name="StonyIslandPiece55" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.51518, 4.75)
+
+[node name="StonyIslandPiece56" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1.51518, 4)
+
+[node name="StonyIslandPiece57" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 1.51518, -0.25)
+
+[node name="StonyIslandPiece58" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1.51518, -4.5)
+
+[node name="StonyIslandPiece59" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 1.51518, -9.25)
+
+[node name="StonyIslandPiece60" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 1.51518, -11)
+
+[node name="StonyIslandPiece61" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.75, 1.51518, -22.5)
+
+[node name="StonyIslandPiece62" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.75, 1.51518, -32)
+
+[node name="StonyIslandPiece63" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.75, 1.51518, -34.75)
+
+[node name="StonyIslandPiece64" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5, 1.51518, -39.25)
+
+[node name="StonyIslandPiece65" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 1.51518, -43.5)
+
+[node name="StonyIslandPiece66" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.25, 1.51518, -44.25)
+
+[node name="StonyIslandPiece67" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 1.51518, -49)
+
+[node name="StonyIslandPiece68" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 1.51518, -53.75)
+
+[node name="StonyIslandPiece69" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 1.51518, -58)
+
+[node name="StonyIslandPiece70" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 1.51518, -62.5)
+
+[node name="StonyIslandPiece71" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 1.51518, -67.25)
+
+[node name="StonyIslandPiece72" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75, 1.51518, -72)
+
+[node name="StonyIslandPiece73" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25, 1.51518, -67.5)
+
+[node name="StonyIslandPiece74" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25, 1.51518, -62.75)
+
+[node name="StonyIslandPiece75" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.51518, -57.75)
+
+[node name="StonyIslandPiece76" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.51518, -53)
+
+[node name="StonyIslandPiece140" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 6.51518, -53.75)
+
+[node name="StonyIslandPiece141" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 6.51518, -58)
+
+[node name="StonyIslandPiece142" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 6.51518, -62.5)
+
+[node name="StonyIslandPiece143" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 6.51518, -67.25)
+
+[node name="StonyIslandPiece144" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.75, 6.51518, -72)
+
+[node name="StonyIslandPiece145" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25, 6.51518, -67.5)
+
+[node name="StonyIslandPiece146" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25, 6.51518, -62.75)
+
+[node name="StonyIslandPiece147" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 6.51518, -57.75)
+
+[node name="StonyIslandPiece148" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 6.51518, -53)
+
+[node name="StonyIslandPiece77" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.51518, -48.75)
+
+[node name="StonyIslandPiece78" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1.51518, -48.25)
+
+[node name="StonyIslandPiece79" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.25, 1.51518, -44)
+
+[node name="StonyIslandPiece80" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.25, 1.51518, -40.25)
+
+[node name="StonyIslandPiece81" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 1.51518, -38.25)
+
+[node name="StonyIslandPiece82" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 1.26518, -38.25)
+
+[node name="StonyIslandPiece83" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.75, 1.26518, -41.25)
+
+[node name="StonyIslandPiece84" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5, 1.26518, -41.75)
+
+[node name="StonyIslandPiece85" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.5, 1.26518, -41.75)
+
+[node name="StonyIslandPiece86" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 1.26518, -37.75)
+
+[node name="StonyIslandPiece87" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.5, 1.26518, -33.5)
+
+[node name="StonyIslandPiece88" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.75, 1.26518, -28.75)
+
+[node name="StonyIslandPiece89" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.75, 1.26518, -25.75)
+
+[node name="StonyIslandPiece90" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.75, 1.26518, -26)
+
+[node name="StonyIslandPiece91" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 1.26518, -27.5)
+
+[node name="StonyIslandPiece92" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75, 1.26518, -29.25)
+
+[node name="StonyIslandPiece93" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.25, 1.26518, -26.75)
+
+[node name="StonyIslandPiece5" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -2.48482, -14.75)
+
+[node name="StonyIslandPiece139" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -2.48482, -11.25)
+
+[node name="StonyIslandPiece6" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -2.48482, -14.75)
+
+[node name="StonyIslandPiece7" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 2.51518, -14.75)
+
+[node name="StonyIslandPiece14" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.25, 2.01518, -19.75)
+
+[node name="TransporterArch" parent="." instance=ExtResource("3_nl5gt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 6, -277)
+pathToLoad = "res://Levels/mine_island_2.tscn"
+
+[node name="lighting" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="lighting"]
+transform = Transform3D(0.762892, 0.392305, 0.513899, -0.558686, -3.62533e-08, 0.829379, 0.32537, -0.919835, 0.219175, 0, -1, 0)
+light_color = Color(0.32549, 0.447059, 0.160784, 1)
+light_energy = 0.1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="lighting"]
+environment = SubResource("Environment_qoprv")
+
+[node name="creatures" type="Node" parent="."]
+
+[node name="blueSlime" parent="." instance=ExtResource("4_1xl1u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.41, -3.93929, -138.85)
+
+[node name="blueSlime2" parent="." instance=ExtResource("4_1xl1u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1397, -2.93929, -151.582)
+
+[node name="blueSlime3" parent="." instance=ExtResource("4_1xl1u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.394168, -2.93929, -117.339)

@@ -8,9 +8,14 @@ var fullscreen = false
 #player stats
 var playerSpeed = 10.0
 var playerJump = 4.5
+var playerHealth = 100.0
+var currentHealth = 100.0
 
 #levelHandling
 const mainLevel = "res://Levels/island_hub.tscn"
+
+#chest saving
+var chests = [0, 0, 0, 0, 0, 0]
 
 
 func set_mouseSensitivity(newVal):
