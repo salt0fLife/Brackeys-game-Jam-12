@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlh2ponw23gil"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pphc2"]
+size = Vector3(5, 5, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w4kjy"]
+albedo_color = Color(0.164706, 0.219608, 0.0627451, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rr76y"]
+material = SubResource("StandardMaterial3D_w4kjy")
+size = Vector3(5, 5, 5)
+
+[node name="grassyIslandPiece" type="Node3D"]
+
+[node name="GrassyPiece" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrassyPiece"]
+shape = SubResource("BoxShape3D_pphc2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GrassyPiece"]
+mesh = SubResource("BoxMesh_rr76y")

@@ -34,9 +34,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="CrosshairRay" type="RayCast3D" parent="Graphics/CameraHandler"]
 target_position = Vector3(0, 0, -5)
-collision_mask = 45
+collision_mask = 173
 
 [node name="Inventory" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -54,10 +55,164 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.266667, 0.266667, 0.266667, 1)
 
-[node name="inventoryList" type="RichTextLabel" parent="Inventory"]
+[node name="inventoryListBackground" type="ColorRect" parent="Inventory"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.122
+anchor_bottom = 1.0
+offset_right = -0.544006
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.270588, 0.270588, 0.270588, 1)
+
+[node name="currentWeapons" type="Control" parent="Inventory"]
+layout_mode = 1
+anchor_left = 0.755
+anchor_top = 0.065
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.239929
+offset_top = -0.120003
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SwordInfo" type="RichTextLabel" parent="Inventory/currentWeapons"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = -420.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PaxelInfo" type="RichTextLabel" parent="Inventory/currentWeapons"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 228.0
+offset_bottom = -225.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BowInfo" type="RichTextLabel" parent="Inventory/currentWeapons"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 423.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SelectedWeaponInfo" type="Control" parent="Inventory"]
+layout_mode = 1
+anchor_left = 0.517
+anchor_top = 0.065
+anchor_right = 0.755
+anchor_bottom = 1.0
+offset_left = 0.415955
+offset_top = -0.120003
+offset_right = 0.239929
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="Inventory/SelectedWeaponInfo"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.368627, 0.407843, 0.317647, 1)
+
+[node name="WeaponInfo" type="RichTextLabel" parent="Inventory/SelectedWeaponInfo"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Equip Selected Weapon" type="Button" parent="Inventory/SelectedWeaponInfo"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -65.0
+offset_top = -43.0
+offset_right = -13.0
+offset_bottom = -12.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Equip"
+
+[node name="avalableWeapons" type="VBoxContainer" parent="Inventory"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.122
+anchor_top = 0.065
+anchor_right = 0.517
+anchor_bottom = 1.0
+offset_left = -0.544006
+offset_top = -0.120003
+offset_right = 0.415955
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="headerBackground" type="ColorRect" parent="Inventory"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.122
+anchor_right = 1.0
+anchor_bottom = 0.065
+offset_left = -0.544006
+offset_bottom = -0.120003
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0705882, 0.0705882, 0.0705882, 1)
+
+[node name="OwnedWeaponslabel" type="Label" parent="Inventory/headerBackground"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.451
+anchor_bottom = 1.0
+offset_right = -0.412048
+grow_horizontal = 2
+grow_vertical = 2
+text = "Owned Weapons"
+horizontal_alignment = 1
+
+[node name="WeaponViewerLabel" type="Label" parent="Inventory/headerBackground"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.451
+anchor_right = 0.721
+anchor_bottom = 1.0
+offset_left = -0.412048
+offset_right = 0.347961
+grow_horizontal = 2
+grow_vertical = 2
+text = "Weapon Viewer"
+horizontal_alignment = 1
+
+[node name="EquippedWeaponsLabel" type="Label" parent="Inventory/headerBackground"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.721
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.347961
+grow_horizontal = 2
+grow_vertical = 2
+text = "Equipped Weapons"
+horizontal_alignment = 1
+
+[node name="inventoryList" type="RichTextLabel" parent="."]
+anchors_preset = -1
+anchor_right = 0.122
+anchor_bottom = 1.0
+offset_right = -0.544006
 grow_horizontal = 2
 grow_vertical = 2

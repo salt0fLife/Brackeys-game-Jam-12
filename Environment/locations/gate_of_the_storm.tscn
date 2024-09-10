@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://qpwafib1h67o"]
+
+[ext_resource type="Script" path="res://scripts/gate_of_the_storm.gd" id="1_omk6q"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_n1mrm"]
+size = Vector3(0.425, 12, 5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wosug"]
+size = Vector3(1, 12, 1)
+
+[node name="GateOfTheStorm" type="Node3D"]
+script = ExtResource("1_omk6q")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+mesh = SubResource("BoxMesh_n1mrm")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 3)
+mesh = SubResource("BoxMesh_wosug")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -3)
+mesh = SubResource("BoxMesh_wosug")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10.5119, 0)
+mesh = SubResource("BoxMesh_wosug")

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dpfhbhns6moty"]
+[gd_scene load_steps=5 format=3 uid="uid://dpfhbhns6moty"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_nb6d7"]
 [ext_resource type="Script" path="res://scripts/SettingsMenu.gd" id="2_qbehs"]
+[ext_resource type="Script" path="res://scripts/PauseMenu.gd" id="2_slhar"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_p6l6r"]
 blend_mode = 3
@@ -24,7 +25,37 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.227451, 0.207843, 0.203922, 1)
+color = Color(0.239216, 0.235294, 0.14902, 1)
+
+[node name="dropShadow" type="ColorRect" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -62.0
+offset_top = -62.0
+offset_right = 69.0
+offset_bottom = 93.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="color" type="ColorRect" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -68.0
+offset_right = 66.0
+offset_bottom = 87.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.337255, 0.337255, 0.337255, 1)
 
 [node name="ButtonBox" type="VBoxContainer" parent="MainMenu"]
 layout_mode = 1
@@ -52,6 +83,25 @@ text = "Settings"
 layout_mode = 2
 text = "Quit"
 
+[node name="Label" type="Label" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -371.0
+offset_top = -185.0
+offset_right = 371.0
+offset_bottom = -108.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8, 0.780392, 0.588235, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 5
+theme_override_font_sizes/font_size = 56
+text = "The Calm Before The Storm"
+
 [node name="sceneHandler" type="Node3D" parent="."]
 
 [node name="PauseMenu" type="Control" parent="."]
@@ -63,6 +113,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("2_slhar")
 
 [node name="PauseBackground" type="ColorRect" parent="PauseMenu"]
 material = SubResource("CanvasItemMaterial_p6l6r")
@@ -99,6 +150,10 @@ text = "Settings"
 [node name="QuitToMainMenu" type="Button" parent="PauseMenu/ButtonBox"]
 layout_mode = 2
 text = "Quit To Main Menu"
+
+[node name="WarpToHub" type="Button" parent="PauseMenu/ButtonBox"]
+layout_mode = 2
+text = "Warp To Hub"
 
 [node name="Settings" type="Control" parent="."]
 process_mode = 3
@@ -166,6 +221,32 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "0"
 
+[node name="breakPoint" type="Label" parent="Settings/CategoryHandler/Level1"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="debugModeLabel" type="Label" parent="Settings/CategoryHandler/Level1"]
+layout_mode = 2
+text = "Debug Mode"
+horizontal_alignment = 1
+
+[node name="debugMode" type="Button" parent="Settings/CategoryHandler/Level1"]
+layout_mode = 2
+text = "false"
+
+[node name="breakPoint2" type="Label" parent="Settings/CategoryHandler/Level1"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="FullscreenLabel" type="Label" parent="Settings/CategoryHandler/Level1"]
+layout_mode = 2
+text = "Fullscreen"
+horizontal_alignment = 1
+
+[node name="Fullscreen" type="Button" parent="Settings/CategoryHandler/Level1"]
+layout_mode = 2
+text = "false"
+
 [node name="SaveAndExit" type="Button" parent="Settings"]
 layout_mode = 0
 offset_right = 8.0
@@ -178,5 +259,8 @@ text = "Save and Exit"
 [connection signal="button_down" from="PauseMenu/ButtonBox/returnToGame" to="." method="_on_return_to_game_button_down"]
 [connection signal="button_down" from="PauseMenu/ButtonBox/Settings" to="." method="_on_settings_button_down"]
 [connection signal="button_down" from="PauseMenu/ButtonBox/QuitToMainMenu" to="." method="_on_quit_to_main_menu_button_down"]
+[connection signal="button_down" from="PauseMenu/ButtonBox/WarpToHub" to="PauseMenu" method="_on_warp_to_hub_button_down"]
 [connection signal="drag_ended" from="Settings/CategoryHandler/Level1/MouseSensitivity" to="Settings" method="_on_mouse_sensitivity_drag_ended"]
+[connection signal="button_down" from="Settings/CategoryHandler/Level1/debugMode" to="Settings" method="_on_debug_mode_button_down"]
+[connection signal="button_down" from="Settings/CategoryHandler/Level1/Fullscreen" to="Settings" method="_on_fullscreen_button_down"]
 [connection signal="button_down" from="Settings/SaveAndExit" to="Settings" method="_on_save_and_exit_button_down"]

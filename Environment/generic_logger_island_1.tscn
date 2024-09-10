@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://w4egb1fa17gl"]
+
+[ext_resource type="PackedScene" uid="uid://c7vxexmhpwq01" path="res://imports/loggerIsland1/genericLoggerIsland1.glb" id="1_w7fl5"]
+
+[node name="genericLoggerIsland1" type="Node3D"]
+
+[node name="genericLoggerIsland1" parent="." instance=ExtResource("1_w7fl5")]
