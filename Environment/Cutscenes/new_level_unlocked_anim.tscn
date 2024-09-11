@@ -153,15 +153,18 @@ _data = {
 "unlockWholeGate": SubResource("Animation_ablf1")
 }
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8ms6c"]
-sky_top_color = Color(0.345098, 0.627451, 0.886275, 1)
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yekyg"]
+sky_top_color = Color(0.458824, 0.627451, 0.854902, 1)
+sky_energy_multiplier = 1.2
+ground_bottom_color = Color(0.227451, 0.439216, 0.458824, 1)
+ground_horizon_color = Color(0.694118, 0.772549, 0.772549, 1)
 
-[sub_resource type="Sky" id="Sky_0usoo"]
-sky_material = SubResource("ProceduralSkyMaterial_8ms6c")
+[sub_resource type="Sky" id="Sky_fuvl8"]
+sky_material = SubResource("ProceduralSkyMaterial_yekyg")
 
-[sub_resource type="Environment" id="Environment_878kg"]
+[sub_resource type="Environment" id="Environment_i8uqf"]
 background_mode = 2
-sky = SubResource("Sky_0usoo")
+sky = SubResource("Sky_fuvl8")
 
 [node name="NewLevelUnlockedAnim" type="Node3D"]
 script = ExtResource("1_k7oq7")
@@ -204,7 +207,7 @@ text = "I Hope Your Ready For What You've Unleashed"
 [node name="lighting" type="Node" parent="."]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="lighting"]
-environment = SubResource("Environment_878kg")
+environment = SubResource("Environment_i8uqf")
 
 [node name="sun" type="DirectionalLight3D" parent="lighting"]
 transform = Transform3D(1, 0, 0, 0, 0.737041, 0.675848, 0, -0.675848, 0.737041, 0, 0, 0)

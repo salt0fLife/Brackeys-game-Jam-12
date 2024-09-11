@@ -86,8 +86,13 @@ collision_mask = 173
 
 [node name="CrossBowRay" type="RayCast3D" parent="Graphics/CameraHandler"]
 transform = Transform3D(1, 0, -4.47035e-08, 0, 1, 0, 4.47035e-08, 0, 1, 0, 0, 0)
-target_position = Vector3(0, 0, -50)
+target_position = Vector3(0, 0, -100)
 collision_mask = 45
+
+[node name="interactCheckRay" type="RayCast3D" parent="Graphics/CameraHandler"]
+transform = Transform3D(1, 0, -4.47035e-08, 0, 1, 0, 4.47035e-08, 0, 1, 0, 0, 0)
+target_position = Vector3(0, 0, -5)
+collision_mask = 256
 
 [node name="screenOverlay" type="Control" parent="."]
 layout_mode = 3
@@ -126,6 +131,23 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.47451, 0, 0.027451, 0)
 
+[node name="help" type="Label" parent="screenOverlay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.0
+offset_top = -32.0
+offset_right = 80.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "press *R* to interact"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="HUD" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
@@ -147,6 +169,30 @@ offset_right = 20.0
 grow_horizontal = 2
 grow_vertical = 0
 horizontal_alignment = 1
+
+[node name="help" type="Label" parent="HUD"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Press E to open inventory"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="picked Up Item" type="Label" parent="HUD"]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 23.0
+grow_horizontal = 0
+horizontal_alignment = 2
 
 [node name="Inventory" type="Control" parent="."]
 visible = false
@@ -190,29 +236,31 @@ grow_vertical = 2
 
 [node name="SwordInfo" type="RichTextLabel" parent="Inventory/currentWeapons"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_bottom = -420.0
+anchor_bottom = 0.307
+offset_bottom = -0.0420074
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PaxelInfo" type="RichTextLabel" parent="Inventory/currentWeapons"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
+anchor_top = 0.376
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 228.0
-offset_bottom = -225.0
+anchor_bottom = 0.629
+offset_top = 0.143997
+offset_bottom = -0.174011
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="BowInfo" type="RichTextLabel" parent="Inventory/currentWeapons"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
+anchor_top = 0.698
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 423.0
+offset_top = 0.0119934
 grow_horizontal = 2
 grow_vertical = 2
 

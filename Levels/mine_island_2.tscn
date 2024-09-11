@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ndb0w5dhshky"]
+[gd_scene load_steps=13 format=3 uid="uid://ndb0w5dhshky"]
 
 [ext_resource type="PackedScene" uid="uid://6xamiee4w237" path="res://Environment/stony_island_piece.tscn" id="1_k3yoa"]
 [ext_resource type="PackedScene" uid="uid://cxffo1r8ltcio" path="res://player/player.tscn" id="2_ohapt"]
@@ -6,6 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://cl8tkoh21qbxm" path="res://Environment/small_bridge.tscn" id="4_7m2wb"]
 [ext_resource type="PackedScene" uid="uid://cfbsb16oupec4" path="res://creatures/enemies/blue_slime.tscn" id="5_8pmao"]
 [ext_resource type="PackedScene" uid="uid://6ab1mh7ne8yi" path="res://Environment/chest.tscn" id="6_se1tr"]
+[ext_resource type="PackedScene" uid="uid://c5wqllcfmcef2" path="res://Environment/materials/ores/copper_ore.tscn" id="7_qty3d"]
+[ext_resource type="PackedScene" uid="uid://c6ut0e4oe3d20" path="res://Environment/materials/ores/iron_ore.tscn" id="8_fqgfr"]
+[ext_resource type="PackedScene" uid="uid://b0bnr5ljl0g0k" path="res://Environment/materials/ores/emerald.tscn" id="9_41606"]
+[ext_resource type="PackedScene" uid="uid://ct42gfdxjw53n" path="res://Environment/materials/ores/magic_sand_deposit.tscn" id="10_6qc8l"]
+[ext_resource type="PackedScene" uid="uid://2m1ile61njh3" path="res://Environment/materials/ores/ruby_deposit.tscn" id="11_240sx"]
 
 [sub_resource type="Environment" id="Environment_h7q07"]
 background_energy_multiplier = 0.0
@@ -4152,7 +4157,6 @@ omni_range = 55.9893
 
 [node name="OneOfThree" parent="." instance=ExtResource("3_dwi6a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -761)
-identityInt = 3
 
 [node name="smallBridge" parent="." instance=ExtResource("4_7m2wb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0611477, -4, -85.7869)
@@ -4400,6 +4404,597 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -48)
 
 [node name="materials" type="Node" parent="."]
 
+[node name="CopperOre" parent="materials" instance=ExtResource("7_qty3d")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -7, 3.33973, -59.9707)
+
+[node name="CopperOre3" parent="materials" instance=ExtResource("7_qty3d")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -7, 2.91199, -58.5225)
+
+[node name="CopperOre2" parent="materials" instance=ExtResource("7_qty3d")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -7, 4.05635, -59.0158)
+
+[node name="CopperOre4" parent="materials" instance=ExtResource("7_qty3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.12912, 0.0115204, -63.0982)
+
+[node name="CopperOre5" parent="materials" instance=ExtResource("7_qty3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7382, 0.0115204, -64.063)
+
+[node name="CopperOre6" parent="materials" instance=ExtResource("7_qty3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.85398, 0.0263773, -63.6966)
+
+[node name="ironOre" parent="materials" instance=ExtResource("8_fqgfr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.35033, 0.0115204, -57.294)
+
+[node name="ironOre2" parent="materials" instance=ExtResource("8_fqgfr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.65268, 0.0115204, -58.7098)
+
+[node name="ironOre3" parent="materials" instance=ExtResource("8_fqgfr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.74303, 0.0115204, -58.098)
+
+[node name="Emerald" parent="materials" instance=ExtResource("9_41606")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 4.44847, 0.940908, -24.7525)
+
+[node name="ironOre4" parent="materials" instance=ExtResource("8_fqgfr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.77418, 0.0115204, -120.684)
+
+[node name="ironOre5" parent="materials" instance=ExtResource("8_fqgfr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.01139, 0.0115204, -120.631)
+
+[node name="ironOre6" parent="materials" instance=ExtResource("8_fqgfr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.47853, 0.137723, -121.103)
+
+[node name="MagicSandDeposit" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.4029, 1.01152, -142.571)
+
+[node name="MagicSandDeposit2" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.4026, 1.01152, -141.817)
+
+[node name="MagicSandDeposit3" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.0677, 1.01152, -143.581)
+
+[node name="MagicSandDeposit4" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59.7759, 1.01152, -157.174)
+
+[node name="MagicSandDeposit5" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.5758, 1.01152, -157.383)
+
+[node name="MagicSandDeposit6" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.4359, 1.01152, -169.23)
+
+[node name="MagicSandDeposit7" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.3574, 0.0115204, -158.454)
+
+[node name="MagicSandDeposit8" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, -5.96046e-08, 1, 0, -1, -5.96046e-08, -2.47184, 10.8859, -200.681)
+
+[node name="MagicSandDeposit21" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, -5.96046e-08, 1, 0, -1, -5.96046e-08, -2.70548, 2.12889, -200.681)
+
+[node name="MagicSandDeposit22" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, -5.96046e-08, 1, 0, -1, -5.96046e-08, -3.82823, 2.74312, -200.681)
+
+[node name="MagicSandDeposit23" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, -5.96046e-08, 1, 0, -1, -5.96046e-08, -4.53178, 14.4283, -200.681)
+
+[node name="RubyDeposit" parent="materials" instance=ExtResource("11_240sx")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.30448, 6.72566, -196.583)
+
+[node name="RubyDeposit2" parent="materials" instance=ExtResource("11_240sx")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.30448, 11.3708, -199.07)
+
+[node name="RubyDeposit3" parent="materials" instance=ExtResource("11_240sx")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -4.82169, 5.0683, -195.681)
+
+[node name="Emerald2" parent="materials" instance=ExtResource("9_41606")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -1.47729, 10.9671, -195.681)
+
+[node name="Emerald3" parent="materials" instance=ExtResource("9_41606")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -3.14206, 11.8096, -195.681)
+
+[node name="Emerald4" parent="materials" instance=ExtResource("9_41606")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -1.28321, 6.59187, -195.681)
+
+[node name="MagicSandDeposit9" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -2.86864, 8.4442, -195.681)
+
+[node name="MagicSandDeposit10" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -1.84204, 9.12811, -195.681)
+
+[node name="MagicSandDeposit11" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -4.32203, 16.1859, -195.681)
+
+[node name="MagicSandDeposit12" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -5.30448, 10.3975, -199.082)
+
+[node name="MagicSandDeposit13" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -5.30448, 13.6116, -197.339)
+
+[node name="MagicSandDeposit14" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -5.30448, 12.2385, -196.832)
+
+[node name="RubyDeposit4" parent="materials" instance=ExtResource("11_240sx")]
+transform = Transform3D(-0.258819, -0.965926, 0, 0.965926, -0.258819, 0, 0, 0, 1, -5.30448, 14.9656, -200.054)
+
+[node name="Emerald5" parent="materials" instance=ExtResource("9_41606")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -5.30448, 2.33188, -199.752)
+
+[node name="Emerald6" parent="materials" instance=ExtResource("9_41606")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -5.30448, 3.65168, -196.535)
+
+[node name="Emerald7" parent="materials" instance=ExtResource("9_41606")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -5.30448, 2.33012, -197.248)
+
+[node name="Emerald8" parent="materials" instance=ExtResource("9_41606")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.30448, 7.79312, -199.528)
+
+[node name="MagicSandDeposit15" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.30448, 4.15927, -197.278)
+
+[node name="MagicSandDeposit16" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.304479, 11.7577, -197.438)
+
+[node name="MagicSandDeposit17" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.304479, 13.011, -198.274)
+
+[node name="MagicSandDeposit18" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.304479, 13.4268, -196.401)
+
+[node name="MagicSandDeposit19" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.304479, 17.3955, -198.252)
+
+[node name="MagicSandDeposit20" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.30448, 3.7494, -199.919)
+
+[node name="Emerald9" parent="materials" instance=ExtResource("9_41606")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.37721, 6.67915, -200.681)
+
+[node name="Emerald10" parent="materials" instance=ExtResource("9_41606")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.90559, 4.84924, -200.681)
+
+[node name="Emerald11" parent="materials" instance=ExtResource("9_41606")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2.80181, 4.93847, -200.681)
+
+[node name="ironOre7" parent="materials" instance=ExtResource("8_fqgfr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.95641, 3.51567, -195.681)
+
+[node name="ironOre8" parent="materials" instance=ExtResource("8_fqgfr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.17685, 3.51152, -194.806)
+
+[node name="ironOre9" parent="materials" instance=ExtResource("8_fqgfr")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -4.53322, 9.96217, -195.681)
+
+[node name="ironOre10" parent="materials" instance=ExtResource("8_fqgfr")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -4.00734, 10.4608, -195.681)
+
+[node name="ironOre11" parent="materials" instance=ExtResource("8_fqgfr")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -4.08507, 9.94271, -195.681)
+
+[node name="ironOre12" parent="materials" instance=ExtResource("8_fqgfr")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.994212, 8.02489, -195.681)
+
+[node name="ironOre13" parent="materials" instance=ExtResource("8_fqgfr")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.30448, 9.81978, -199.678)
+
+[node name="ironOre14" parent="materials" instance=ExtResource("8_fqgfr")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.30448, 9.14456, -199.121)
+
+[node name="ironOre15" parent="materials" instance=ExtResource("8_fqgfr")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.30448, 9.86989, -196.969)
+
+[node name="ironOre16" parent="materials" instance=ExtResource("8_fqgfr")]
+transform = Transform3D(1, 0, 0, 0, 2.98023e-08, 1, 0, -1, 2.98023e-08, -0.977925, 6.35825, -200.681)
+
+[node name="ironOre17" parent="materials" instance=ExtResource("8_fqgfr")]
+transform = Transform3D(1, 0, 0, 0, 2.98023e-08, 1, 0, -1, 2.98023e-08, -1.71057, 6.97212, -200.681)
+
+[node name="ironOre18" parent="materials" instance=ExtResource("8_fqgfr")]
+transform = Transform3D(1, 0, 0, 0, 2.98023e-08, 1, 0, -1, 2.98023e-08, -1.16994, 8.75473, -200.681)
+
+[node name="ironOre19" parent="materials" instance=ExtResource("8_fqgfr")]
+transform = Transform3D(1, 0, 0, 0, 2.98023e-08, 1, 0, -1, 2.98023e-08, -4.11121, 12.4238, -200.681)
+
+[node name="ironOre20" parent="materials" instance=ExtResource("8_fqgfr")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -5.30448, 4.38179, -199.469)
+
+[node name="ironOre21" parent="materials" instance=ExtResource("8_fqgfr")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -5.30448, 4.4595, -198.721)
+
+[node name="ironOre22" parent="materials" instance=ExtResource("8_fqgfr")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -5.30448, 5.41732, -199.422)
+
+[node name="ironOre23" parent="materials" instance=ExtResource("8_fqgfr")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -5.30448, 15.5086, -196.426)
+
+[node name="CopperOre7" parent="materials" instance=ExtResource("7_qty3d")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -5.30448, 8.06634, -197.221)
+
+[node name="CopperOre8" parent="materials" instance=ExtResource("7_qty3d")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -5.30448, 9.03799, -197.526)
+
+[node name="CopperOre9" parent="materials" instance=ExtResource("7_qty3d")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -5.30448, 9.03799, -197.526)
+
+[node name="CopperOre10" parent="materials" instance=ExtResource("7_qty3d")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -5.30448, 9.13967, -196.593)
+
+[node name="CopperOre11" parent="materials" instance=ExtResource("7_qty3d")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -5.30448, 13.8117, -199.752)
+
+[node name="CopperOre12" parent="materials" instance=ExtResource("7_qty3d")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -3.47218, 6.28177, -195.681)
+
+[node name="CopperOre13" parent="materials" instance=ExtResource("7_qty3d")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -3.98634, 6.93105, -195.681)
+
+[node name="CopperOre14" parent="materials" instance=ExtResource("7_qty3d")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.846852, 14.5409, -195.681)
+
+[node name="CopperOre15" parent="materials" instance=ExtResource("7_qty3d")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -1.96687, 15.5817, -195.681)
+
+[node name="CopperOre16" parent="materials" instance=ExtResource("7_qty3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.0413, 0.0115204, -212.363)
+
+[node name="CopperOre17" parent="materials" instance=ExtResource("7_qty3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.2477, 0.0115204, -213.756)
+
+[node name="CopperOre18" parent="materials" instance=ExtResource("7_qty3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.5763, 0.0115213, -215.571)
+
+[node name="CopperOre19" parent="materials" instance=ExtResource("7_qty3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.4378, 0.0115204, -214.366)
+
+[node name="Emerald12" parent="materials" instance=ExtResource("9_41606")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.7124, 0.0115213, -210.569)
+
+[node name="Emerald13" parent="materials" instance=ExtResource("9_41606")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -82.5457, 0.0115213, -238.11)
+
+[node name="ironOre24" parent="materials" instance=ExtResource("8_fqgfr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.9654, 0.0115204, -236.965)
+
+[node name="ironOre25" parent="materials" instance=ExtResource("8_fqgfr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80.5801, 0.0115194, -235.925)
+
+[node name="Emerald14" parent="materials" instance=ExtResource("9_41606")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90.5682, 0.0115204, -235.781)
+
+[node name="MagicSandDeposit24" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.5879, 0.0115204, -214.569)
+
+[node name="MagicSandDeposit25" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79.8623, 0.0115204, -210.984)
+
+[node name="MagicSandDeposit26" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.103, 0.0115204, -213.195)
+
+[node name="MagicSandDeposit27" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.7666, 0.0115204, -211.026)
+
+[node name="ironOre26" parent="materials" instance=ExtResource("8_fqgfr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -102.711, 0.0115204, -211.628)
+
+[node name="Emerald15" parent="materials" instance=ExtResource("9_41606")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -102.833, 0.0115204, -214.38)
+
+[node name="CopperOre20" parent="materials" instance=ExtResource("7_qty3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -99.1557, 0.0115204, -214.394)
+
+[node name="CopperOre21" parent="materials" instance=ExtResource("7_qty3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -99.5912, 0.0115204, -215.079)
+
+[node name="CopperOre22" parent="materials" instance=ExtResource("7_qty3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108.576, 2.23686, -239.334)
+
+[node name="Emerald16" parent="materials" instance=ExtResource("9_41606")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -138.325, 2.01152, -188.573)
+
+[node name="Emerald17" parent="materials" instance=ExtResource("9_41606")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.306, 2.01152, -185.078)
+
+[node name="Emerald18" parent="materials" instance=ExtResource("9_41606")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.704, 2.01152, -189.656)
+
+[node name="Emerald19" parent="materials" instance=ExtResource("9_41606")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -137.555, 0.0115204, -201.932)
+
+[node name="Emerald20" parent="materials" instance=ExtResource("9_41606")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -136.892, 0.0115204, -203.856)
+
+[node name="Emerald21" parent="materials" instance=ExtResource("9_41606")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -147.773, 0.0115204, -199.272)
+
+[node name="Emerald22" parent="materials" instance=ExtResource("9_41606")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -145.055, 0.0115204, -203.301)
+
+[node name="ironOre27" parent="materials" instance=ExtResource("8_fqgfr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.058, 0.0115204, -198.871)
+
+[node name="ironOre28" parent="materials" instance=ExtResource("8_fqgfr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -139.624, 0.0115204, -201.012)
+
+[node name="ironOre29" parent="materials" instance=ExtResource("8_fqgfr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.633, 0.0115204, -200.115)
+
+[node name="Emerald23" parent="materials" instance=ExtResource("9_41606")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -143.919, 0.0115204, -198.686)
+
+[node name="Emerald24" parent="materials" instance=ExtResource("9_41606")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -147.926, 0.0115204, -203.978)
+
+[node name="Emerald25" parent="materials" instance=ExtResource("9_41606")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -147.948, 0.0115204, -201.292)
+
+[node name="Emerald26" parent="materials" instance=ExtResource("9_41606")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -142.621, 2.01152, -188.01)
+
+[node name="Emerald27" parent="materials" instance=ExtResource("9_41606")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -150, 2.13241, -185.682)
+
+[node name="Emerald28" parent="materials" instance=ExtResource("9_41606")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -138.301, 0.0115204, -203.576)
+
+[node name="Emerald29" parent="materials" instance=ExtResource("9_41606")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -135, 3.38876, -201.574)
+
+[node name="Emerald30" parent="materials" instance=ExtResource("9_41606")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -135, 3.78785, -197.845)
+
+[node name="Emerald31" parent="materials" instance=ExtResource("9_41606")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -135, 5.48176, -201.814)
+
+[node name="Emerald32" parent="materials" instance=ExtResource("9_41606")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -135, 5.66208, -199.157)
+
+[node name="Emerald33" parent="materials" instance=ExtResource("9_41606")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -135, 6.51939, -200.766)
+
+[node name="Emerald34" parent="materials" instance=ExtResource("9_41606")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -135, 1.75383, -205.545)
+
+[node name="Emerald35" parent="materials" instance=ExtResource("9_41606")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -135, 3.79302, -206.419)
+
+[node name="Emerald36" parent="materials" instance=ExtResource("9_41606")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -135, 3.65546, -204.433)
+
+[node name="Emerald37" parent="materials" instance=ExtResource("9_41606")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -135, 6.82237, -196.439)
+
+[node name="Emerald38" parent="materials" instance=ExtResource("9_41606")]
+transform = Transform3D(0, 1, 0, -1, 0, 0, 0, 0, 1, -149, 4.10105, -202.288)
+
+[node name="Emerald39" parent="materials" instance=ExtResource("9_41606")]
+transform = Transform3D(0, 1, 0, -1, 0, 0, 0, 0, 1, -149, 3.07646, -203.948)
+
+[node name="Emerald40" parent="materials" instance=ExtResource("9_41606")]
+transform = Transform3D(0, 1, 0, -1, 0, 0, 0, 0, 1, -149, 4.36759, -204.509)
+
+[node name="Emerald41" parent="materials" instance=ExtResource("9_41606")]
+transform = Transform3D(0, 1, 0, -1, 0, 0, 0, 0, 1, -149, 1.38943, -199.738)
+
+[node name="ironOre30" parent="materials" instance=ExtResource("8_fqgfr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -148.788, 0.0115204, -194.069)
+
+[node name="ironOre31" parent="materials" instance=ExtResource("8_fqgfr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -148.294, 0.0115204, -195.671)
+
+[node name="ironOre32" parent="materials" instance=ExtResource("8_fqgfr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -146.305, 0.0115204, -194.362)
+
+[node name="MagicSandDeposit28" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -137.113, 0.0115204, -196.913)
+
+[node name="MagicSandDeposit29" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -145.485, 2.01152, -187.864)
+
+[node name="MagicSandDeposit30" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -149, 6.3958, -203.74)
+
+[node name="MagicSandDeposit31" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -135, 5.47685, -204.909)
+
+[node name="CopperOre23" parent="materials" instance=ExtResource("7_qty3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140.633, 0.0115204, -204.59)
+
+[node name="CopperOre24" parent="materials" instance=ExtResource("7_qty3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -146.918, 0.0115204, -195.079)
+
+[node name="CopperOre25" parent="materials" instance=ExtResource("7_qty3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -131.473, 0.0115194, -207.921)
+
+[node name="CopperOre26" parent="materials" instance=ExtResource("7_qty3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -131.374, 0.0115204, -208.75)
+
+[node name="CopperOre27" parent="materials" instance=ExtResource("7_qty3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.921, 0.0115204, -208.076)
+
+[node name="CopperOre28" parent="materials" instance=ExtResource("7_qty3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -152.896, 1.01152, -220.147)
+
+[node name="CopperOre29" parent="materials" instance=ExtResource("7_qty3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -152.425, 1.35239, -220.741)
+
+[node name="CopperOre30" parent="materials" instance=ExtResource("7_qty3d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -151.99, 2.1872, -221.184)
+
+[node name="RubyDeposit5" parent="materials" instance=ExtResource("11_240sx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.5284, 1.01152, -199.875)
+
+[node name="RubyDeposit6" parent="materials" instance=ExtResource("11_240sx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82.3957, 1.01152, -199.633)
+
+[node name="RubyDeposit7" parent="materials" instance=ExtResource("11_240sx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.1372, 1.01152, -200.753)
+
+[node name="RubyDeposit8" parent="materials" instance=ExtResource("11_240sx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.0521, 1.01152, -201.361)
+
+[node name="RubyDeposit9" parent="materials" instance=ExtResource("11_240sx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.99, 1.01152, -203.977)
+
+[node name="RubyDeposit10" parent="materials" instance=ExtResource("11_240sx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82.7224, 1.01152, -217.107)
+
+[node name="RubyDeposit11" parent="materials" instance=ExtResource("11_240sx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.8939, 1.01152, -215.523)
+
+[node name="RubyDeposit12" parent="materials" instance=ExtResource("11_240sx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.3506, 1.01152, -216.716)
+
+[node name="RubyDeposit13" parent="materials" instance=ExtResource("11_240sx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.0528, 1.01152, -217.524)
+
+[node name="RubyDeposit14" parent="materials" instance=ExtResource("11_240sx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 109.403, 1.01152, -201.062)
+
+[node name="RubyDeposit15" parent="materials" instance=ExtResource("11_240sx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115.359, 1.01152, -201.222)
+
+[node name="RubyDeposit16" parent="materials" instance=ExtResource("11_240sx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 111.93, 1.01152, -203.387)
+
+[node name="RubyDeposit17" parent="materials" instance=ExtResource("11_240sx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 138.488, 0.0115204, -214.29)
+
+[node name="RubyDeposit18" parent="materials" instance=ExtResource("11_240sx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 141.77, 0.0115204, -212.555)
+
+[node name="RubyDeposit19" parent="materials" instance=ExtResource("11_240sx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 146.457, 0.0115204, -214.794)
+
+[node name="RubyDeposit20" parent="materials" instance=ExtResource("11_240sx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 148.455, 1.01152, -164.479)
+
+[node name="RubyDeposit21" parent="materials" instance=ExtResource("11_240sx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 151.684, 1.01152, -163.365)
+
+[node name="RubyDeposit22" parent="materials" instance=ExtResource("11_240sx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 149.692, 1.01152, -165.431)
+
+[node name="RubyDeposit23" parent="materials" instance=ExtResource("11_240sx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 153.822, 1.01152, -194.21)
+
+[node name="RubyDeposit24" parent="materials" instance=ExtResource("11_240sx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 152.338, 1.01152, -195.33)
+
+[node name="RubyDeposit25" parent="materials" instance=ExtResource("11_240sx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 154.433, 1.01152, -195.599)
+
+[node name="RubyDeposit26" parent="materials" instance=ExtResource("11_240sx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 134.557, 0.41616, -159.164)
+
+[node name="RubyDeposit27" parent="materials" instance=ExtResource("11_240sx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.814, 0.0115213, -161.004)
+
+[node name="RubyDeposit28" parent="materials" instance=ExtResource("11_240sx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 135.428, 0.0115204, -159.782)
+
+[node name="MagicSandDeposit32" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.60812, 0.0115213, -217.359)
+
+[node name="MagicSandDeposit33" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.926794, -228.513)
+
+[node name="MagicSandDeposit34" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.2433, 0.0115204, -232.622)
+
+[node name="MagicSandDeposit35" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.6679, 0.0115204, -234.177)
+
+[node name="MagicSandDeposit36" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.2896, 0.0115204, -257.861)
+
+[node name="MagicSandDeposit37" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.7449, 0.261369, -287.164)
+
+[node name="MagicSandDeposit38" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9822, -0.98848, -352.632)
+
+[node name="MagicSandDeposit39" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6858, -11.5084, -442.164)
+
+[node name="MagicSandDeposit40" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.9775, -18.7695, -442.164)
+
+[node name="MagicSandDeposit41" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.32989, -14.4021, -442.164)
+
+[node name="MagicSandDeposit42" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 3.39671, -412.155)
+
+[node name="MagicSandDeposit43" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 1.3154, -416.764)
+
+[node name="MagicSandDeposit44" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 11.4321, -417.897)
+
+[node name="MagicSandDeposit45" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -5.38572, -449.724)
+
+[node name="MagicSandDeposit46" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -1.97099, -443.467)
+
+[node name="MagicSandDeposit47" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.8963, -126.516, -578.164)
+
+[node name="MagicSandDeposit48" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.6681, -114.969, -578.164)
+
+[node name="MagicSandDeposit49" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9557, -54.0563, -578.164)
+
+[node name="MagicSandDeposit50" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.9311, -58.0706, -578.164)
+
+[node name="MagicSandDeposit51" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.5138, -25.3233, -578.164)
+
+[node name="MagicSandDeposit52" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.7001, -27.6305, -578.164)
+
+[node name="MagicSandDeposit53" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.3997, -20.3492, -578.164)
+
+[node name="MagicSandDeposit54" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.6851, -26.9117, -578.164)
+
+[node name="MagicSandDeposit55" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 195.702, 3.47823, -572)
+
+[node name="MagicSandDeposit56" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 180.399, 18.9904, -572)
+
+[node name="MagicSandDeposit57" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 166.41, -44.5853, -572)
+
+[node name="MagicSandDeposit58" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 171.568, -50.0661, -572)
+
+[node name="MagicSandDeposit59" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 119.162, 26.1433, -572)
+
+[node name="MagicSandDeposit60" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 136.425, 22.3671, -573)
+
+[node name="MagicSandDeposit61" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96.1841, 0.0115204, -574.285)
+
+[node name="MagicSandDeposit62" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -97.6378, 0.0115204, -544.683)
+
+[node name="MagicSandDeposit63" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -105, 7.36235, -558.939)
+
+[node name="MagicSandDeposit64" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.327, 0.0115185, -524.109)
+
+[node name="MagicSandDeposit66" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.9974, 0.0115185, -521.986)
+
+[node name="MagicSandDeposit65" parent="materials" instance=ExtResource("10_6qc8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.6952, 0.0115204, -520.951)
+
 [node name="creatures" type="Node" parent="."]
 
 [node name="blueSlime" parent="creatures" instance=ExtResource("5_8pmao")]
@@ -4439,4 +5034,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15859, -0.988482, -371.421)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 134.827, 0.0115185, -173.349)
 
 [node name="Chest" parent="." instance=ExtResource("6_se1tr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147.87, 1.01152, -162.58)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 147.87, 1.01152, -167.506)

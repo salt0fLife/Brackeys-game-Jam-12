@@ -84,11 +84,13 @@ radius = 1.0
 height = 2.0
 
 [node name="youngOak" type="StaticBody3D"]
+collision_layer = 257
 script = ExtResource("1_kbaf3")
 health = 4
 item = [0, "Oak Wood", "Oak Wood", 0, 8]
 dropMin = 2
 dropMax = 5
+toutorialChop = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

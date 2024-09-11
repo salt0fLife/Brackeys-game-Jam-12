@@ -1,6 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://c5wqllcfmcef2"]
+[gd_scene load_steps=8 format=3 uid="uid://c6ut0e4oe3d20"]
 
-[ext_resource type="Script" path="res://scripts/Standard_Material.gd" id="1_bjxlc"]
+[ext_resource type="Script" path="res://scripts/Standard_Material.gd" id="1_a5lhi"]
 
 [sub_resource type="Animation" id="Animation_417ew"]
 length = 0.001
@@ -136,33 +136,23 @@ _data = {
 "takeDamage": SubResource("Animation_x0eue")
 }
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_rhtg3"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_lfrmp"]
 radius = 0.760615
 
-[sub_resource type="Gradient" id="Gradient_vj4wv"]
-colors = PackedColorArray(0.429969, 0.326654, 0.0958913, 1, 0.410846, 0.542949, 0.404723, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x5yvw"]
+albedo_color = Color(0.223529, 0.0941176, 0.0470588, 1)
+metallic = 0.4
+roughness = 0.45
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_xq2sx"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_w6igg"]
-color_ramp = SubResource("Gradient_vj4wv")
-noise = SubResource("FastNoiseLite_xq2sx")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6wojf"]
-albedo_color = Color(0.403922, 0.317647, 0.113725, 1)
-albedo_texture = SubResource("NoiseTexture2D_w6igg")
-metallic = 0.5
-roughness = 0.5
-
-[sub_resource type="BoxMesh" id="BoxMesh_55i7e"]
-material = SubResource("StandardMaterial3D_6wojf")
+[sub_resource type="BoxMesh" id="BoxMesh_u6lav"]
+material = SubResource("StandardMaterial3D_x5yvw")
 size = Vector3(0.26, 1, 0.235)
 
-[node name="CopperOre" type="StaticBody3D"]
+[node name="ironOre" type="StaticBody3D"]
 collision_layer = 292
 collision_mask = 36
-script = ExtResource("1_bjxlc")
-item = [0, "Copper Ore", "Copper Ore", 0, 10]
+script = ExtResource("1_a5lhi")
+item = [0, "Iron Ore", "Iron Ore", 0, 10]
 dropMin = 2
 dropMax = 4
 
@@ -173,24 +163,24 @@ libraries = {
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.395228, 0)
-shape = SubResource("SphereShape3D_rhtg3")
+shape = SubResource("SphereShape3D_lfrmp")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.980254, -0.191005, -0.0511796, 0.197743, 0.946853, 0.253708, 0, -0.258819, 0.965926, 0, 0.179444, -0.149194)
-mesh = SubResource("BoxMesh_55i7e")
+mesh = SubResource("BoxMesh_u6lav")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.992922, -0.10461, -0.0562403, 0.101508, 0.993288, -0.0554523, 0.0616637, 0.049351, 0.996876, 0.0117721, 0.308974, -0.056123)
-mesh = SubResource("BoxMesh_55i7e")
+mesh = SubResource("BoxMesh_u6lav")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.964456, -0.26007, -0.0467833, 0.256949, 0.964328, -0.0636337, 0.0616637, 0.0493509, 0.996876, -0.0830764, 0.206394, -0.056123)
-mesh = SubResource("BoxMesh_55i7e")
+mesh = SubResource("BoxMesh_u6lav")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.179338, 0.0171226, 0.983639, 0.331295, 0.940399, -0.0767721, -0.926327, 0.339643, 0.162977, -0.0167063, 0.049675, 0.0740648)
-mesh = SubResource("BoxMesh_55i7e")
+mesh = SubResource("BoxMesh_u6lav")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.712555, 0.302701, 0.63296, 0.331295, 0.940399, -0.076772, -0.618473, 0.154992, -0.770369, 0.0886794, 0.138061, 0.0771707)
-mesh = SubResource("BoxMesh_55i7e")
+mesh = SubResource("BoxMesh_u6lav")

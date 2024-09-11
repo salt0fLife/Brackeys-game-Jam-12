@@ -1,0 +1,133 @@
+[gd_scene load_steps=8 format=3 uid="uid://2m1ile61njh3"]
+
+[ext_resource type="Script" path="res://scripts/Standard_Material.gd" id="1_4sa43"]
+
+[sub_resource type="Animation" id="Animation_ca1ud"]
+resource_name = "takeDamage"
+length = 0.1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("graphics:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.02, 0.05, 0.08, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.0286433, -0.044036, 0.0399511), Vector3(-0.0272868, -0.0366999, -0.0273272), Vector3(-0.0407627, 0.0266349, 0.0456738), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("graphics:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.02, 0.05, 0.08, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.11479, 0), Vector3(0, 0.127939, 0), Vector3(0, -0.0885729, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_weptf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("graphics:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("graphics:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5den4"]
+_data = {
+"RESET": SubResource("Animation_weptf"),
+"takeDamage": SubResource("Animation_ca1ud")
+}
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_dcrod"]
+radius = 0.679283
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b2eth"]
+albedo_color = Color(0.560784, 0, 0.113725, 1)
+roughness = 0.0
+emission_enabled = true
+emission = Color(0.301961, 0.0117647, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_47jnm"]
+material = SubResource("StandardMaterial3D_b2eth")
+radius = 0.25
+height = 0.5
+
+[node name="RubyDeposit" type="StaticBody3D"]
+collision_layer = 36
+collision_mask = 36
+script = ExtResource("1_4sa43")
+health = 10
+item = [0, "Ruby", "Ruby", 0, 50]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5den4")
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_dcrod")
+
+[node name="graphics" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="graphics"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.120495, 0)
+mesh = SubResource("SphereMesh_47jnm")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="graphics"]
+transform = Transform3D(0.835, 0, 0, 0, 0.835, 0, 0, 0, 0.835, 0.10216, 0.0540514, 0.10503)
+mesh = SubResource("SphereMesh_47jnm")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="graphics"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.213066, 0.0540514, -0.199167)
+mesh = SubResource("SphereMesh_47jnm")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="graphics"]
+transform = Transform3D(0.905, 0, 0, 0, 0.905, 0, 0, 0, 0.905, -0.182549, 0.0540514, -0.249717)
+mesh = SubResource("SphereMesh_47jnm")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="graphics"]
+transform = Transform3D(0.665, 0, 0, 0, 0.665, 0, 0, 0, 0.665, -0.222141, 0.0678592, 0.270599)
+mesh = SubResource("SphereMesh_47jnm")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="graphics"]
+transform = Transform3D(0.665, 0, 0, 0, 0.665, 0, 0, 0, 0.665, 0.122477, -0.0129544, 0.449702)
+mesh = SubResource("SphereMesh_47jnm")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="graphics"]
+transform = Transform3D(0.665, 0, 0, 0, 0.665, 0, 0, 0, 0.665, 0.38824, -0.00128829, 0.0462178)
+mesh = SubResource("SphereMesh_47jnm")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="graphics"]
+transform = Transform3D(0.665, 0, 0, 0, 0.665, 0, 0, 0, 0.665, 0.0253252, 0.0678592, -0.387867)
+mesh = SubResource("SphereMesh_47jnm")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="graphics"]
+transform = Transform3D(0.665, 0, 0, 0, 0.665, 0, 0, 0, 0.665, -0.426503, 0.0121384, -0.0312159)
+mesh = SubResource("SphereMesh_47jnm")

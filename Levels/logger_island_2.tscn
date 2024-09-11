@@ -11,25 +11,20 @@
 [ext_resource type="PackedScene" uid="uid://cqwi5b1kq0u00" path="res://Environment/materials/trees/old_oak.tscn" id="9_ft3gh"]
 [ext_resource type="PackedScene" uid="uid://c8r47hrentfr6" path="res://Environment/materials/trees/young_oak.tscn" id="10_6a120"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_h68aw"]
-sky_top_color = Color(0.345098, 0.627451, 0.886275, 1)
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7umyi"]
+sky_top_color = Color(0.458824, 0.627451, 0.854902, 1)
+sky_energy_multiplier = 1.2
+ground_bottom_color = Color(0.227451, 0.439216, 0.458824, 1)
+ground_horizon_color = Color(0.694118, 0.772549, 0.772549, 1)
 
-[sub_resource type="Sky" id="Sky_iopce"]
-sky_material = SubResource("ProceduralSkyMaterial_h68aw")
+[sub_resource type="Sky" id="Sky_vutly"]
+sky_material = SubResource("ProceduralSkyMaterial_7umyi")
 
-[sub_resource type="Environment" id="Environment_wk78k"]
+[sub_resource type="Environment" id="Environment_5j37g"]
 background_mode = 2
-sky = SubResource("Sky_iopce")
+sky = SubResource("Sky_vutly")
 
 [node name="LoggerIsland2" type="Node3D"]
-
-[node name="lighting" type="Node" parent="."]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="lighting"]
-environment = SubResource("Environment_wk78k")
-
-[node name="sun" type="DirectionalLight3D" parent="lighting"]
-transform = Transform3D(1, 0, 0, 0, 0.737041, 0.675848, 0, -0.675848, 0.737041, 0, 0, 0)
 
 [node name="playerHandler" type="Node3D" parent="."]
 
@@ -1102,6 +1097,7 @@ transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, -0.5, 3.5)
 
 [node name="OneOfThree" parent="." instance=ExtResource("4_mnsk8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -289.671, 11, -424.559)
+identityInt = 3
 
 [node name="oldTrees" type="Node3D" parent="."]
 
@@ -3382,3 +3378,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -338.403, 14.505, -378.93)
 
 [node name="youngOak124" parent="youngTrees" instance=ExtResource("10_6a120")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -340.121, 14.505, -365.942)
+
+[node name="lighting" type="Node" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="lighting"]
+environment = SubResource("Environment_5j37g")
+
+[node name="sun" type="DirectionalLight3D" parent="lighting"]
+transform = Transform3D(1, 0, 0, 0, 0.737041, 0.675848, 0, -0.675848, 0.737041, 0, 0, 0)

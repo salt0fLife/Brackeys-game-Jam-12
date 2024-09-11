@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://qpwafib1h67o"]
+[gd_scene load_steps=24 format=3 uid="uid://qpwafib1h67o"]
 
 [ext_resource type="Script" path="res://scripts/gate_of_the_storm.gd" id="1_omk6q"]
 
@@ -13,10 +13,13 @@ size = Vector3(1, 12, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_04oxo"]
 size = Vector3(0.5, 11, 2.5)
 
-[sub_resource type="Animation" id="Animation_6yitw"]
-resource_name = "open"
-length = 5.0
-step = 0.01
+[sub_resource type="BoxShape3D" id="BoxShape3D_qgp6k"]
+size = Vector3(1, 12, 3)
+
+[sub_resource type="Animation" id="Animation_ks40f"]
+resource_name = "IdleOpen"
+length = 3.0
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -24,34 +27,10 @@ tracks/0/path = NodePath("crown:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 0.8, 1.01, 1.4, 2, 2.48, 2.97, 4.15, 5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(1, 0, 0), Vector3(1.07929, 0.0930513, 0), Vector3(1, -0.0645704, 0), Vector3(1, 0.521288, 0), Vector3(1, 1.93543, 0), Vector3(1, 2.14215, 0), Vector3(1, 1.90953, 0), Vector3(1, 2.09544, 0), Vector3(1, 1.91086, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("doorRight:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(1, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, -1.5708, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("doorLeft:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(1, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0)]
+"values": [Vector3(1, 1.91086, 0), Vector3(1, 1.65739, 0), Vector3(1, 1.91086, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_iqnqo"]
@@ -105,10 +84,10 @@ tracks/3/keys = {
 "values": [Vector3(0.263902, 10.5685, 2.93896)]
 }
 
-[sub_resource type="Animation" id="Animation_ks40f"]
-resource_name = "IdleOpen"
-length = 3.0
-loop_mode = 1
+[sub_resource type="Animation" id="Animation_6yitw"]
+resource_name = "open"
+length = 5.0
+step = 0.01
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -116,10 +95,34 @@ tracks/0/path = NodePath("crown:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5, 3),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.5, 0.8, 1.01, 1.4, 2, 2.48, 2.97, 4.15, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(1, 1.91086, 0), Vector3(1, 1.65739, 0), Vector3(1, 1.91086, 0)]
+"values": [Vector3(0, 0, 0), Vector3(1, 0, 0), Vector3(1.07929, 0.0930513, 0), Vector3(1, -0.0645704, 0), Vector3(1, 0.521288, 0), Vector3(1, 1.93543, 0), Vector3(1, 2.14215, 0), Vector3(1, 1.90953, 0), Vector3(1, 2.09544, 0), Vector3(1, 1.91086, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("doorRight:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -1.5708, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("doorLeft:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_flahx"]
@@ -148,6 +151,88 @@ size = Vector3(0.845, 0.5, 0.5)
 [sub_resource type="BoxMesh" id="BoxMesh_73wa2"]
 size = Vector3(2, 1, 7)
 
+[sub_resource type="Shader" id="Shader_ui1v8"]
+code = "// NOTE: Shader automatically converted from Godot Engine 4.2.1.stable's StandardMaterial3D.
+
+shader_type spatial;
+render_mode blend_mix,depth_draw_opaque,cull_back,diffuse_burley,specular_schlick_ggx;
+uniform vec4 albedo : source_color;
+uniform sampler2D texture_albedo : source_color,filter_linear_mipmap,repeat_enable;
+uniform float point_size : hint_range(0,128);
+uniform float roughness : hint_range(0,1);
+uniform sampler2D texture_metallic : hint_default_white,filter_linear_mipmap,repeat_enable;
+uniform vec4 metallic_texture_channel;
+uniform sampler2D texture_roughness : hint_roughness_r,filter_linear_mipmap,repeat_enable;
+uniform float specular;
+uniform float metallic;
+uniform sampler2D texture_normal : hint_roughness_normal,filter_linear_mipmap,repeat_enable;
+uniform float normal_scale : hint_range(-16,16);
+uniform vec3 uv1_scale;
+uniform vec3 uv1_offset;
+uniform vec3 uv2_scale;
+uniform vec3 uv2_offset;
+
+
+void vertex() {
+	UV=UV*uv1_scale.xy+uv1_offset.xy + vec2(TIME/10.0, TIME/20.0);
+}
+
+
+
+
+
+
+void fragment() {
+	vec2 base_uv = UV;
+	vec4 albedo_tex = texture(texture_albedo,base_uv);
+	ALBEDO = albedo.rgb * albedo_tex.rgb;
+	float metallic_tex = dot(texture(texture_metallic,base_uv),metallic_texture_channel);
+	METALLIC = metallic_tex * metallic;
+	vec4 roughness_texture_channel = vec4(1.0,0.0,0.0,0.0);
+	float roughness_tex = dot(texture(texture_roughness,base_uv),roughness_texture_channel);
+	ROUGHNESS = roughness_tex * roughness;
+	SPECULAR = specular;
+	NORMAL_MAP = texture(texture_normal,base_uv).rgb;
+	NORMAL_MAP_DEPTH = normal_scale;
+}
+"
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_3wpu5"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_3kbyr"]
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_3wpu5")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3e8gs"]
+render_priority = 0
+shader = SubResource("Shader_ui1v8")
+shader_parameter/albedo = Color(0.356863, 0.721569, 0.572549, 1)
+shader_parameter/point_size = 1.0
+shader_parameter/roughness = 0.0
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = 0.5
+shader_parameter/metallic = 0.55
+shader_parameter/normal_scale = 1.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/texture_normal = SubResource("NoiseTexture2D_3kbyr")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7c25p"]
+material = SubResource("ShaderMaterial_3e8gs")
+size = Vector2(12, 7)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ivqg4"]
+size = Vector3(1, 12, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uqds3"]
+size = Vector3(2, 1, 7)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wrfei"]
+size = Vector3(0.493713, 12, 5)
+
 [node name="GateOfTheStorm" type="Node3D"]
 script = ExtResource("1_omk6q")
 
@@ -172,14 +257,18 @@ mesh = SubResource("BoxMesh_wosug")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 0)
 mesh = SubResource("BoxMesh_b8cht")
 
-[node name="doorRight" type="Node3D" parent="."]
+[node name="doorRight" type="AnimatableBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.50218)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="doorRight"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, -1.25)
 mesh = SubResource("BoxMesh_04oxo")
 
-[node name="doorLeft" type="Node3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doorRight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -1)
+shape = SubResource("BoxShape3D_qgp6k")
+
+[node name="doorLeft" type="AnimatableBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.49782)
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="doorLeft"]
@@ -187,13 +276,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 1.25)
 mesh = SubResource("BoxMesh_04oxo")
 skeleton = NodePath("../../doorRight")
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doorLeft"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 1)
+shape = SubResource("BoxShape3D_qgp6k")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_flahx")
 }
 
 [node name="crown" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="crown"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.373977, 11, 0)
@@ -236,3 +328,47 @@ mesh = SubResource("BoxMesh_73wa2")
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -4.5, 0)
 mesh = SubResource("BoxMesh_73wa2")
+
+[node name="InternalPlane" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.460473, 4, 0)
+mesh = SubResource("PlaneMesh_7c25p")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 3)
+shape = SubResource("BoxShape3D_ivqg4")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, -3)
+shape = SubResource("BoxShape3D_ivqg4")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10.5, 0)
+shape = SubResource("BoxShape3D_ivqg4")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
+shape = SubResource("BoxShape3D_uqds3")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -2.5, 0)
+shape = SubResource("BoxShape3D_uqds3")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -3.5, 0)
+shape = SubResource("BoxShape3D_uqds3")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -4.5, 0)
+shape = SubResource("BoxShape3D_uqds3")
+
+[node name="AreaOfImportance" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AreaOfImportance"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0110779, 4.5, 0)
+shape = SubResource("BoxShape3D_wrfei")
+
+[connection signal="body_entered" from="AreaOfImportance" to="." method="_on_area_of_importance_body_entered"]

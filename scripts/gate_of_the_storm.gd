@@ -7,7 +7,7 @@ var three = Settings.threeUnlocked
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	updateGraphics()
-	
+	#openAnimation()
 	pass # Replace with function body.
 
 func updateGraphics():
@@ -42,4 +42,18 @@ func updateGraphics():
 
 func openAnimation():
 	$AnimationPlayer.play("open")
+	await get_tree().create_timer(5).timeout 
+	$AnimationPlayer.play("IdleOpen")
 	pass
+
+
+func _on_area_of_importance_body_entered(body):
+	var main = get_tree().get_first_node_in_group("Main")
+	if one and two and three:
+		main.load_new_scene("res://Levels/boss_fight.tscn")
+	else:
+		printerr("ERROR: gate entered before unlocked \nkilled player")
+		var p = get_tree().get_first_node_in_group("Player")
+		p.die()
+		#main.load_new_scene("res://Levels/boss_fight.tscn")
+	pass # Replace with function body.

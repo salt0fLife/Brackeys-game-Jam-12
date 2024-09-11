@@ -2,6 +2,7 @@ extends CharacterBody3D
 #local scene changes
 @export var initialRotDegrees = 0
 @export var initialHeadTiltDegrees = 0
+@export var inBossFight := false
 
 #general
 var debugMode = Settings.debugMode
@@ -57,6 +58,7 @@ var bufferingUse = false
 #preloads (arrows particles and such)
 @onready var hitMarker = preload("res://effects/particles/damage_indicator.tscn")
 @onready var arrow = preload("res://effects/particles/stuck_arrow.tscn")
+var OpenedInv = Settings.hasOpenedInventory
 
 func update_stats_from_item_tags():
 	SPEED = MaxSPEED
@@ -67,6 +69,22 @@ func update_stats_from_item_tags():
 	var bowTags = bowInfo[4]
 	
 	for tag in swordTags:
+		if tag == "speedy" or debugMode:
+			SPEED = SPEED * 1.5
+			pass
+		if tag == "lightFooted" or debugMode:
+			JUMP_VELOCITY = JUMP_VELOCITY * 1.5
+		if tag == "healthy" or debugMode:
+			maxHealth = maxHealth * 1.5
+	for tag in bowTags:
+		if tag == "speedy" or debugMode:
+			SPEED = SPEED * 1.5
+			pass
+		if tag == "lightFooted" or debugMode:
+			JUMP_VELOCITY = JUMP_VELOCITY * 1.5
+		if tag == "healthy" or debugMode:
+			maxHealth = maxHealth * 1.5
+	for tag in paxelTags:
 		if tag == "speedy" or debugMode:
 			SPEED = SPEED * 1.5
 			pass
@@ -87,6 +105,8 @@ func update_values_from_settings():
 	pass
 
 func _ready():
+	if OpenedInv:
+		$HUD/help.hide()
 	graphics.rotation_degrees.y = initialRotDegrees
 	CameraHandler.rotation_degrees.x = initialHeadTiltDegrees
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -149,12 +169,16 @@ func sword_heavy_attack():
 	pass
 
 func sword_leaping_attack():
+	actionState = true
 	velocity.y = JUMP_VELOCITY*1.5
 	var input_dir = Input.get_vector("left", "right", "up", "down")
 	var direction = (graphics.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	velocity.x = direction.x * SPEED * 2
 	velocity.z = direction.z * SPEED * 2
 	#printerr("sword leaping attack not fully implemented")
+	await get_tree().create_timer(0.25).timeout
+	actionState = false
+	
 	pass
 
 func toggle_bow_aim():
@@ -400,6 +424,10 @@ func _input(event):
 	pass
 
 func open_inventory():
+	$"HUD/picked Up Item".hide()
+	if !OpenedInv:
+		Settings.hasOpenedInventory = true
+		Settings.check_for_toutorial_completion()
 	for shop in get_tree().get_nodes_in_group("ShopKeeper"):
 		shop.close_shop()
 	update_Inventory_graphics()
@@ -428,7 +456,10 @@ func sync_HeldItem():
 func _physics_process(delta):
 	#check for void plane
 	if position.y <= -25:
-		die()
+		if !inBossFight:
+			die()
+		else:
+			alertBoss()
 	
 	# Add the gravity.
 	if not is_on_floor():
@@ -465,15 +496,17 @@ func _physics_process(delta):
 		velocity.z += direction.z * add_speed * friction
 		pass
 	elif is_on_floor():
-		var friction = 10
+		var friction = 15
 		velocity.x -= (velocity.x /2) * delta * friction
 		velocity.z -= (velocity.z /2) * delta * friction
 		#velocity.x = move_toward(velocity.x, 0, SPEED)
 		#velocity.z = move_toward(velocity.z, 0, SPEED)
-
 	move_and_slide()
 
 func pickup_item(itemData = [-1]):
+	$"HUD/picked Up Item".visible = true
+	$"HUD/picked Up Item".text = itemData[1] + " added to inventory"
+	
 	if itemData[0] == 0:
 		var Reference = itemData[1]
 		var stacked = false
@@ -509,9 +542,36 @@ func update_Inventory_graphics():
 			inventoryList.text += item[1] + " : " + str(item[3]) + "\n"
 			pass
 	
-	$Inventory/currentWeapons/SwordInfo.text = str(swordInfo)
-	$Inventory/currentWeapons/PaxelInfo.text = str(paxelInfo)
-	$Inventory/currentWeapons/BowInfo.text = str(bowInfo)
+	#for word Graphics
+	#tool
+	var swordText = ""
+	swordText = "Sword\nName : " + swordInfo[1]
+	swordText += "\nDamage : " + str(swordInfo[2])
+	swordText += "\nKnockback : " + str(swordInfo[3])
+	swordText += "\nthis items uniqueTags are : "
+	for tag in swordInfo[4]:
+		swordText += "\n" + tag
+		pass
+	$Inventory/currentWeapons/SwordInfo.text = swordText
+	
+	var paxelText = ""
+	paxelText = "Paxel\nName : " + paxelInfo[1]
+	paxelText += "\nMining Speed : " + str(paxelInfo[2])
+	paxelText += "\nthis items uniqueTags are : "
+	for tag in paxelInfo[4]:
+		paxelText += "\n" + tag
+		pass
+	$Inventory/currentWeapons/PaxelInfo.text = paxelText
+	
+	var bowText = ""
+	bowText = "Bow\nName : " + bowInfo[1]
+	bowText += "\nDamage : " + str(bowInfo[2])
+	bowText += "\nKnockback : " + str(bowInfo[3])
+	bowText += "\nthis items uniqueTags are : "
+	for tag in bowInfo[4]:
+		bowText += "\n" + tag
+		pass
+	$Inventory/currentWeapons/BowInfo.text = bowText
 	
 	for b in $Inventory/avalableWeapons.get_children(false):
 		b.queue_free()
@@ -522,7 +582,33 @@ func update_Inventory_graphics():
 		$Inventory/avalableWeapons.add_child(but)
 	
 	if selectedWeaponIndex != -1:
-		$Inventory/SelectedWeaponInfo/WeaponInfo.text = str(localWeaponsInv[selectedWeaponIndex])
+		#$Inventory/SelectedWeaponInfo/WeaponInfo.text = str(localWeaponsInv[selectedWeaponIndex])
+		var weaponInfo = localWeaponsInv[selectedWeaponIndex]
+		var weaponText = ""
+		if weaponInfo[0] == 1:
+			weaponText = "Sword\nName : " + weaponInfo[1]
+			weaponText += "\nDamage : " + str(weaponInfo[2])
+			weaponText += "\nKnockback : " + str(weaponInfo[3])
+			weaponText += "\nthis items uniqueTags are : "
+			for tag in weaponInfo[4]:
+				weaponText += "\n" + tag
+				pass
+		elif weaponInfo[0] == 2:
+			weaponText = "Paxel\nName : " + weaponInfo[1]
+			weaponText += "\nMining Speed : " + str(weaponInfo[2])
+			weaponText += "\nthis items uniqueTags are : "
+			for tag in weaponInfo[4]:
+				weaponText += "\n" + tag
+				pass
+		else:
+			weaponText = "Bow\nName : " + weaponInfo[1]
+			weaponText += "\nDamage : " + str(weaponInfo[2])
+			weaponText += "\nKnockback : " + str(weaponInfo[3])
+			weaponText += "\nthis items uniqueTags are : "
+			for tag in weaponInfo[4]:
+				weaponText += "\n" + tag
+				pass
+		$Inventory/SelectedWeaponInfo/WeaponInfo.text = weaponText
 		pass
 
 func _on_weapon_button_pressed(Index = -1):
@@ -582,6 +668,16 @@ func _on_equip_selected_weapon_button_down():
 	pass # Replace with function body.
 
 func _process(delta):
+	if $Graphics/CameraHandler/interactCheckRay.is_colliding():
+		var hit = $Graphics/CameraHandler/interactCheckRay.get_collider()
+		$screenOverlay/help.visible = true
+		$screenOverlay/help.text = hit.tooltip
+		pass
+	else:
+		$screenOverlay/help.visible = false
+	
+	
+	
 	if bufferedJump > 0:
 		bufferedJump -= delta
 	
@@ -613,5 +709,14 @@ func take_damage(amount, tag, knockback):
 		update_health_graphics()
 		pass
 	else:
-		die()
+		if inBossFight:
+			die_boss()
+		else:
+			die()
+	pass
+
+func alertBoss():
+	var boss = get_tree().get_first_node_in_group("Boss")
+	boss.alert_to_punish()
+	
 	pass
