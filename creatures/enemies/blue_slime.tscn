@@ -14,7 +14,7 @@ anisotropy = -0.5
 material = SubResource("StandardMaterial3D_br8fu")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_pg3xb"]
-radius = 0.383145
+radius = 1.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_akqqt"]
 size = Vector3(33, 6, 33)

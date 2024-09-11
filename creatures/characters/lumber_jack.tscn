@@ -88,6 +88,17 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.298039, 0.25098, 0.211765, 1)
 
+[node name="headerBackdrop" type="ColorRect" parent="shop/shopButtons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.127
+offset_right = 0.00012207
+offset_bottom = 0.197998
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.25098, 0.188235, 0.133333, 1)
+
 [node name="closeShop" type="Button" parent="shop/shopButtons"]
 layout_mode = 1
 anchors_preset = 3
@@ -104,19 +115,23 @@ text = "close Shop"
 [node name="playerItems" type="RichTextLabel" parent="shop/shopButtons"]
 layout_mode = 1
 anchors_preset = -1
+anchor_top = 0.127
 anchor_right = 0.226
 anchor_bottom = 1.0
-offset_right = 0.789993
+offset_top = 0.197998
+offset_right = 0.790009
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ItemsForSale" type="Control" parent="shop/shopButtons"]
 layout_mode = 1
 anchor_left = 0.227
+anchor_top = 0.127
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -0.295013
-offset_right = 0.5
+offset_left = -0.294968
+offset_top = 0.197998
+offset_right = 0.500061
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -131,10 +146,12 @@ grow_vertical = 2
 [node name="selectedRecipe" type="Control" parent="shop/shopButtons"]
 layout_mode = 1
 anchor_left = 0.5
+anchor_top = 0.127
 anchor_right = 0.916
 anchor_bottom = 1.0
-offset_left = 0.5
-offset_right = 0.139954
+offset_left = 0.500061
+offset_top = 0.197998
+offset_right = 0.140015
 grow_horizontal = 2
 grow_vertical = 2
 

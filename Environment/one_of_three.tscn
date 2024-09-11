@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://fvrqly6gk72l"]
+[gd_scene load_steps=8 format=3 uid="uid://fvrqly6gk72l"]
 
 [ext_resource type="Script" path="res://scripts/one_of_three.gd" id="1_qajfc"]
 
@@ -24,6 +24,9 @@ distance_fade_max_distance = 40.0
 material = SubResource("ORMMaterial3D_7nb0q")
 size = Vector3(4, 5000, 4)
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_juagk"]
+radius = 11.0
+
 [node name="OneOfThree" type="StaticBody3D"]
 collision_mask = 5
 script = ExtResource("1_qajfc")
@@ -45,3 +48,20 @@ mesh = SubResource("CylinderMesh_qop8k")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_t0ohd")
+
+[node name="playerNearArea" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="playerNearArea"]
+shape = SubResource("SphereShape3D_juagk")
+
+[node name="Help" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+visible = false
+billboard = 1
+no_depth_test = true
+text = "Strike the pilar to activate it"
+
+[connection signal="body_entered" from="playerNearArea" to="." method="_on_player_near_area_body_entered"]
+[connection signal="body_exited" from="playerNearArea" to="." method="_on_player_near_area_body_exited"]
