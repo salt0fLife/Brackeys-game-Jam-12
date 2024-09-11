@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://oak3cmybw46b"]
+[gd_scene load_steps=18 format=3 uid="uid://oak3cmybw46b"]
 
 [ext_resource type="PackedScene" uid="uid://dlh2ponw23gil" path="res://Environment/grassy_island_piece.tscn" id="1_wgqij"]
 [ext_resource type="PackedScene" uid="uid://cl8tkoh21qbxm" path="res://Environment/small_bridge.tscn" id="2_iwir3"]
@@ -12,16 +12,21 @@
 [ext_resource type="PackedScene" uid="uid://dvroebkhp87cf" path="res://creatures/characters/lumber_jack.tscn" id="9_rxs44"]
 [ext_resource type="PackedScene" uid="uid://fvrqly6gk72l" path="res://Environment/one_of_three.tscn" id="11_8t3t8"]
 [ext_resource type="PackedScene" uid="uid://6xamiee4w237" path="res://Environment/stony_island_piece.tscn" id="12_msdvo"]
+[ext_resource type="PackedScene" uid="uid://c6ut0e4oe3d20" path="res://Environment/materials/ores/iron_ore.tscn" id="13_05kv8"]
+[ext_resource type="PackedScene" uid="uid://c5wqllcfmcef2" path="res://Environment/materials/ores/copper_ore.tscn" id="14_c0jo2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mgau6"]
-sky_top_color = Color(0.345098, 0.627451, 0.886275, 1)
+sky_top_color = Color(0.458824, 0.627451, 0.854902, 1)
+sky_energy_multiplier = 1.2
+ground_bottom_color = Color(0.227451, 0.439216, 0.458824, 1)
+ground_horizon_color = Color(0.694118, 0.772549, 0.772549, 1)
 
-[sub_resource type="Sky" id="Sky_w5nrn"]
+[sub_resource type="Sky" id="Sky_8pup6"]
 sky_material = SubResource("ProceduralSkyMaterial_mgau6")
 
 [sub_resource type="Environment" id="Environment_nw8q3"]
 background_mode = 2
-sky = SubResource("Sky_w5nrn")
+sky = SubResource("Sky_8pup6")
 
 [node name="IslandHub" type="Node3D"]
 
@@ -195,13 +200,13 @@ pathToLoad = "res://Levels/logger_island_1.tscn"
 transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 0, 2.51079, -40)
 pathToLoad = "res://Levels/mine_island_1.tscn"
 
+[node name="PunchingBag2" parent="." instance=ExtResource("6_lca4l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
+
 [node name="lighting" type="Node" parent="."]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="lighting"]
 environment = SubResource("Environment_nw8q3")
-
-[node name="PunchingBag" parent="lighting/WorldEnvironment" instance=ExtResource("6_lca4l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
 
 [node name="sun" type="DirectionalLight3D" parent="lighting"]
 transform = Transform3D(1, 0, 0, 0, 0.737041, 0.675848, 0, -0.675848, 0.737041, 0, 0, 0)
@@ -237,6 +242,111 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7273, 2.5, 5.08417)
 
 [node name="youngOak5" parent="Materials" instance=ExtResource("8_fgne5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.75373, 2.5, 12.0204)
+
+[node name="ironOre" parent="Materials" instance=ExtResource("13_05kv8")]
+transform = Transform3D(0.908464, 0.417962, 0, -0.417962, 0.908464, 0, 0, 0, 1, -2.27576, 2.5, -26.0411)
+
+[node name="ironOre2" parent="Materials" instance=ExtResource("13_05kv8")]
+transform = Transform3D(0.675492, 0.310777, -0.668676, -0.417962, 0.908464, 0, 0.607469, 0.279482, 0.743553, -2.50065, 2.41023, -25.6203)
+
+[node name="ironOre3" parent="Materials" instance=ExtResource("13_05kv8")]
+transform = Transform3D(0.0916291, 0.995441, 0.026473, -0.994631, 0.092774, -0.0458526, -0.0480996, -0.0221294, 0.998598, -2.72839, 3.41023, -27.3173)
+
+[node name="ironOre4" parent="Materials" instance=ExtResource("13_05kv8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.63499, 4.22724, -27.7523)
+
+[node name="ironOre5" parent="Materials" instance=ExtResource("13_05kv8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.36793, 4.22724, -28.2195)
+
+[node name="ironOre6" parent="Materials" instance=ExtResource("13_05kv8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0175, 4.22724, -27.4364)
+
+[node name="CopperOre" parent="Materials" instance=ExtResource("14_c0jo2")]
+transform = Transform3D(0.849543, -0.527519, 0, 0.527519, 0.849543, 0, 0, 0, 1, 3.48835, 2.43767, -29.2822)
+
+[node name="CopperOre2" parent="Materials" instance=ExtResource("14_c0jo2")]
+transform = Transform3D(0.8216, -0.510168, 0.254366, 0.527519, 0.849543, 0, -0.216095, 0.134183, 0.967108, 3.48835, 2.43767, -28.7444)
+
+[node name="CopperOre3" parent="Materials" instance=ExtResource("14_c0jo2")]
+transform = Transform3D(0.760781, -0.472403, -0.445026, 0.527519, 0.849543, -7.20552e-09, 0.378069, -0.23476, 0.895518, 3.48835, 2.43767, -29.6982)
+
+[node name="CopperOre4" parent="Materials" instance=ExtResource("14_c0jo2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.72282, 3.19238, -30.7767)
+
+[node name="CopperOre5" parent="Materials" instance=ExtResource("14_c0jo2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.68078, 3.19238, -30.5259)
+
+[node name="ironOre7" parent="Materials" instance=ExtResource("13_05kv8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.01274, 3.17903, -29.8548)
+
+[node name="CopperOre6" parent="Materials" instance=ExtResource("14_c0jo2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.93585, 2.14146, -33.0175)
+
+[node name="CopperOre7" parent="Materials" instance=ExtResource("14_c0jo2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.93781, 2.05215, -32.4803)
+
+[node name="CopperOre8" parent="Materials" instance=ExtResource("14_c0jo2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.47549, 2.05215, -32.9212)
+
+[node name="CopperOre9" parent="Materials" instance=ExtResource("14_c0jo2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5, 6.30789, -35.1379)
+
+[node name="CopperOre10" parent="Materials" instance=ExtResource("14_c0jo2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5, 4.63225, -34.5904)
+
+[node name="ironOre8" parent="Materials" instance=ExtResource("13_05kv8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5, 4.81409, -32.7236)
+
+[node name="CopperOre11" parent="Materials" instance=ExtResource("14_c0jo2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5, 8.65936, -36.2071)
+
+[node name="CopperOre12" parent="Materials" instance=ExtResource("14_c0jo2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 2.712, -25.075)
+
+[node name="CopperOre13" parent="Materials" instance=ExtResource("14_c0jo2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, -0.785882, -21.1893)
+
+[node name="ironOre9" parent="Materials" instance=ExtResource("13_05kv8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 1.92773, -24.634)
+
+[node name="ironOre10" parent="Materials" instance=ExtResource("13_05kv8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.7125, 3.5277, -31.5)
+
+[node name="ironOre11" parent="Materials" instance=ExtResource("13_05kv8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.3725, 4.47618, -31.5)
+
+[node name="ironOre12" parent="Materials" instance=ExtResource("13_05kv8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0363, 4.99529, -31.15)
+
+[node name="ironOre13" parent="Materials" instance=ExtResource("13_05kv8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.9933, 9.60053, -49.5)
+
+[node name="ironOre14" parent="Materials" instance=ExtResource("13_05kv8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.3769, 9.09609, -49.5)
+
+[node name="ironOre15" parent="Materials" instance=ExtResource("13_05kv8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.3197, 10.6613, -49.5)
+
+[node name="CopperOre14" parent="Materials" instance=ExtResource("14_c0jo2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.4235, 11.5, -73.2545)
+
+[node name="CopperOre15" parent="Materials" instance=ExtResource("14_c0jo2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.1934, 11.5, -74.8256)
+
+[node name="CopperOre16" parent="Materials" instance=ExtResource("14_c0jo2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.4847, 7.76342, -71.5)
+
+[node name="ironOre16" parent="Materials" instance=ExtResource("13_05kv8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.33883, 15.5744, -53.5)
+
+[node name="ironOre17" parent="Materials" instance=ExtResource("13_05kv8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.55618, 15.5, -53.4554)
+
+[node name="CopperOre17" parent="Materials" instance=ExtResource("14_c0jo2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1485, 16.1251, -52.8558)
+
+[node name="CopperOre18" parent="Materials" instance=ExtResource("14_c0jo2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.17208, 15.5, -54.5466)
 
 [node name="characters" type="Node" parent="."]
 

@@ -14,7 +14,8 @@ material = SubResource("StandardMaterial3D_mhymu")
 blend_mode = 3
 
 [node name="LumberJack" type="StaticBody3D" groups=["ShopKeeper"]]
-collision_layer = 129
+collision_layer = 257
+collision_mask = 257
 script = ExtResource("1_7m8qf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -28,8 +29,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("CapsuleMesh_gmttv")
 
 [node name="nameTag" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.13761, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.52025, 0)
 billboard = 1
+no_depth_test = true
 text = "Stanford"
 
 [node name="shop" type="Control" parent="."]
@@ -99,6 +101,46 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.25098, 0.188235, 0.133333, 1)
 
+[node name="playerItemsLabel" type="Label" parent="shop/shopButtons/headerBackdrop"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.226
+anchor_bottom = 1.0
+offset_right = 0.789993
+theme_override_colors/font_color = Color(0.811765, 0.756863, 0.694118, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "owned Crafting Ingredients"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemsForSaleLabel" type="Label" parent="shop/shopButtons/headerBackdrop"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.227
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -0.295013
+offset_right = 0.5
+theme_override_colors/font_color = Color(0.811765, 0.756863, 0.694118, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Items Avalable"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SelectedRecipeLabel" type="Label" parent="shop/shopButtons/headerBackdrop"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.916
+anchor_bottom = 1.0
+offset_left = 0.5
+offset_right = 0.139954
+theme_override_colors/font_color = Color(0.811765, 0.756863, 0.694118, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "Selected Recipe"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="closeShop" type="Button" parent="shop/shopButtons"]
 layout_mode = 1
 anchors_preset = 3
@@ -119,7 +161,7 @@ anchor_top = 0.127
 anchor_right = 0.226
 anchor_bottom = 1.0
 offset_top = 0.197998
-offset_right = 0.790009
+offset_right = -0.209961
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -165,17 +207,33 @@ grow_vertical = 2
 
 [node name="Craft" type="Button" parent="shop/shopButtons/selectedRecipe"]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -4.0
-offset_top = -8.0
-offset_right = 4.0
-grow_horizontal = 2
-grow_vertical = 0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -47.0
+offset_bottom = 31.0
+grow_horizontal = 0
 text = "Craft"
+
+[node name="Label" type="Label" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0.670588, 0.164706, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Addedf Item to Inventory!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="button_down" from="shop/shopButtons/closeShop" to="." method="_on_close_shop_button_down"]
 [connection signal="button_down" from="shop/shopButtons/selectedRecipe/Craft" to="." method="_on_craft_button_down"]

@@ -16,7 +16,7 @@ const twig = [0, "twig", "twig", 1, 2]
 const iron = [0, "iron ore", "iron", 1, 25]
 
 #inventory and player
-var inventory = [[0, "twig", "twig", 1, 2]]
+var inventory = [[0, "Iron Ore", "Iron Ore", 100, 2], [0, "Magic Sand", "Magic Sand", 100, 2], [0, "Copper Ore", "Copper Ore", 100, 2], [0, "Emerald", "Emerald", 100, 2], [0, "Ruby", "Ruby", 100, 2], [0, "Sword Handle", "swordHandle", 100, 2], [0, "Oak Wood", "Oak Wood", 100, 2], [0, "Birch Wood", "Birch Wood", 100, 2]]
 var weaponsInv = [leapingSword]
 var HeldItem = 1
 

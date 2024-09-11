@@ -9,15 +9,18 @@
 [ext_resource type="PackedScene" uid="uid://bguuma0i7f3ll" path="res://Environment/materials/trees/standard_birch.tscn" id="7_1b4pk"]
 [ext_resource type="PackedScene" uid="uid://cj8m4fyqakn53" path="res://Environment/materials/trees/standard_oak.tscn" id="8_rrw4h"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ky447"]
-sky_top_color = Color(0.345098, 0.627451, 0.886275, 1)
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t70m2"]
+sky_top_color = Color(0.458824, 0.627451, 0.854902, 1)
+sky_energy_multiplier = 1.2
+ground_bottom_color = Color(0.227451, 0.439216, 0.458824, 1)
+ground_horizon_color = Color(0.694118, 0.772549, 0.772549, 1)
 
-[sub_resource type="Sky" id="Sky_dtt1n"]
-sky_material = SubResource("ProceduralSkyMaterial_ky447")
+[sub_resource type="Sky" id="Sky_lux73"]
+sky_material = SubResource("ProceduralSkyMaterial_t70m2")
 
-[sub_resource type="Environment" id="Environment_s505m"]
+[sub_resource type="Environment" id="Environment_3cv1c"]
 background_mode = 2
-sky = SubResource("Sky_dtt1n")
+sky = SubResource("Sky_lux73")
 
 [node name="LoggerIsland1" type="Node3D"]
 
@@ -26,14 +29,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1.5, -111)
 
 [node name="Player" parent="playerHandler" instance=ExtResource("1_dqbcr")]
 initialRotDegrees = 180
-
-[node name="lighting" type="Node" parent="."]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="lighting"]
-environment = SubResource("Environment_s505m")
-
-[node name="sun" type="DirectionalLight3D" parent="lighting"]
-transform = Transform3D(1, 0, 0, 0, 0.737041, 0.675848, 0, -0.675848, 0.737041, 0, 0, 0)
 
 [node name="grass" type="Node3D" parent="."]
 
@@ -235,7 +230,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -33)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -30)
 
 [node name="TransporterArch" parent="." instance=ExtResource("3_qqmnk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.44209, 2)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 2.44209, 2)
 pathToLoad = "res://Levels/logger_island_2.tscn"
 
 [node name="Resources" type="Node" parent="."]
@@ -440,3 +435,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.1314, 2.5, -35.7382)
 
 [node name="StandardOak3" parent="." instance=ExtResource("8_rrw4h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.231693, 1.5, -63.3904)
+
+[node name="lighting" type="Node" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="lighting"]
+environment = SubResource("Environment_3cv1c")
+
+[node name="sun" type="DirectionalLight3D" parent="lighting"]
+transform = Transform3D(1, 0, 0, 0, 0.737041, 0.675848, 0, -0.675848, 0.737041, 0, 0, 0)

@@ -113,6 +113,7 @@ closeDialogue={
 3d_physics/layer_6="hurtbox"
 3d_physics/layer_7="hitbox"
 3d_physics/layer_8="interactable"
+3d_physics/layer_9="tooltip"
 
 [rendering]
 

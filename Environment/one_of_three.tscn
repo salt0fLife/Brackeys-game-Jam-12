@@ -12,7 +12,7 @@ radius = 1.0
 top_radius = 1.0
 height = 1.0
 
-[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_7nb0q"]
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_abr0d"]
 shading_mode = 0
 albedo_color = Color(0.72549, 0.513726, 0.270588, 1)
 proximity_fade_distance = 91.02
@@ -21,14 +21,15 @@ distance_fade_min_distance = 4.0
 distance_fade_max_distance = 40.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_t0ohd"]
-material = SubResource("ORMMaterial3D_7nb0q")
+material = SubResource("ORMMaterial3D_abr0d")
 size = Vector3(4, 5000, 4)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_juagk"]
 radius = 11.0
 
 [node name="OneOfThree" type="StaticBody3D"]
-collision_mask = 5
+collision_layer = 257
+collision_mask = 261
 script = ExtResource("1_qajfc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

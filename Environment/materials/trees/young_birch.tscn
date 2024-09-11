@@ -84,10 +84,12 @@ radius = 1.0
 height = 2.0
 
 [node name="youngBirch" type="StaticBody3D"]
+collision_layer = 257
 script = ExtResource("1_qycj4")
 item = [0, "Birch Wood", "Birch Wood", 0, 10]
 dropMin = 2
 dropMax = 5
+toutorialChop = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

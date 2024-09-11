@@ -1,6 +1,7 @@
 extends StaticBody3D
 @export var identityInt := 1
 @export var teleport = true
+var tooltip = "strike the pillar to activate it"
 
 func take_damage(amount = 1, type = -1, _kb = Vector3(0,0,0)):
 	unlock()
@@ -16,8 +17,10 @@ func _ready():
 		activated = true
 	if activated:
 		if identityInt == 2:
+			tooltip = "this pillar has already\nbeen activated, search the world and find the other two"
 			$Help.text = "this pillar has already\nbeen activated, search the world and find the other two"
 		else:
+			tooltip = "this pillar has already\nuse *Warp To Hub* in pause menu to return"
 			$Help.text = "this pillar has already\nuse *Warp To Hub* in pause menu to return"
 		pass
 	pass
@@ -51,10 +54,10 @@ func unlock():
 
 
 func _on_player_near_area_body_entered(body):
-	$Help.visible = true
+	#$Help.visible = true
 	pass # Replace with function body.
 
 
 func _on_player_near_area_body_exited(body):
-	$Help.visible = false
+	#$Help.visible = false
 	pass # Replace with function body.

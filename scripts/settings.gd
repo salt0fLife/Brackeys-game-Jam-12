@@ -18,6 +18,16 @@ const mainLevel = "res://Levels/island_hub.tscn"
 var chests = [0, 0, 0, 0, 0, 0]
 var spokeToStanford = false
 var canUseGateways = false
+var toutorial = true
+var hasMined = false
+var hasOpenedInventory = false
+var hasChopped = false
+
+func check_for_toutorial_completion():
+	if hasMined and canUseGateways and spokeToStanford and hasOpenedInventory:
+		toutorial = false
+	pass
+
 
 func set_mouseSensitivity(newVal):
 	mouseSensitivity = newVal
