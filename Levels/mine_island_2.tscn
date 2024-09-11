@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://ndb0w5dhshky"]
+[gd_scene load_steps=8 format=3 uid="uid://ndb0w5dhshky"]
 
 [ext_resource type="PackedScene" uid="uid://6xamiee4w237" path="res://Environment/stony_island_piece.tscn" id="1_k3yoa"]
 [ext_resource type="PackedScene" uid="uid://cxffo1r8ltcio" path="res://player/player.tscn" id="2_ohapt"]
 [ext_resource type="PackedScene" uid="uid://fvrqly6gk72l" path="res://Environment/one_of_three.tscn" id="3_dwi6a"]
 [ext_resource type="PackedScene" uid="uid://cl8tkoh21qbxm" path="res://Environment/small_bridge.tscn" id="4_7m2wb"]
 [ext_resource type="PackedScene" uid="uid://cfbsb16oupec4" path="res://creatures/enemies/blue_slime.tscn" id="5_8pmao"]
+[ext_resource type="PackedScene" uid="uid://6ab1mh7ne8yi" path="res://Environment/chest.tscn" id="6_se1tr"]
 
 [sub_resource type="Environment" id="Environment_h7q07"]
 background_energy_multiplier = 0.0
@@ -4388,6 +4389,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.1718, 7.02165, -504)
 [node name="StonyIslandPiece70" parent="StonyPatch2" instance=ExtResource("1_k3yoa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.3824, 0.424294, -504)
 
+[node name="StonyIslandPiece71" parent="StonyPatch2" instance=ExtResource("1_k3yoa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -4, -395)
+
+[node name="StonyIslandPiece72" parent="StonyPatch2" instance=ExtResource("1_k3yoa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -4, -392)
+
+[node name="StonyIslandPiece" parent="StonyPatch2/StonyIslandPiece72" instance=ExtResource("1_k3yoa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -48)
+
 [node name="materials" type="Node" parent="."]
 
 [node name="creatures" type="Node" parent="."]
@@ -4424,3 +4434,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.6361, -0.988482, -286.27)
 
 [node name="blueSlime11" parent="creatures" instance=ExtResource("5_8pmao")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15859, -0.988482, -371.421)
+
+[node name="blueSlime" parent="." instance=ExtResource("5_8pmao")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 134.827, 0.0115185, -173.349)
+
+[node name="Chest" parent="." instance=ExtResource("6_se1tr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 147.87, 1.01152, -162.58)

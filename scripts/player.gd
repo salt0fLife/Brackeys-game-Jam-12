@@ -1,7 +1,7 @@
 extends CharacterBody3D
 #local scene changes
 @export var initialRotDegrees = 0
-
+@export var initialHeadTiltDegrees = 0
 
 #general
 var debugMode = Settings.debugMode
@@ -19,7 +19,7 @@ var maxHealth = HealthDefault
 var health = maxHealth
 
 var regenCooldownTimer = 0
-
+var bufferedJump = 0
 
 #items and combat
 var bufferedInput = ""
@@ -67,12 +67,12 @@ func update_stats_from_item_tags():
 	var bowTags = bowInfo[4]
 	
 	for tag in swordTags:
-		if tag == "speedy":
+		if tag == "speedy" or debugMode:
 			SPEED = SPEED * 1.5
 			pass
-		if tag == "lightFooted":
+		if tag == "lightFooted" or debugMode:
 			JUMP_VELOCITY = JUMP_VELOCITY * 1.5
-		if tag == "healthy":
+		if tag == "healthy" or debugMode:
 			maxHealth = maxHealth * 1.5
 	pass
 
@@ -88,6 +88,7 @@ func update_values_from_settings():
 
 func _ready():
 	graphics.rotation_degrees.y = initialRotDegrees
+	CameraHandler.rotation_degrees.x = initialHeadTiltDegrees
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	update_heldItem_graphics()
 	update_Inventory_graphics()
@@ -148,10 +149,12 @@ func sword_heavy_attack():
 	pass
 
 func sword_leaping_attack():
-	velocity.y = JUMP_VELOCITY*3
-	velocity.x = velocity.x * 3
-	velocity.z = velocity.z * 3
-	printerr("sword leaping attack not fully implemented")
+	velocity.y = JUMP_VELOCITY*1.5
+	var input_dir = Input.get_vector("left", "right", "up", "down")
+	var direction = (graphics.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	velocity.x = direction.x * SPEED * 2
+	velocity.z = direction.z * SPEED * 2
+	#printerr("sword leaping attack not fully implemented")
 	pass
 
 func toggle_bow_aim():
@@ -430,10 +433,16 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
+	elif bufferedJump > 0 and !disabled:
+		bufferedJump = 0
+		velocity.y = JUMP_VELOCITY
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor() and !disabled:
-		velocity.y = JUMP_VELOCITY
+	if Input.is_action_just_pressed("ui_accept") and !disabled:
+		if is_on_floor():
+			velocity.y = JUMP_VELOCITY
+		else:
+			bufferedJump = 0.5
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -441,12 +450,26 @@ func _physics_process(delta):
 	var direction = (graphics.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if disabled:
 		direction = Vector3(0,0,0)
-	if direction:
+	if direction and is_on_floor() and !bufferedJump > 0:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
+		pass
+	elif direction:
+		var current_speed = Vector2(direction.x, direction.z).dot(Vector2(velocity.x, velocity.z))
+		var acceleration = 20
+		var friction = 0.5
+		var add_speed = acceleration * delta
+		if add_speed > (SPEED*1.5 - current_speed):
+			add_speed = (SPEED*1.5 - current_speed)
+		velocity.x += direction.x * add_speed * friction
+		velocity.z += direction.z * add_speed * friction
+		pass
 	elif is_on_floor():
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		var friction = 10
+		velocity.x -= (velocity.x /2) * delta * friction
+		velocity.z -= (velocity.z /2) * delta * friction
+		#velocity.x = move_toward(velocity.x, 0, SPEED)
+		#velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
 
@@ -482,8 +505,9 @@ func push_inventory_changes():
 func update_Inventory_graphics():
 	inventoryList.text = ""
 	for item in localInv:
-		inventoryList.text += item[1] + " : " + str(item[3]) + "\n"
-		pass
+		if item[3] != 0:
+			inventoryList.text += item[1] + " : " + str(item[3]) + "\n"
+			pass
 	
 	$Inventory/currentWeapons/SwordInfo.text = str(swordInfo)
 	$Inventory/currentWeapons/PaxelInfo.text = str(paxelInfo)
@@ -558,6 +582,9 @@ func _on_equip_selected_weapon_button_down():
 	pass # Replace with function body.
 
 func _process(delta):
+	if bufferedJump > 0:
+		bufferedJump -= delta
+	
 	if regenCooldownTimer > 0:
 		regenCooldownTimer -= delta
 	elif health != maxHealth:
@@ -579,6 +606,7 @@ func update_health_graphics():
 
 func take_damage(amount, tag, knockback):
 	if health - amount > 0:
+		position.y += 0.1
 		health -= amount
 		regenCooldownTimer = 5.0
 		$screenOverlay/damageAnimations.play("take_damage")

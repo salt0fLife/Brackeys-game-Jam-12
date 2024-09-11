@@ -103,5 +103,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -11)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -14)
 identityInt = 2
 
+[node name="OneOfThree2" parent="." instance=ExtResource("13_va5w2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -21)
+
+[node name="OneOfThree3" parent="." instance=ExtResource("13_va5w2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -28)
+identityInt = 3
+
 [node name="Chest" parent="." instance=ExtResource("14_ayw2o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -12)

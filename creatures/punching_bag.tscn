@@ -5,12 +5,11 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_lwd64"]
 size = Vector3(1, 2, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_668je"]
-albedo_color = Color(0.301961, 0.192157, 0.0862745, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3st8t"]
+albedo_color = Color(0.407843, 0.32549, 0.231373, 1)
 
-[sub_resource type="BoxMesh" id="BoxMesh_ws2ec"]
-material = SubResource("StandardMaterial3D_668je")
-size = Vector3(1, 2, 1)
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_fq8e7"]
+material = SubResource("StandardMaterial3D_3st8t")
 
 [node name="PunchingBag" type="StaticBody3D"]
 collision_layer = 44
@@ -22,8 +21,14 @@ shape = SubResource("BoxShape3D_lwd64")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-mesh = SubResource("BoxMesh_ws2ec")
+mesh = SubResource("CapsuleMesh_fq8e7")
 
 [node name="typeDisplay" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.63051, 0.525197)
+visible = false
 text = "yay"
+
+[node name="NameTag" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2769, 0)
+billboard = 1
+text = "Punching Bag"

@@ -11,13 +11,13 @@ func _ready():
 	pass # Replace with function body.
 
 func showOffAnim():
-	if Settings.oneUnlocked:
-		$Label.text += ", one unlocked"
-	if Settings.twoUnlocked:
-		$Label.text += ", two unlocked"
-	if Settings.threeUnlocked:
-		$Label.text += ", three unlocked"
-	
+	#if Settings.oneUnlocked:
+		#$Label.text += ", one unlocked"
+	#if Settings.twoUnlocked:
+		#$Label.text += ", two unlocked"
+	#if Settings.threeUnlocked:
+		#$Label.text += ", three unlocked"
+	#
 	$AnimationPlayer.play("showOffCurrentGate")
 	await get_tree().create_timer(5).timeout
 	
@@ -29,7 +29,7 @@ func showOffAnim():
 	pass
 
 func openGateAnim():
-	$Label.hide()
+	#$Label.hide()
 	$Label2.visible = true
 	$AnimationPlayer.play("unlockWholeGate")
 	await get_tree().create_timer(7).timeout

@@ -16,8 +16,10 @@ func pause_game():
 	if playingGame and !paused:
 		for i in get_tree().get_nodes_in_group("ShopKeeper"):
 			i.close_shop()
-		var p = get_tree().get_first_node_in_group("Player")
-		p.close_inventory()
+		for p in get_tree().get_nodes_in_group("Player"):
+			p.close_inventory()
+		#var p = get_tree().get_first_node_in_group("Player")
+		#p.close_inventory()
 		paused = true
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		$PauseMenu.visible = true

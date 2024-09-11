@@ -5,15 +5,26 @@ var canInteract = true
 #recipes
 #[item to craft], [[required item, count], [different required item, count]]
 var swordHandle = [[0, "Sword Handle", "swordHandle", 2], [["Oak Wood", 1], ["Birch Wood", 1]]]
-var testRecipe = [[0, "special twig", "uncraftable", 1], [["twig", 1]]]
+#adventurers sword
 var LeapingSword = [[1, "leaping sword", 5,0,["leaping", "sword"], "res://player/items/DefaultSword/default_sword.tscn"], [["swordHandle", 1], ["Birch Wood", 2]]]
+
 
 var recipeIndex = -1
 
-@onready var recipes = [swordHandle, testRecipe, LeapingSword]
+@onready var recipes = [swordHandle, LeapingSword]
+
+#dialogue
+var goodbyes = ["come back again soon!", "pleasant talking with you", "have a great rest of your day!", "hope it was helpfull", "anothertime then!", "goodluck on your adventure!"]
+var greetings = ["howdy, hows saving the world going?", "Hello traveler!", "care to buy anything?", "in need of restock by chance?"]
+
 
 func _ready():
 	$shop.hide()
+	if !Settings.spokeToStanford:
+		$nameTag.text = "hello! my name is Stanford!\ninteract with *R* to open my shop!"
+	else:
+		var gi = randi_range(0, greetings.size()-1)
+		$nameTag.text = greetings[gi]
 
 func interact():
 	canInteract = false
@@ -27,7 +38,9 @@ func interact():
 	pass
 
 func open_shop():
+	$nameTag.hide()
 	update_inventory_display()
+	Settings.spokeToStanford = true
 	populate_shop()
 	var player = get_tree().get_first_node_in_group("Player")
 	player.set_disabled(true)
@@ -37,6 +50,10 @@ func open_shop():
 	pass
 
 func close_shop():
+	var gi = randi_range(0, goodbyes.size()-1)
+	$nameTag.text = goodbyes[gi]
+	$nameTag.visible = true
+	
 	var player = get_tree().get_first_node_in_group("Player")
 	player.set_disabled(false)
 	$shop.visible = false
@@ -76,7 +93,8 @@ func _on_recipe_selected(index = -1):
 func update_inventory_display():
 	$shop/shopButtons/playerItems.text = ""
 	for item in ItemHandler.inventory:
-		$shop/shopButtons/playerItems.text += item[1] + " : " + str(item[3]) + "\n"
+		if item[3] != 0:
+			$shop/shopButtons/playerItems.text += item[1] + " : " + str(item[3]) + "\n"
 
 func _on_close_shop_button_down():
 	close_shop()
