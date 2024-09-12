@@ -10,6 +10,8 @@ const fireSword = [1, "fire sword", 5, 0, ["flaming", "sword", "heavyHanded", "s
 const critSword = [1, "crit sword", 2,0,["vanilla", "sword", "critical", "lightFooted"], "res://player/items/DefaultSword/default_sword.tscn"]
 const superiorBow = [3, "superior Bow", 5,5,["vanilla", "bow"], "res://player/items/DefaultBow/default_bow.tscn"]
 
+
+
 #materials
 #data = [IdentityINT, displayName, internalReference, count, worth gb]
 const twig = [0, "twig", "twig", 1, 2]

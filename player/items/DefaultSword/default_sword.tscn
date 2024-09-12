@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cbf75kmmxipkt"]
+[gd_scene load_steps=9 format=3 uid="uid://cbf75kmmxipkt"]
 
 [sub_resource type="Animation" id="Animation_sivlh"]
 resource_name = "Attack1"
@@ -87,6 +87,35 @@ tracks/1/keys = {
 "values": [Vector3(1, 0, -1), Vector3(0.434264, 0.724477, -0.706099), Vector3(0.419582, 1.20974, -0.725102), Vector3(0.169997, 0.141235, -1.04815), Vector3(0.169997, -0.355309, -1.04815)]
 }
 
+[sub_resource type="Animation" id="Animation_ook5b"]
+resource_name = "Draw"
+length = 0.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.2, 0.35),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 2.65321, -0.215703), Vector3(1, 0, -1), Vector3(1, -0.128329, -1), Vector3(1, 0, -1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.0472, 0, 0), Vector3(0, 0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_j0rfm"]
 length = 0.001
 tracks/0/type = "value"
@@ -147,6 +176,7 @@ _data = {
 "Attack1": SubResource("Animation_sivlh"),
 "Attack2": SubResource("Animation_jnwh2"),
 "Attack3": SubResource("Animation_d1osb"),
+"Draw": SubResource("Animation_ook5b"),
 "RESET": SubResource("Animation_j0rfm"),
 "idle": SubResource("Animation_gvqil")
 }
