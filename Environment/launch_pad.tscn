@@ -1,0 +1,95 @@
+[gd_scene load_steps=10 format=3 uid="uid://c3nsoman3koeg"]
+
+[ext_resource type="Script" path="res://scripts/launch_pad.gd" id="1_u676x"]
+
+[sub_resource type="Animation" id="Animation_2xig1"]
+resource_name = "launch"
+length = 1.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../graphics/arm:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06, 0.22, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-1.0472, 0, 0), Vector3(-1.24775, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_tnscn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../graphics/arm:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hwivn"]
+_data = {
+"RESET": SubResource("Animation_tnscn"),
+"launch": SubResource("Animation_2xig1")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d6hbi"]
+size = Vector3(0.549561, 1, 0.777832)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v6l7j"]
+albedo_color = Color(0.392157, 0.207843, 0.156863, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rlgwo"]
+material = SubResource("StandardMaterial3D_v6l7j")
+size = Vector3(1, 0.225, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ury85"]
+size = Vector3(0.47, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bxmbo"]
+size = Vector3(1.405, 0.345, 2)
+
+[node name="LaunchPad" type="Node3D"]
+script = ExtResource("1_u676x")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../StaticBody3D")
+libraries = {
+"": SubResource("AnimationLibrary_hwivn")
+}
+
+[node name="StaticBody3D" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0469971, 0, -0.111084)
+shape = SubResource("BoxShape3D_d6hbi")
+
+[node name="graphics" type="Node3D" parent="."]
+
+[node name="arm" type="Node3D" parent="graphics"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="graphics/arm"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.022486, 1)
+mesh = SubResource("BoxMesh_rlgwo")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="graphics/arm"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.395999, 0.503139)
+mesh = SubResource("BoxMesh_ury85")
+skeleton = NodePath("../../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="graphics"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.164368, 0)
+mesh = SubResource("BoxMesh_bxmbo")
+
+[connection signal="body_entered" from="StaticBody3D" to="." method="_on_static_body_3d_body_entered"]

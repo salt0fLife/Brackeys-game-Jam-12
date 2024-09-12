@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://td2a7gmc38w5"]
+
+[ext_resource type="Script" path="res://scripts/Boss.gd" id="1_hxmwo"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_4y0lu"]
+size = Vector3(5, 10, 5)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_61jwc"]
+top_radius = 1.0
+height = 6.95
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0tg1c"]
+size = Vector3(5, 10, 5)
+
+[node name="boss" type="CharacterBody3D" groups=["Boss"]]
+script = ExtResource("1_hxmwo")
+
+[node name="graphics" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="graphics"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+mesh = SubResource("BoxMesh_4y0lu")
+
+[node name="armHandler" type="Node3D" parent="graphics"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.58789, 7, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="graphics/armHandler"]
+transform = Transform3D(0.979104, -0.0383937, -0.199701, -0.199284, 0.014424, -0.979836, 0.0405, 0.999159, 0.00647139, -0.853521, 0, 3)
+mesh = SubResource("CylinderMesh_61jwc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+shape = SubResource("BoxShape3D_0tg1c")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="projectileHandler" type="Node" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

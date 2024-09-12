@@ -935,3 +935,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8031, 6.06071, -271.589)
 
 [node name="CopperOre66" parent="materials" instance=ExtResource("5_28aj1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.40025, 6.06071, -275.685)
+
+[node name="Help" type="Label3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 2, 5)
+text = "use *warp to hub* found in pause 
+menu to go back quickly"

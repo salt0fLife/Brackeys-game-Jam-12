@@ -50,7 +50,7 @@ func openAnimation():
 func _on_area_of_importance_body_entered(body):
 	var main = get_tree().get_first_node_in_group("Main")
 	if one and two and three:
-		main.load_new_scene("res://Levels/boss_fight.tscn")
+		main.load_new_scene("res://Environment/Cutscenes/boss_intro_cutscene.tscn")
 	else:
 		printerr("ERROR: gate entered before unlocked \nkilled player")
 		var p = get_tree().get_first_node_in_group("Player")

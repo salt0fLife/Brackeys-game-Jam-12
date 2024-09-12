@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://c1d6w84fi84sv"]
+[gd_scene load_steps=10 format=3 uid="uid://c1d6w84fi84sv"]
 
 [ext_resource type="Script" path="res://Levels/boss_fight.gd" id="1_mpmvo"]
 [ext_resource type="PackedScene" uid="uid://6xamiee4w237" path="res://Environment/stony_island_piece.tscn" id="1_smd2w"]
 [ext_resource type="PackedScene" uid="uid://cxffo1r8ltcio" path="res://player/player.tscn" id="2_c18my"]
-[ext_resource type="Script" path="res://scripts/Boss.gd" id="4_l6i7h"]
+[ext_resource type="PackedScene" uid="uid://c3nsoman3koeg" path="res://Environment/launch_pad.tscn" id="5_qeb46"]
+[ext_resource type="PackedScene" uid="uid://td2a7gmc38w5" path="res://creatures/enemies/boss.tscn" id="6_0dndg"]
+[ext_resource type="PackedScene" uid="uid://6srnwmu5on8x" path="res://Environment/boss_pillar.tscn" id="6_toid1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2ixqe"]
 sky_top_color = Color(0.458824, 0.627451, 0.854902, 1)
@@ -18,8 +20,6 @@ sky_material = SubResource("ProceduralSkyMaterial_2ixqe")
 background_mode = 2
 sky = SubResource("Sky_s05p6")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_gi6p4"]
-
 [node name="BossFight" type="Node3D"]
 script = ExtResource("1_mpmvo")
 
@@ -27,7 +27,6 @@ script = ExtResource("1_mpmvo")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
 
 [node name="Player" parent="playerHandler" instance=ExtResource("2_c18my")]
-inBossFight = true
 
 [node name="lighting" type="Node" parent="."]
 
@@ -2883,8 +2882,84 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.1962, 0.5, -38.7914)
 
 [node name="Pillars" type="Node3D" parent="."]
 
-[node name="Boss" type="CharacterBody3D" parent="." groups=["Boss"]]
-script = ExtResource("4_l6i7h")
+[node name="BossPillar" parent="Pillars" instance=ExtResource("6_toid1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -97.2273, 5.99999, -110.656)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Boss"]
-shape = SubResource("BoxShape3D_gi6p4")
+[node name="BossPillar2" parent="Pillars" instance=ExtResource("6_toid1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -237.502, 3.53233, -451.008)
+
+[node name="BossPillar3" parent="Pillars" instance=ExtResource("6_toid1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.4805, 3.53232, -619.577)
+
+[node name="BossPillar4" parent="Pillars" instance=ExtResource("6_toid1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 311.627, 3.53232, -325.179)
+
+[node name="launchers" type="Node3D" parent="."]
+
+[node name="LaunchPad3" parent="launchers" instance=ExtResource("5_qeb46")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -6.16077, 10.5323, -6.79115)
+newVelocity = Vector3(-30, 10, -30)
+disabedTime = 2.0
+
+[node name="LaunchPad4" parent="launchers" instance=ExtResource("5_qeb46")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 6.83923, 10.5323, -6.79115)
+newVelocity = Vector3(60, 10, -50)
+disabedTime = 3.0
+
+[node name="LaunchPad" parent="launchers" instance=ExtResource("5_qeb46")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -96.7719, 6, -145.784)
+newVelocity = Vector3(-20, 8, -90)
+disabedTime = 2.5
+
+[node name="LaunchPad2" parent="launchers" instance=ExtResource("5_qeb46")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -136.211, 3.53232, -361.749)
+newVelocity = Vector3(-20, 20, -20)
+disabedTime = 4.0
+
+[node name="LaunchPad5" parent="launchers" instance=ExtResource("5_qeb46")]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -166.698, 4.53231, -502.246)
+newVelocity = Vector3(40, 10, -10)
+disabedTime = 2.0
+
+[node name="LaunchPad7" parent="launchers" instance=ExtResource("5_qeb46")]
+transform = Transform3D(0.607154, 0, -0.794584, 0, 1, 0, 0.794584, 0, 0.607154, -76.6165, 4.53231, -550.751)
+newVelocity = Vector3(30, 10, -20)
+disabedTime = 2.0
+
+[node name="LaunchPad8" parent="launchers" instance=ExtResource("5_qeb46")]
+transform = Transform3D(-0.792119, 0, 0.610366, 0, 1, 0, -0.610366, 0, -0.792119, -13.9424, 3.6975, -581.011)
+newVelocity = Vector3(-30, 11, 20)
+disabedTime = 2.3
+
+[node name="LaunchPad9" parent="launchers" instance=ExtResource("5_qeb46")]
+transform = Transform3D(-0.924652, 0, -0.380812, 0, 1, 0, 0.380812, 0, -0.924652, 81.0576, 4.60849, -581.011)
+newVelocity = Vector3(10, 25, 25)
+disabedTime = 2.5
+
+[node name="LaunchPad6" parent="launchers" instance=ExtResource("5_qeb46")]
+transform = Transform3D(5.96046e-08, 0, 1, 0, 1, 0, -1, 0, 5.96046e-08, -94.6978, 4.53231, -500.246)
+newVelocity = Vector3(-40, 10, 0)
+disabedTime = 2.0
+
+[node name="LaunchPad10" parent="launchers" instance=ExtResource("5_qeb46")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 110.069, 25.3323, -557.633)
+newVelocity = Vector3(-20, 5, -20)
+disabedTime = 2.0
+
+[node name="LaunchPad11" parent="launchers" instance=ExtResource("5_qeb46")]
+transform = Transform3D(-0.531088, 0, -0.847317, 0, 1, 0, 0.847317, 0, -0.531088, 105.985, 23.3323, -482.878)
+newVelocity = Vector3(75, 10, 75)
+disabedTime = 3.0
+
+[node name="LaunchPad12" parent="launchers" instance=ExtResource("5_qeb46")]
+transform = Transform3D(-0.622337, 0, 0.782749, 0, 1, 0, -0.782749, 0, -0.622337, 263.414, 3.53232, -305.795)
+newVelocity = Vector3(-100, 20, 75)
+disabedTime = 4.0
+
+[node name="boss" parent="." instance=ExtResource("6_0dndg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.4892, 15, -284.529)
+
+[node name="LaunchPad" parent="." instance=ExtResource("5_qeb46")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 207.05, 3.53232, -159.84)
+newVelocity = Vector3(30, 20, -60)
+disabedTime = 2.0

@@ -23,6 +23,8 @@ var hasMined = false
 var hasOpenedInventory = false
 var hasChopped = false
 
+var soundEffects = 50
+
 func check_for_toutorial_completion():
 	if hasMined and canUseGateways and spokeToStanford and hasOpenedInventory:
 		toutorial = false

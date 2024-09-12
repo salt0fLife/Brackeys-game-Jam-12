@@ -51,7 +51,7 @@ var bufferingUse = false
 @onready var graphics = $Graphics
 @onready var ItemGraphicsHandler = $Graphics/CameraHandler/ItemGraphicsHandler
 @onready var chRay = $Graphics/CameraHandler/CrosshairRay
-@onready var inventoryList = $inventoryList
+@onready var inventoryList = $Inventory/inventoryList
 @onready var BowRay = $Graphics/CameraHandler/CrossBowRay
 
 

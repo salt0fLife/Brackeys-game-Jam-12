@@ -369,7 +369,8 @@ grow_vertical = 2
 text = "Equipped Weapons"
 horizontal_alignment = 1
 
-[node name="inventoryList" type="RichTextLabel" parent="."]
+[node name="inventoryList" type="RichTextLabel" parent="Inventory"]
+layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.122
 anchor_bottom = 1.0
