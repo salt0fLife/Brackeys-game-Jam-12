@@ -4,6 +4,7 @@ extends Node
 var mouseSensitivity = 2.5
 var debugMode = false
 var fullscreen = false
+var fov = 90
 
 #player stats
 var playerSpeed = 5.0
@@ -13,6 +14,7 @@ var currentHealth = 100.0
 
 #levelHandling
 const mainLevel = "res://Levels/island_hub.tscn"
+
 
 #chest saving
 var chests = [0, 0, 0, 0, 0, 0]

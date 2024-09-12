@@ -102,9 +102,11 @@ func update_values_from_settings():
 	JUMP_VELOCITY = Settings.playerJump
 	MouseSensitivity = Settings.mouseSensitivity
 	debugMode = Settings.debugMode
+	$Graphics/CameraHandler/Camera3D.set_fov(Settings.fov)
 	pass
 
 func _ready():
+	$Graphics/CameraHandler/Camera3D.set_fov(Settings.fov)
 	if OpenedInv:
 		$HUD/help.hide()
 	graphics.rotation_degrees.y = initialRotDegrees
@@ -347,14 +349,17 @@ func update_heldItem_graphics():
 	if HeldItem == 1:
 		var sword = load(swordInfo[5]).instantiate()
 		ItemGraphicsHandler.add_child(sword)
+		sword.get_child(0, true).play("Draw")
 		pass
 	elif HeldItem == 2:
 		var paxel = load(paxelInfo[5]).instantiate()
 		ItemGraphicsHandler.add_child(paxel)
+		paxel.get_child(0, true).play("Draw")
 		pass
 	elif HeldItem == 3:
 		var bow = load(bowInfo[5]).instantiate()
 		ItemGraphicsHandler.add_child(bow)
+		bow.get_child(0, true).play("Draw")
 		pass
 
 func _input(event):

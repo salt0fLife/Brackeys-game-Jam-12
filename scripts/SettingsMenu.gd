@@ -10,10 +10,13 @@ func load_Values_from_settings():
 	$CategoryHandler/Level1/MouseSensDisplay.text = str(Settings.mouseSensitivity)
 	$CategoryHandler/Level1/debugMode.text = str(Settings.debugMode)
 	$CategoryHandler/Level1/Fullscreen.text = str(Settings.fullscreen)
+	$CategoryHandler/Level1/FOVDisplay.text = str(Settings.fov)
+	$CategoryHandler/Level1/FOVSlider.value = Settings.fov
 	pass
 
 func update_settings_from_Values():
 	Settings.set_mouseSensitivity($CategoryHandler/Level1/MouseSensitivity.value)
+	Settings.fov = $CategoryHandler/Level1/FOVSlider.value
 
 
 func _on_save_and_exit_button_down():
@@ -53,4 +56,10 @@ func _on_fullscreen_button_down():
 	else:
 		Settings.set_fullscreen(true)
 		$CategoryHandler/Level1/Fullscreen.text = "true"
+	pass # Replace with function body.
+
+
+func _on_fov_slider_drag_ended(value_changed):
+	$CategoryHandler/Level1/FOVDisplay.text = str($CategoryHandler/Level1/FOVSlider.value)
+	
 	pass # Replace with function body.

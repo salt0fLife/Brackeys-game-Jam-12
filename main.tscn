@@ -251,6 +251,27 @@ horizontal_alignment = 1
 layout_mode = 2
 text = "false"
 
+[node name="breakPoint3" type="Label" parent="Settings/CategoryHandler/Level1"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="FOVLabel" type="Label" parent="Settings/CategoryHandler/Level1"]
+layout_mode = 2
+text = "FOV"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FOVSlider" type="HSlider" parent="Settings/CategoryHandler/Level1"]
+layout_mode = 2
+min_value = 75.0
+max_value = 90.0
+value = 75.0
+
+[node name="FOVDisplay" type="Label" parent="Settings/CategoryHandler/Level1"]
+layout_mode = 2
+text = "75"
+horizontal_alignment = 1
+
 [node name="SaveAndExit" type="Button" parent="Settings"]
 layout_mode = 0
 offset_right = 8.0
@@ -268,4 +289,5 @@ text = "Save and Exit"
 [connection signal="drag_ended" from="Settings/CategoryHandler/Level1/MouseSensitivity" to="Settings" method="_on_mouse_sensitivity_drag_ended"]
 [connection signal="button_down" from="Settings/CategoryHandler/Level1/debugMode" to="Settings" method="_on_debug_mode_button_down"]
 [connection signal="button_down" from="Settings/CategoryHandler/Level1/Fullscreen" to="Settings" method="_on_fullscreen_button_down"]
+[connection signal="drag_ended" from="Settings/CategoryHandler/Level1/FOVSlider" to="Settings" method="_on_fov_slider_drag_ended"]
 [connection signal="button_down" from="Settings/SaveAndExit" to="Settings" method="_on_save_and_exit_button_down"]
