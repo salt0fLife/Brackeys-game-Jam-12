@@ -2,6 +2,7 @@ extends Node
 var playingGame = false
 var paused = false
 
+
 func play_game():
 	print_rich("[color=GREEN][i]now playing game[/i]")
 	#printerr("play not implemented")
@@ -72,7 +73,6 @@ func load_new_scene(path = ""):
 	var newScene = load(path).instantiate()
 	$sceneHandler.add_child(newScene)
 	pass
-
 
 func _on_debug_scene_button_down():
 	print_rich("[color=GREEN][i]now debugging game[/i]")

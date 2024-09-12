@@ -391,6 +391,42 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.28164, 1.5, -65.8663)
 [node name="youngOak25" parent="Resources" instance=ExtResource("5_k58hd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3297, 1.5, -63.5382)
 
+[node name="StandardBirch2" parent="Resources" instance=ExtResource("7_1b4pk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.5621, 13.5, -45.1092)
+
+[node name="StandardBirch3" parent="Resources" instance=ExtResource("7_1b4pk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.51881, 2.5, -79.8094)
+
+[node name="StandardBirch4" parent="Resources" instance=ExtResource("7_1b4pk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6211, 2.5, -17.5573)
+
+[node name="StandardBirch5" parent="Resources" instance=ExtResource("7_1b4pk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.72266, 4.5, -17.8423)
+
+[node name="StandardBirch6" parent="Resources" instance=ExtResource("7_1b4pk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.4502, 2.5, -28.9119)
+
+[node name="StandardBirch7" parent="Resources" instance=ExtResource("7_1b4pk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.56965, 2.5, -9.62193)
+
+[node name="StandardBirch8" parent="Resources" instance=ExtResource("7_1b4pk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.86101, 4.5, -35.3446)
+
+[node name="StandardBirch9" parent="Resources" instance=ExtResource("7_1b4pk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.86977, 1.5, -58.2756)
+
+[node name="StandardBirch10" parent="Resources" instance=ExtResource("7_1b4pk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.0742, 1.5, -52.4396)
+
+[node name="StandardOak" parent="Resources" instance=ExtResource("8_rrw4h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12188, 2.5, -16.4257)
+
+[node name="StandardOak2" parent="Resources" instance=ExtResource("8_rrw4h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.1314, 2.5, -35.7382)
+
+[node name="StandardOak3" parent="Resources" instance=ExtResource("8_rrw4h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.231693, 1.5, -63.3904)
+
 [node name="smallBridge" parent="." instance=ExtResource("6_qmd3s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -2.74808, -73.1695)
 
@@ -400,42 +436,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -2.74808, -89.9168)
 [node name="StandardBirch" parent="." instance=ExtResource("7_1b4pk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 8, -26)
 
-[node name="StandardBirch2" parent="." instance=ExtResource("7_1b4pk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.5621, 13.5, -45.1092)
-
-[node name="StandardBirch3" parent="." instance=ExtResource("7_1b4pk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.51881, 2.5, -79.8094)
-
-[node name="StandardBirch4" parent="." instance=ExtResource("7_1b4pk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6211, 2.5, -17.5573)
-
-[node name="StandardBirch5" parent="." instance=ExtResource("7_1b4pk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.72266, 4.5, -17.8423)
-
-[node name="StandardBirch6" parent="." instance=ExtResource("7_1b4pk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.4502, 2.5, -28.9119)
-
-[node name="StandardBirch7" parent="." instance=ExtResource("7_1b4pk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.56965, 2.5, -9.62193)
-
-[node name="StandardBirch8" parent="." instance=ExtResource("7_1b4pk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.86101, 4.5, -35.3446)
-
-[node name="StandardBirch9" parent="." instance=ExtResource("7_1b4pk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.86977, 1.5, -58.2756)
-
-[node name="StandardBirch10" parent="." instance=ExtResource("7_1b4pk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.0742, 1.5, -52.4396)
-
-[node name="StandardOak" parent="." instance=ExtResource("8_rrw4h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12188, 2.5, -16.4257)
-
-[node name="StandardOak2" parent="." instance=ExtResource("8_rrw4h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.1314, 2.5, -35.7382)
-
-[node name="StandardOak3" parent="." instance=ExtResource("8_rrw4h")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.231693, 1.5, -63.3904)
-
 [node name="lighting" type="Node" parent="."]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="lighting"]
@@ -443,3 +443,8 @@ environment = SubResource("Environment_3cv1c")
 
 [node name="sun" type="DirectionalLight3D" parent="lighting"]
 transform = Transform3D(1, 0, 0, 0, 0.737041, 0.675848, 0, -0.675848, 0.737041, 0, 0, 0)
+
+[node name="Help" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 3, -113)
+text = "use *warp to hub* found in pause 
+menu to go back quickly"

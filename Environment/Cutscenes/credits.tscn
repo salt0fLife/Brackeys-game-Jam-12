@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bb6dek7c62mjs"]
+
+[node name="Credits" type="Node3D"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -184.0
+offset_top = -324.0
+offset_right = 173.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Dear Player
+	you beat the game! I am so Proud of you!
+I was the only one working on the game, and its honestly a miracle that I got as much done as I did. Thank you so much for playing the game all the way through, I really hope you enjoyed it!
+
+	as for whats next. well If you liked the game and want to see more of it, reach out and let me know, I would love to get feedback and constructive critisism
+just keep in mind this game was made in 6 days by a single very tired developer
+
+	anyway, Once again thank you from the bottom of my heart for playing this all the way through
+
+I hope you have an amazing rest of your day!
+
+sincerely 
+-Salt0fLife"
