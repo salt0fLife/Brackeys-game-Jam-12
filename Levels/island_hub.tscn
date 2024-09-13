@@ -352,10 +352,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.17208, 15.5, -54.5466)
 [node name="characters" type="Node" parent="."]
 
 [node name="LumberJack" parent="characters" instance=ExtResource("9_rxs44")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.14548, 2.98205, 15.8084)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.37305, 2.98205, 15.9786)
 
 [node name="OneOfThree" parent="." instance=ExtResource("11_8t3t8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 3, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 2.51958, 0)
 identityInt = 2
 
 [node name="help" type="Node3D" parent="."]

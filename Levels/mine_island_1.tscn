@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://chuabdhcd2v8k"]
+[gd_scene load_steps=10 format=3 uid="uid://chuabdhcd2v8k"]
 
 [ext_resource type="PackedScene" uid="uid://cxffo1r8ltcio" path="res://player/player.tscn" id="1_ami73"]
 [ext_resource type="PackedScene" uid="uid://6xamiee4w237" path="res://Environment/stony_island_piece.tscn" id="2_tmf08"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c6ut0e4oe3d20" path="res://Environment/materials/ores/iron_ore.tscn" id="7_xv3c8"]
 [ext_resource type="PackedScene" uid="uid://ct42gfdxjw53n" path="res://Environment/materials/ores/magic_sand_deposit.tscn" id="8_5qjvw"]
 [ext_resource type="PackedScene" uid="uid://6ab1mh7ne8yi" path="res://Environment/chest.tscn" id="8_b2rbl"]
+[ext_resource type="PackedScene" uid="uid://cu721f35yc12a" path="res://creatures/characters/funny_guy.tscn" id="9_eps6t"]
 
 [node name="MineIsland1" type="Node3D"]
 
@@ -16,9 +17,13 @@
 [node name="Player" parent="PlayerHandler" instance=ExtResource("1_ami73")]
 
 [node name="OmniLight3D" type="OmniLight3D" parent="PlayerHandler/Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-light_energy = 4.0
-omni_range = 55.9893
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+light_color = Color(0.854902, 0.882353, 0.890196, 1)
+light_energy = 0.5
+distance_fade_begin = 660.61
+distance_fade_shadow = 587.86
+omni_range = 28.589
+omni_attenuation = 0.203063
 
 [node name="stonyPatch" type="Node3D" parent="."]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
@@ -336,7 +341,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.75, 1.51518, -32)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.75, 1.51518, -34.75)
 
 [node name="StonyIslandPiece64" parent="stonyPatch" instance=ExtResource("2_tmf08")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5, 1.51518, -39.25)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.929, 1.51518, -39.25)
+
+[node name="StonyIslandPiece149" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1546, 1.51518, -35.8919)
+
+[node name="StonyIslandPiece150" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.2193, 1.51518, -42.269)
+
+[node name="StonyIslandPiece151" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.2193, 3.42577, -39.7207)
+
+[node name="StonyIslandPiece152" parent="stonyPatch" instance=ExtResource("2_tmf08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.2193, -2.97156, -39.7207)
 
 [node name="StonyIslandPiece65" parent="stonyPatch" instance=ExtResource("2_tmf08")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 1.51518, -43.5)
@@ -929,5 +946,8 @@ menu to go back quickly"
 
 [node name="LesserShinobiChest" parent="." instance=ExtResource("8_b2rbl")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 73.5613, -4.98848, -134.973)
-ItemToGive = [1, "Lesser Shinobi", 5, 0, ["vanilla", "Sword", "lightFooted"], "res://imports/shinobiSword/Shinobi.glb"]
+ItemToGive = [1, "Lesser Shinobi", 5, 0, ["leaping", "Sword", "speedy"], "res://imports/shinobiSword/Shinobi.glb"]
 index = 4
+
+[node name="FunnyGuy" parent="." instance=ExtResource("9_eps6t")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -58.3516, -1.92176, -156.273)

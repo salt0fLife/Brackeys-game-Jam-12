@@ -24,6 +24,8 @@ var toutorial = true
 var hasMined = false
 var hasOpenedInventory = false
 var hasChopped = false
+var hasBossDied = false
+var hasSeenFG = false
 
 var soundEffects = 50
 

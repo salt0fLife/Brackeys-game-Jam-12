@@ -78,20 +78,20 @@ func update_stats_from_item_tags():
 		if tag == "healthy" or debugMode:
 			maxHealth = maxHealth * 1.5
 	for tag in bowTags:
-		if tag == "speedy" or debugMode:
+		if tag == "speedy":
 			SPEED = SPEED * 1.5
 			pass
-		if tag == "lightFooted" or debugMode:
+		if tag == "lightFooted":
 			JUMP_VELOCITY = JUMP_VELOCITY * 1.5
-		if tag == "healthy" or debugMode:
+		if tag == "healthy":
 			maxHealth = maxHealth * 1.5
 	for tag in paxelTags:
-		if tag == "speedy" or debugMode:
+		if tag == "speedy":
 			SPEED = SPEED * 1.5
 			pass
-		if tag == "lightFooted" or debugMode:
+		if tag == "lightFooted":
 			JUMP_VELOCITY = JUMP_VELOCITY * 1.5
-		if tag == "healthy" or debugMode:
+		if tag == "healthy":
 			maxHealth = maxHealth * 1.5
 	pass
 
@@ -151,8 +151,31 @@ func sword_special_attack():
 		elif tag == "leaping":
 			sword_leaping_attack()
 			return
+		elif tag == "masterful":
+			sword_masterful_attack()
+			return
 		else:
 			actionState = false
+	pass
+
+func sword_masterful_attack():
+	actionState = true
+	var itemGraphics = ItemGraphicsHandler.get_child(0, false)
+	itemGraphics.get_child(1, true).play("Attack3")
+	var damage = swordInfo[2]
+	check_for_hit(damage)
+	await get_tree().create_timer(0.25).timeout
+	check_for_hit(damage)
+	await get_tree().create_timer(0.25).timeout
+	check_for_hit(damage)
+	if bufferedInput == "UseItem":
+		bufferedInput = ""
+		use_sword()
+	else:
+		bufferedInput = ""
+		actionState = false
+		itemGraphics.get_child(1, true).play("idle")
+	
 	pass
 
 func sword_heavy_attack():
@@ -186,7 +209,19 @@ func sword_leaping_attack():
 	pass
 
 func toggle_bow_aim():
-	printerr("bow aiming not implemented")
+	for tag in bowInfo[4]:
+		if tag == "vanilla":
+			use_bow()
+			pass
+		elif tag == "ancient":
+			bow_ancient_attack()
+			pass
+		else:
+			printerr("bow aiming not implemented")
+	pass
+
+func bow_ancient_attack():
+	
 	pass
 
 func use_sword():
@@ -464,11 +499,7 @@ func sync_HeldItem():
 func _physics_process(delta):
 	#check for void plane
 	if position.y <= -25:
-		if !inBossFight:
-			die()
-		else:
-			alertBoss()
-	
+		die()
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -626,13 +657,17 @@ func _on_weapon_button_pressed(Index = -1):
 	pass
 
 func die():
-	position = Vector3(0,0,0)
-	health = maxHealth
-	update_health_graphics()
-	pass
+	if inBossFight:
+		die_boss()
+	else:
+		position = Vector3(0,0,0)
+		health = maxHealth
+		update_health_graphics()
+		pass
 
 func die_boss():
-	
+	var main = get_tree().get_first_node_in_group("Main")
+	main.load_new_scene("res://Environment/Cutscenes/died_in_boss_room.tscn")
 	pass
 
 func _on_equip_selected_weapon_button_down():
@@ -723,8 +758,3 @@ func take_damage(amount, tag, knockback):
 			die()
 	pass
 
-func alertBoss():
-	var boss = get_tree().get_first_node_in_group("Boss")
-	boss.alert_to_punish()
-	
-	pass

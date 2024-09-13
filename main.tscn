@@ -84,6 +84,7 @@ layout_mode = 2
 text = "Quit"
 
 [node name="DebugScene" type="Button" parent="MainMenu/ButtonBox"]
+visible = false
 layout_mode = 2
 text = "DebugScene"
 
@@ -104,7 +105,9 @@ theme_override_colors/font_color = Color(0.8, 0.780392, 0.588235, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_y = 5
 theme_override_font_sizes/font_size = 56
-text = "The Calm Before The Storm"
+text = "The Heart Of The Storm"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="sceneHandler" type="Node3D" parent="."]
 

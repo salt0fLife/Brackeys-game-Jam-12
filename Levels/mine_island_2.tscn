@@ -4156,7 +4156,7 @@ light_energy = 4.0
 omni_range = 55.9893
 
 [node name="OneOfThree" parent="." instance=ExtResource("3_dwi6a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -761)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.0226068, -761)
 
 [node name="smallBridge" parent="." instance=ExtResource("4_7m2wb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0611477, -4, -85.7869)
@@ -5039,5 +5039,5 @@ ItemToGive = [2, "Dwarven Paxel", 20, 20, ["vanilla", "Paxel"], "res://imports/d
 
 [node name="ShinobiChest" parent="." instance=ExtResource("6_se1tr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -135.685, 0.0115204, -227.271)
-ItemToGive = [1, "Shinobi", 10, 0, ["vanilla", "Sword", "speedy", "lightFooted", "healthy"], "res://imports/shinobiSword/Shinobi.glb"]
+ItemToGive = [1, "Shinobi", 10, 0, ["masterful", "Sword", "speedy", "lightFooted", "healthy", "critical"], "res://imports/shinobiSword/Shinobi.glb"]
 index = 3

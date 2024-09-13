@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2vahgn1kashk"]
+[gd_scene load_steps=9 format=3 uid="uid://c2vahgn1kashk"]
 
 [ext_resource type="Script" path="res://scripts/boss_defeated_cutscene.gd" id="1_y4un6"]
+[ext_resource type="PackedScene" uid="uid://6xamiee4w237" path="res://Environment/stony_island_piece.tscn" id="2_5e2s2"]
 
 [sub_resource type="Animation" id="Animation_fosqr"]
 resource_name = "Outro"
@@ -8,14 +9,86 @@ length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Label:rotation")
+tracks/0/path = NodePath("Camera3D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 6.28319]
+"values": [Vector3(287.376, 105.088, 0), Vector3(310.136, 116.412, 23.9646)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.365949, 0.689524, 0.0406604), Vector3(-0.303002, 0.605101, -0.0456588)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("rot1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(69, 0, -316), Vector3(69, -420.745, -316)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("rot4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(69, 0, -316), Vector3(69, -181.748, -316)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("rot2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(69, 0, -316), Vector3(69, -35.4951, -316)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("rot3:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(69, 0, -316), Vector3(69, -14.2415, -316)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ColorRect:color")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 4.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.0470588, 0.0470588, 0.0470588, 0), Color(0.0470588, 0.0470588, 0.0470588, 0), Color(0.0470588, 0.0470588, 0.0470588, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_qk2t2"]
@@ -23,14 +96,86 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Label:rotation")
+tracks/0/path = NodePath("Camera3D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [Vector3(287.376, 105.088, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.365949, 0.689524, 0.0406604)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("rot1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(69, 0, -316)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("rot4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(69, 0, -316)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("rot2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(69, 0, -316)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("rot3:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(69, 0, -316)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ColorRect:color")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.0470588, 0.0470588, 0.0470588, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_an6io"]
@@ -39,24 +184,2915 @@ _data = {
 "RESET": SubResource("Animation_qk2t2")
 }
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cd5wf"]
+sky_top_color = Color(0.458824, 0.627451, 0.854902, 1)
+sky_energy_multiplier = 1.2
+ground_bottom_color = Color(0.227451, 0.439216, 0.458824, 1)
+ground_horizon_color = Color(0.694118, 0.772549, 0.772549, 1)
+
+[sub_resource type="Sky" id="Sky_7bvlb"]
+sky_material = SubResource("ProceduralSkyMaterial_cd5wf")
+
+[sub_resource type="Environment" id="Environment_8bji3"]
+background_mode = 2
+sky = SubResource("Sky_7bvlb")
+
 [node name="BossDefeatedCutscene" type="Node3D"]
 script = ExtResource("1_y4un6")
-
-[node name="Label" type="Label" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "Boss Defeated Cutscene"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_an6io")
 }
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0470588, 0.0470588, 0.0470588, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchors_preset = -1
+anchor_left = 0.204
+anchor_top = 0.076
+anchor_right = 0.778
+anchor_bottom = 0.914
+offset_left = -0.00801086
+offset_top = -0.248005
+offset_right = -0.256042
+offset_bottom = -0.272034
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="next" type="Button" parent="RichTextLabel"]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Done"
+
+[node name="lighting" type="Node" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="lighting"]
+environment = SubResource("Environment_8bji3")
+
+[node name="sun" type="DirectionalLight3D" parent="lighting"]
+transform = Transform3D(1, 0, 0, 0, 0.737041, 0.675848, 0, -0.675848, 0.737041, 0, 0, 0)
+
+[node name="rot1" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69, 0, -316)
+
+[node name="smallIsland10" type="Node3D" parent="rot1"]
+transform = Transform3D(0.0179584, 0, -0.999839, 0, 1, 0, 0.999839, 0, 0.0179584, -214.972, -144, 51.7672)
+
+[node name="StonyIslandPiece8" parent="rot1/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -7)
+
+[node name="StonyIslandPiece9" parent="rot1/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 13)
+
+[node name="StonyIslandPiece20" parent="rot1/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -19, -7)
+
+[node name="StonyIslandPiece21" parent="rot1/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -25, 13)
+
+[node name="StonyIslandPiece10" parent="rot1/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -7)
+
+[node name="StonyIslandPiece11" parent="rot1/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 13)
+
+[node name="StonyIslandPiece22" parent="rot1/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 18, -13, 13)
+
+[node name="StonyIslandPiece12" parent="rot1/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -27)
+
+[node name="StonyIslandPiece13" parent="rot1/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -27)
+
+[node name="StonyIslandPiece14" parent="rot1/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -27)
+
+[node name="StonyIslandPiece15" parent="rot1/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -7)
+
+[node name="StonyIslandPiece16" parent="rot1/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 13)
+
+[node name="StonyIslandPiece24" parent="rot1/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -14, -14, 13)
+
+[node name="StonyIslandPiece17" parent="rot1/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 33)
+
+[node name="StonyIslandPiece18" parent="rot1/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 33)
+
+[node name="StonyIslandPiece23" parent="rot1/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -13, 32)
+
+[node name="StonyIslandPiece19" parent="rot1/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 33)
+
+[node name="smallIsland11" type="Node3D" parent="rot1"]
+transform = Transform3D(0.759532, 0, -0.650469, 0, 1, 0, 0.650469, 0, 0.759532, -290.712, -144, -15.6779)
+
+[node name="StonyIslandPiece8" parent="rot1/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -7)
+
+[node name="StonyIslandPiece9" parent="rot1/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 13)
+
+[node name="StonyIslandPiece20" parent="rot1/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -19, -7)
+
+[node name="StonyIslandPiece21" parent="rot1/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -25, 13)
+
+[node name="StonyIslandPiece10" parent="rot1/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -7)
+
+[node name="StonyIslandPiece11" parent="rot1/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 13)
+
+[node name="StonyIslandPiece22" parent="rot1/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 18, -13, 13)
+
+[node name="StonyIslandPiece12" parent="rot1/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -27)
+
+[node name="StonyIslandPiece13" parent="rot1/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -27)
+
+[node name="StonyIslandPiece14" parent="rot1/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -27)
+
+[node name="StonyIslandPiece15" parent="rot1/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -7)
+
+[node name="StonyIslandPiece16" parent="rot1/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 13)
+
+[node name="StonyIslandPiece24" parent="rot1/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -14, -14, 13)
+
+[node name="StonyIslandPiece17" parent="rot1/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 33)
+
+[node name="StonyIslandPiece18" parent="rot1/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 33)
+
+[node name="StonyIslandPiece23" parent="rot1/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -13, 32)
+
+[node name="StonyIslandPiece19" parent="rot1/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 33)
+
+[node name="smallIsland12" type="Node3D" parent="rot1"]
+transform = Transform3D(0.598017, 0, -0.801483, 0, 1, 0, 0.801483, 0, 0.598017, -65.3375, -136.421, 2.62256)
+
+[node name="StonyIslandPiece8" parent="rot1/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -7)
+
+[node name="StonyIslandPiece9" parent="rot1/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 13)
+
+[node name="StonyIslandPiece20" parent="rot1/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -19, -7)
+
+[node name="StonyIslandPiece21" parent="rot1/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -25, 13)
+
+[node name="StonyIslandPiece10" parent="rot1/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -7)
+
+[node name="StonyIslandPiece11" parent="rot1/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 13)
+
+[node name="StonyIslandPiece22" parent="rot1/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 18, -13, 13)
+
+[node name="StonyIslandPiece12" parent="rot1/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -27)
+
+[node name="StonyIslandPiece13" parent="rot1/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -27)
+
+[node name="StonyIslandPiece14" parent="rot1/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -27)
+
+[node name="StonyIslandPiece15" parent="rot1/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -7)
+
+[node name="StonyIslandPiece16" parent="rot1/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 13)
+
+[node name="StonyIslandPiece24" parent="rot1/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -14, -14, 13)
+
+[node name="StonyIslandPiece17" parent="rot1/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 33)
+
+[node name="StonyIslandPiece18" parent="rot1/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 33)
+
+[node name="StonyIslandPiece23" parent="rot1/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -13, 32)
+
+[node name="StonyIslandPiece19" parent="rot1/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 33)
+
+[node name="smallIsland13" type="Node3D" parent="rot1"]
+transform = Transform3D(-0.0582261, 0, -0.998303, 0, 1, 0, 0.998303, 0, -0.0582261, -106.078, -146.468, -144.746)
+
+[node name="StonyIslandPiece8" parent="rot1/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -7)
+
+[node name="StonyIslandPiece9" parent="rot1/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 13)
+
+[node name="StonyIslandPiece20" parent="rot1/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -19, -7)
+
+[node name="StonyIslandPiece21" parent="rot1/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -25, 13)
+
+[node name="StonyIslandPiece10" parent="rot1/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -7)
+
+[node name="StonyIslandPiece11" parent="rot1/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 13)
+
+[node name="StonyIslandPiece22" parent="rot1/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 18, -13, 13)
+
+[node name="StonyIslandPiece12" parent="rot1/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -27)
+
+[node name="StonyIslandPiece13" parent="rot1/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -27)
+
+[node name="StonyIslandPiece14" parent="rot1/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -27)
+
+[node name="StonyIslandPiece15" parent="rot1/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -7)
+
+[node name="StonyIslandPiece16" parent="rot1/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 13)
+
+[node name="StonyIslandPiece24" parent="rot1/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -14, -14, 13)
+
+[node name="StonyIslandPiece17" parent="rot1/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 33)
+
+[node name="StonyIslandPiece18" parent="rot1/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 33)
+
+[node name="StonyIslandPiece23" parent="rot1/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -13, 32)
+
+[node name="StonyIslandPiece19" parent="rot1/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 33)
+
+[node name="smallIsland14" type="Node3D" parent="rot1"]
+transform = Transform3D(0.0414397, 0, -0.999141, 0, 1, 0, 0.999141, 0, 0.0414397, -284.974, -146.468, 114.211)
+
+[node name="StonyIslandPiece8" parent="rot1/smallIsland14" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -7)
+
+[node name="StonyIslandPiece9" parent="rot1/smallIsland14" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 13)
+
+[node name="StonyIslandPiece20" parent="rot1/smallIsland14" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -19, -7)
+
+[node name="StonyIslandPiece21" parent="rot1/smallIsland14" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -25, 13)
+
+[node name="StonyIslandPiece10" parent="rot1/smallIsland14" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -7)
+
+[node name="StonyIslandPiece11" parent="rot1/smallIsland14" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 13)
+
+[node name="StonyIslandPiece22" parent="rot1/smallIsland14" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 18, -13, 13)
+
+[node name="StonyIslandPiece12" parent="rot1/smallIsland14" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -27)
+
+[node name="StonyIslandPiece13" parent="rot1/smallIsland14" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -27)
+
+[node name="StonyIslandPiece14" parent="rot1/smallIsland14" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -27)
+
+[node name="StonyIslandPiece15" parent="rot1/smallIsland14" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -7)
+
+[node name="StonyIslandPiece16" parent="rot1/smallIsland14" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 13)
+
+[node name="StonyIslandPiece24" parent="rot1/smallIsland14" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -14, -14, 13)
+
+[node name="StonyIslandPiece17" parent="rot1/smallIsland14" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 33)
+
+[node name="StonyIslandPiece18" parent="rot1/smallIsland14" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 33)
+
+[node name="StonyIslandPiece23" parent="rot1/smallIsland14" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -13, 32)
+
+[node name="StonyIslandPiece19" parent="rot1/smallIsland14" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 33)
+
+[node name="smallIsland15" type="Node3D" parent="rot1"]
+transform = Transform3D(0.182905, 0, -0.983131, 0, 1, 0, 0.983131, 0, 0.182905, -135.638, -146.468, 209.504)
+
+[node name="StonyIslandPiece8" parent="rot1/smallIsland15" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -7)
+
+[node name="StonyIslandPiece9" parent="rot1/smallIsland15" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 13)
+
+[node name="StonyIslandPiece20" parent="rot1/smallIsland15" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -19, -7)
+
+[node name="StonyIslandPiece21" parent="rot1/smallIsland15" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -25, 13)
+
+[node name="StonyIslandPiece10" parent="rot1/smallIsland15" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -7)
+
+[node name="StonyIslandPiece11" parent="rot1/smallIsland15" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 13)
+
+[node name="StonyIslandPiece22" parent="rot1/smallIsland15" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 18, -13, 13)
+
+[node name="StonyIslandPiece12" parent="rot1/smallIsland15" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -27)
+
+[node name="StonyIslandPiece13" parent="rot1/smallIsland15" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -27)
+
+[node name="StonyIslandPiece14" parent="rot1/smallIsland15" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -27)
+
+[node name="StonyIslandPiece15" parent="rot1/smallIsland15" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -7)
+
+[node name="StonyIslandPiece16" parent="rot1/smallIsland15" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 13)
+
+[node name="StonyIslandPiece24" parent="rot1/smallIsland15" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -14, -14, 13)
+
+[node name="StonyIslandPiece17" parent="rot1/smallIsland15" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 33)
+
+[node name="StonyIslandPiece18" parent="rot1/smallIsland15" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 33)
+
+[node name="StonyIslandPiece23" parent="rot1/smallIsland15" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -13, 32)
+
+[node name="StonyIslandPiece19" parent="rot1/smallIsland15" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 33)
+
+[node name="smallIsland16" type="Node3D" parent="rot1"]
+transform = Transform3D(0.182905, 0, -0.983131, 0, 1, 0, 0.983131, 0, 0.182905, 81.6097, -146.468, 66.2991)
+
+[node name="StonyIslandPiece8" parent="rot1/smallIsland16" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -7)
+
+[node name="StonyIslandPiece9" parent="rot1/smallIsland16" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 13)
+
+[node name="StonyIslandPiece20" parent="rot1/smallIsland16" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -19, -7)
+
+[node name="StonyIslandPiece21" parent="rot1/smallIsland16" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -25, 13)
+
+[node name="StonyIslandPiece10" parent="rot1/smallIsland16" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -7)
+
+[node name="StonyIslandPiece11" parent="rot1/smallIsland16" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 13)
+
+[node name="StonyIslandPiece22" parent="rot1/smallIsland16" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 18, -13, 13)
+
+[node name="StonyIslandPiece12" parent="rot1/smallIsland16" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -27)
+
+[node name="StonyIslandPiece13" parent="rot1/smallIsland16" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -27)
+
+[node name="StonyIslandPiece14" parent="rot1/smallIsland16" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -27)
+
+[node name="StonyIslandPiece15" parent="rot1/smallIsland16" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -7)
+
+[node name="StonyIslandPiece16" parent="rot1/smallIsland16" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 13)
+
+[node name="StonyIslandPiece24" parent="rot1/smallIsland16" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -14, -14, 13)
+
+[node name="StonyIslandPiece17" parent="rot1/smallIsland16" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 33)
+
+[node name="StonyIslandPiece18" parent="rot1/smallIsland16" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 33)
+
+[node name="StonyIslandPiece23" parent="rot1/smallIsland16" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -13, 32)
+
+[node name="StonyIslandPiece19" parent="rot1/smallIsland16" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 33)
+
+[node name="smallIsland17" type="Node3D" parent="rot1"]
+transform = Transform3D(0.964764, 0, -0.263115, 0, 1, 0, 0.263115, 0, 0.964764, 64.5359, -146.468, -196.07)
+
+[node name="StonyIslandPiece8" parent="rot1/smallIsland17" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -7)
+
+[node name="StonyIslandPiece9" parent="rot1/smallIsland17" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 13)
+
+[node name="StonyIslandPiece20" parent="rot1/smallIsland17" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -19, -7)
+
+[node name="StonyIslandPiece21" parent="rot1/smallIsland17" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -25, 13)
+
+[node name="StonyIslandPiece10" parent="rot1/smallIsland17" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -7)
+
+[node name="StonyIslandPiece11" parent="rot1/smallIsland17" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 13)
+
+[node name="StonyIslandPiece22" parent="rot1/smallIsland17" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 18, -13, 13)
+
+[node name="StonyIslandPiece12" parent="rot1/smallIsland17" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -27)
+
+[node name="StonyIslandPiece13" parent="rot1/smallIsland17" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -27)
+
+[node name="StonyIslandPiece14" parent="rot1/smallIsland17" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -27)
+
+[node name="StonyIslandPiece15" parent="rot1/smallIsland17" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -7)
+
+[node name="StonyIslandPiece16" parent="rot1/smallIsland17" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 13)
+
+[node name="StonyIslandPiece24" parent="rot1/smallIsland17" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -14, -14, 13)
+
+[node name="StonyIslandPiece17" parent="rot1/smallIsland17" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 33)
+
+[node name="StonyIslandPiece18" parent="rot1/smallIsland17" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 33)
+
+[node name="StonyIslandPiece23" parent="rot1/smallIsland17" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -13, 32)
+
+[node name="StonyIslandPiece19" parent="rot1/smallIsland17" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 33)
+
+[node name="smallIsland18" type="Node3D" parent="rot1"]
+transform = Transform3D(-0.263116, 0, -0.964764, 0, 1, 0, 0.964764, 0, -0.263116, 157.634, -126.668, -40.8192)
+
+[node name="StonyIslandPiece8" parent="rot1/smallIsland18" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -7)
+
+[node name="StonyIslandPiece9" parent="rot1/smallIsland18" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 13)
+
+[node name="StonyIslandPiece20" parent="rot1/smallIsland18" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -19, -7)
+
+[node name="StonyIslandPiece21" parent="rot1/smallIsland18" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -25, 13)
+
+[node name="StonyIslandPiece10" parent="rot1/smallIsland18" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -7)
+
+[node name="StonyIslandPiece11" parent="rot1/smallIsland18" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 13)
+
+[node name="StonyIslandPiece22" parent="rot1/smallIsland18" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 18, -13, 13)
+
+[node name="StonyIslandPiece12" parent="rot1/smallIsland18" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -27)
+
+[node name="StonyIslandPiece13" parent="rot1/smallIsland18" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -27)
+
+[node name="StonyIslandPiece14" parent="rot1/smallIsland18" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -27)
+
+[node name="StonyIslandPiece15" parent="rot1/smallIsland18" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -7)
+
+[node name="StonyIslandPiece16" parent="rot1/smallIsland18" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 13)
+
+[node name="StonyIslandPiece24" parent="rot1/smallIsland18" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -14, -14, 13)
+
+[node name="StonyIslandPiece17" parent="rot1/smallIsland18" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 33)
+
+[node name="StonyIslandPiece18" parent="rot1/smallIsland18" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 33)
+
+[node name="StonyIslandPiece23" parent="rot1/smallIsland18" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -13, 32)
+
+[node name="StonyIslandPiece19" parent="rot1/smallIsland18" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 33)
+
+[node name="largerIsland4" type="Node3D" parent="rot1"]
+transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 233.237, -150, -183.912)
+
+[node name="smallIsland10" type="Node3D" parent="rot1/largerIsland4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.8793, 3.53232, 36.0207)
+
+[node name="StonyIslandPiece8" parent="rot1/largerIsland4/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -7)
+
+[node name="StonyIslandPiece25" parent="rot1/largerIsland4/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -6.76934, -16.6711, -7)
+
+[node name="StonyIslandPiece9" parent="rot1/largerIsland4/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 13)
+
+[node name="StonyIslandPiece20" parent="rot1/largerIsland4/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -34, -7)
+
+[node name="StonyIslandPiece21" parent="rot1/largerIsland4/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -25, 13)
+
+[node name="StonyIslandPiece10" parent="rot1/largerIsland4/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -7)
+
+[node name="StonyIslandPiece11" parent="rot1/largerIsland4/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 13)
+
+[node name="StonyIslandPiece28" parent="rot1/largerIsland4/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 40, -10, 13)
+
+[node name="StonyIslandPiece22" parent="rot1/largerIsland4/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 18, -29, 13)
+
+[node name="StonyIslandPiece12" parent="rot1/largerIsland4/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -27)
+
+[node name="StonyIslandPiece27" parent="rot1/largerIsland4/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -29, -27)
+
+[node name="StonyIslandPiece13" parent="rot1/largerIsland4/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -27)
+
+[node name="StonyIslandPiece26" parent="rot1/largerIsland4/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -29.729, -27)
+
+[node name="StonyIslandPiece14" parent="rot1/largerIsland4/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -27)
+
+[node name="StonyIslandPiece15" parent="rot1/largerIsland4/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -7)
+
+[node name="StonyIslandPiece16" parent="rot1/largerIsland4/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 13)
+
+[node name="StonyIslandPiece24" parent="rot1/largerIsland4/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -14, -14, 13)
+
+[node name="StonyIslandPiece17" parent="rot1/largerIsland4/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 33)
+
+[node name="StonyIslandPiece18" parent="rot1/largerIsland4/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 33)
+
+[node name="StonyIslandPiece23" parent="rot1/largerIsland4/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -13, 32)
+
+[node name="StonyIslandPiece19" parent="rot1/largerIsland4/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 33)
+
+[node name="smallIsland11" type="Node3D" parent="rot1/largerIsland4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.1207, 3.53232, 36.0207)
+
+[node name="StonyIslandPiece8" parent="rot1/largerIsland4/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -7)
+
+[node name="StonyIslandPiece9" parent="rot1/largerIsland4/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 13)
+
+[node name="StonyIslandPiece20" parent="rot1/largerIsland4/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -27.8068, -7)
+
+[node name="StonyIslandPiece21" parent="rot1/largerIsland4/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -25, 13)
+
+[node name="StonyIslandPiece10" parent="rot1/largerIsland4/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -7)
+
+[node name="StonyIslandPiece11" parent="rot1/largerIsland4/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 13)
+
+[node name="StonyIslandPiece22" parent="rot1/largerIsland4/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 18, -13, 13)
+
+[node name="StonyIslandPiece12" parent="rot1/largerIsland4/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -27)
+
+[node name="StonyIslandPiece27" parent="rot1/largerIsland4/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 12.5599, -19.9124, -27)
+
+[node name="StonyIslandPiece13" parent="rot1/largerIsland4/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -27)
+
+[node name="StonyIslandPiece26" parent="rot1/largerIsland4/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -29, -27)
+
+[node name="StonyIslandPiece14" parent="rot1/largerIsland4/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -27)
+
+[node name="StonyIslandPiece25" parent="rot1/largerIsland4/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -45, -27)
+
+[node name="StonyIslandPiece15" parent="rot1/largerIsland4/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -7)
+
+[node name="StonyIslandPiece28" parent="rot1/largerIsland4/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -18.3854, -27.5198, -7)
+
+[node name="StonyIslandPiece29" parent="rot1/largerIsland4/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -37, -29, -7)
+
+[node name="StonyIslandPiece16" parent="rot1/largerIsland4/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -22, -26, 16)
+
+[node name="StonyIslandPiece24" parent="rot1/largerIsland4/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -14, -30, 13)
+
+[node name="StonyIslandPiece17" parent="rot1/largerIsland4/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 33)
+
+[node name="StonyIslandPiece18" parent="rot1/largerIsland4/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 33)
+
+[node name="StonyIslandPiece23" parent="rot1/largerIsland4/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -13, 32)
+
+[node name="StonyIslandPiece19" parent="rot1/largerIsland4/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 33)
+
+[node name="smallIsland12" type="Node3D" parent="rot1/largerIsland4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.1207, 3.53232, -43.9793)
+
+[node name="StonyIslandPiece8" parent="rot1/largerIsland4/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -7)
+
+[node name="StonyIslandPiece9" parent="rot1/largerIsland4/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 13)
+
+[node name="StonyIslandPiece20" parent="rot1/largerIsland4/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -19, -7)
+
+[node name="StonyIslandPiece21" parent="rot1/largerIsland4/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -25, 13)
+
+[node name="StonyIslandPiece10" parent="rot1/largerIsland4/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -7)
+
+[node name="StonyIslandPiece11" parent="rot1/largerIsland4/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 13)
+
+[node name="StonyIslandPiece22" parent="rot1/largerIsland4/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 17.2493, -15.4623, 13)
+
+[node name="StonyIslandPiece12" parent="rot1/largerIsland4/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -27)
+
+[node name="StonyIslandPiece13" parent="rot1/largerIsland4/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -27)
+
+[node name="StonyIslandPiece14" parent="rot1/largerIsland4/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -27)
+
+[node name="StonyIslandPiece15" parent="rot1/largerIsland4/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -7)
+
+[node name="StonyIslandPiece16" parent="rot1/largerIsland4/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 13)
+
+[node name="StonyIslandPiece24" parent="rot1/largerIsland4/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -14, -28, 13)
+
+[node name="StonyIslandPiece17" parent="rot1/largerIsland4/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 33)
+
+[node name="StonyIslandPiece25" parent="rot1/largerIsland4/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -31, 33)
+
+[node name="StonyIslandPiece18" parent="rot1/largerIsland4/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 33)
+
+[node name="StonyIslandPiece23" parent="rot1/largerIsland4/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -29, 32)
+
+[node name="StonyIslandPiece19" parent="rot1/largerIsland4/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 33)
+
+[node name="smallIsland13" type="Node3D" parent="rot1/largerIsland4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.8793, 3.53232, -42.9793)
+
+[node name="StonyIslandPiece8" parent="rot1/largerIsland4/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -7)
+
+[node name="StonyIslandPiece9" parent="rot1/largerIsland4/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 13)
+
+[node name="StonyIslandPiece20" parent="rot1/largerIsland4/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -19, -7)
+
+[node name="StonyIslandPiece21" parent="rot1/largerIsland4/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -25, 13)
+
+[node name="StonyIslandPiece10" parent="rot1/largerIsland4/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -7)
+
+[node name="StonyIslandPiece11" parent="rot1/largerIsland4/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 13)
+
+[node name="StonyIslandPiece22" parent="rot1/largerIsland4/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 18, -27, 13)
+
+[node name="StonyIslandPiece12" parent="rot1/largerIsland4/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -27)
+
+[node name="StonyIslandPiece13" parent="rot1/largerIsland4/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -27)
+
+[node name="StonyIslandPiece14" parent="rot1/largerIsland4/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -27)
+
+[node name="StonyIslandPiece15" parent="rot1/largerIsland4/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -7)
+
+[node name="StonyIslandPiece16" parent="rot1/largerIsland4/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 13)
+
+[node name="StonyIslandPiece24" parent="rot1/largerIsland4/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -14, -14, 13)
+
+[node name="StonyIslandPiece17" parent="rot1/largerIsland4/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 33)
+
+[node name="StonyIslandPiece18" parent="rot1/largerIsland4/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 33)
+
+[node name="StonyIslandPiece23" parent="rot1/largerIsland4/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -28, 32)
+
+[node name="StonyIslandPiece19" parent="rot1/largerIsland4/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 33)
+
+[node name="StonyIslandPiece25" parent="rot1/largerIsland4/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -30, 33)
+
+[node name="largerIsland5" type="Node3D" parent="rot1"]
+transform = Transform3D(-5.96046e-08, 0, -1, 0, 1, 0, 1, 0, -5.96046e-08, 118.171, -150, 242.788)
+
+[node name="smallIsland10" type="Node3D" parent="rot1/largerIsland5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.8793, 3.53232, 36.0207)
+
+[node name="StonyIslandPiece8" parent="rot1/largerIsland5/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -7)
+
+[node name="StonyIslandPiece25" parent="rot1/largerIsland5/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -6.76934, -16.6711, -7)
+
+[node name="StonyIslandPiece9" parent="rot1/largerIsland5/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 13)
+
+[node name="StonyIslandPiece20" parent="rot1/largerIsland5/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -34, -7)
+
+[node name="StonyIslandPiece21" parent="rot1/largerIsland5/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -25, 13)
+
+[node name="StonyIslandPiece10" parent="rot1/largerIsland5/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -7)
+
+[node name="StonyIslandPiece11" parent="rot1/largerIsland5/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 13)
+
+[node name="StonyIslandPiece28" parent="rot1/largerIsland5/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 40, -10, 13)
+
+[node name="StonyIslandPiece22" parent="rot1/largerIsland5/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 18, -29, 13)
+
+[node name="StonyIslandPiece12" parent="rot1/largerIsland5/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -27)
+
+[node name="StonyIslandPiece27" parent="rot1/largerIsland5/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -29, -27)
+
+[node name="StonyIslandPiece13" parent="rot1/largerIsland5/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -27)
+
+[node name="StonyIslandPiece26" parent="rot1/largerIsland5/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -29.729, -27)
+
+[node name="StonyIslandPiece14" parent="rot1/largerIsland5/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -27)
+
+[node name="StonyIslandPiece15" parent="rot1/largerIsland5/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -7)
+
+[node name="StonyIslandPiece16" parent="rot1/largerIsland5/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 13)
+
+[node name="StonyIslandPiece24" parent="rot1/largerIsland5/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -14, -14, 13)
+
+[node name="StonyIslandPiece17" parent="rot1/largerIsland5/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 33)
+
+[node name="StonyIslandPiece18" parent="rot1/largerIsland5/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 33)
+
+[node name="StonyIslandPiece23" parent="rot1/largerIsland5/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -13, 32)
+
+[node name="StonyIslandPiece19" parent="rot1/largerIsland5/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 33)
+
+[node name="smallIsland11" type="Node3D" parent="rot1/largerIsland5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.1207, 3.53232, 36.0207)
+
+[node name="StonyIslandPiece8" parent="rot1/largerIsland5/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -7)
+
+[node name="StonyIslandPiece9" parent="rot1/largerIsland5/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 13)
+
+[node name="StonyIslandPiece20" parent="rot1/largerIsland5/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -27.8068, -7)
+
+[node name="StonyIslandPiece21" parent="rot1/largerIsland5/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -25, 13)
+
+[node name="StonyIslandPiece10" parent="rot1/largerIsland5/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -7)
+
+[node name="StonyIslandPiece11" parent="rot1/largerIsland5/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 13)
+
+[node name="StonyIslandPiece22" parent="rot1/largerIsland5/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 18, -13, 13)
+
+[node name="StonyIslandPiece12" parent="rot1/largerIsland5/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -27)
+
+[node name="StonyIslandPiece27" parent="rot1/largerIsland5/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 12.5599, -19.9124, -27)
+
+[node name="StonyIslandPiece13" parent="rot1/largerIsland5/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -27)
+
+[node name="StonyIslandPiece26" parent="rot1/largerIsland5/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -29, -27)
+
+[node name="StonyIslandPiece14" parent="rot1/largerIsland5/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -27)
+
+[node name="StonyIslandPiece25" parent="rot1/largerIsland5/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -45, -27)
+
+[node name="StonyIslandPiece15" parent="rot1/largerIsland5/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -7)
+
+[node name="StonyIslandPiece28" parent="rot1/largerIsland5/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -18.3854, -27.5198, -7)
+
+[node name="StonyIslandPiece29" parent="rot1/largerIsland5/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -37, -29, -7)
+
+[node name="StonyIslandPiece16" parent="rot1/largerIsland5/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -22, -26, 16)
+
+[node name="StonyIslandPiece24" parent="rot1/largerIsland5/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -14, -30, 13)
+
+[node name="StonyIslandPiece17" parent="rot1/largerIsland5/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 33)
+
+[node name="StonyIslandPiece18" parent="rot1/largerIsland5/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 33)
+
+[node name="StonyIslandPiece23" parent="rot1/largerIsland5/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -13, 32)
+
+[node name="StonyIslandPiece19" parent="rot1/largerIsland5/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 33)
+
+[node name="smallIsland12" type="Node3D" parent="rot1/largerIsland5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.1207, 3.53232, -43.9793)
+
+[node name="StonyIslandPiece8" parent="rot1/largerIsland5/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -7)
+
+[node name="StonyIslandPiece9" parent="rot1/largerIsland5/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 13)
+
+[node name="StonyIslandPiece20" parent="rot1/largerIsland5/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -19, -7)
+
+[node name="StonyIslandPiece21" parent="rot1/largerIsland5/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -25, 13)
+
+[node name="StonyIslandPiece10" parent="rot1/largerIsland5/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -7)
+
+[node name="StonyIslandPiece11" parent="rot1/largerIsland5/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 13)
+
+[node name="StonyIslandPiece22" parent="rot1/largerIsland5/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 17.2493, -15.4623, 13)
+
+[node name="StonyIslandPiece12" parent="rot1/largerIsland5/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -27)
+
+[node name="StonyIslandPiece13" parent="rot1/largerIsland5/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -27)
+
+[node name="StonyIslandPiece14" parent="rot1/largerIsland5/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -27)
+
+[node name="StonyIslandPiece15" parent="rot1/largerIsland5/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -7)
+
+[node name="StonyIslandPiece16" parent="rot1/largerIsland5/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 13)
+
+[node name="StonyIslandPiece24" parent="rot1/largerIsland5/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -14, -28, 13)
+
+[node name="StonyIslandPiece17" parent="rot1/largerIsland5/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 33)
+
+[node name="StonyIslandPiece25" parent="rot1/largerIsland5/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -31, 33)
+
+[node name="StonyIslandPiece18" parent="rot1/largerIsland5/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 33)
+
+[node name="StonyIslandPiece23" parent="rot1/largerIsland5/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -29, 32)
+
+[node name="StonyIslandPiece19" parent="rot1/largerIsland5/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 33)
+
+[node name="smallIsland13" type="Node3D" parent="rot1/largerIsland5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.8793, 3.53232, -42.9793)
+
+[node name="StonyIslandPiece8" parent="rot1/largerIsland5/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -7)
+
+[node name="StonyIslandPiece9" parent="rot1/largerIsland5/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 13)
+
+[node name="StonyIslandPiece20" parent="rot1/largerIsland5/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -19, -7)
+
+[node name="StonyIslandPiece21" parent="rot1/largerIsland5/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -25, 13)
+
+[node name="StonyIslandPiece10" parent="rot1/largerIsland5/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -7)
+
+[node name="StonyIslandPiece11" parent="rot1/largerIsland5/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 13)
+
+[node name="StonyIslandPiece22" parent="rot1/largerIsland5/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 18, -27, 13)
+
+[node name="StonyIslandPiece12" parent="rot1/largerIsland5/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -27)
+
+[node name="StonyIslandPiece13" parent="rot1/largerIsland5/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -27)
+
+[node name="StonyIslandPiece14" parent="rot1/largerIsland5/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -27)
+
+[node name="StonyIslandPiece15" parent="rot1/largerIsland5/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -7)
+
+[node name="StonyIslandPiece16" parent="rot1/largerIsland5/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 13)
+
+[node name="StonyIslandPiece24" parent="rot1/largerIsland5/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -14, -14, 13)
+
+[node name="StonyIslandPiece17" parent="rot1/largerIsland5/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 33)
+
+[node name="StonyIslandPiece18" parent="rot1/largerIsland5/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 33)
+
+[node name="StonyIslandPiece23" parent="rot1/largerIsland5/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -28, 32)
+
+[node name="StonyIslandPiece19" parent="rot1/largerIsland5/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 33)
+
+[node name="StonyIslandPiece25" parent="rot1/largerIsland5/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -30, 33)
+
+[node name="largerIsland6" type="Node3D" parent="rot1"]
+transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -63.7719, -150, -310.347)
+
+[node name="smallIsland10" type="Node3D" parent="rot1/largerIsland6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.8793, 3.53232, 36.0207)
+
+[node name="StonyIslandPiece8" parent="rot1/largerIsland6/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -7)
+
+[node name="StonyIslandPiece25" parent="rot1/largerIsland6/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -6.76934, -16.6711, -7)
+
+[node name="StonyIslandPiece9" parent="rot1/largerIsland6/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 13)
+
+[node name="StonyIslandPiece20" parent="rot1/largerIsland6/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -34, -7)
+
+[node name="StonyIslandPiece21" parent="rot1/largerIsland6/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -25, 13)
+
+[node name="StonyIslandPiece10" parent="rot1/largerIsland6/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -7)
+
+[node name="StonyIslandPiece11" parent="rot1/largerIsland6/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 13)
+
+[node name="StonyIslandPiece28" parent="rot1/largerIsland6/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 40, -10, 13)
+
+[node name="StonyIslandPiece22" parent="rot1/largerIsland6/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 18, -29, 13)
+
+[node name="StonyIslandPiece12" parent="rot1/largerIsland6/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -27)
+
+[node name="StonyIslandPiece27" parent="rot1/largerIsland6/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -29, -27)
+
+[node name="StonyIslandPiece13" parent="rot1/largerIsland6/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -27)
+
+[node name="StonyIslandPiece26" parent="rot1/largerIsland6/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -29.729, -27)
+
+[node name="StonyIslandPiece14" parent="rot1/largerIsland6/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -27)
+
+[node name="StonyIslandPiece15" parent="rot1/largerIsland6/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -7)
+
+[node name="StonyIslandPiece16" parent="rot1/largerIsland6/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 13)
+
+[node name="StonyIslandPiece24" parent="rot1/largerIsland6/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -14, -14, 13)
+
+[node name="StonyIslandPiece17" parent="rot1/largerIsland6/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 33)
+
+[node name="StonyIslandPiece18" parent="rot1/largerIsland6/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 33)
+
+[node name="StonyIslandPiece23" parent="rot1/largerIsland6/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -13, 32)
+
+[node name="StonyIslandPiece19" parent="rot1/largerIsland6/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 33)
+
+[node name="smallIsland11" type="Node3D" parent="rot1/largerIsland6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.1207, 3.53232, 36.0207)
+
+[node name="StonyIslandPiece8" parent="rot1/largerIsland6/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -7)
+
+[node name="StonyIslandPiece9" parent="rot1/largerIsland6/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 13)
+
+[node name="StonyIslandPiece20" parent="rot1/largerIsland6/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -27.8068, -7)
+
+[node name="StonyIslandPiece21" parent="rot1/largerIsland6/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -25, 13)
+
+[node name="StonyIslandPiece10" parent="rot1/largerIsland6/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -7)
+
+[node name="StonyIslandPiece11" parent="rot1/largerIsland6/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 13)
+
+[node name="StonyIslandPiece22" parent="rot1/largerIsland6/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 18, -13, 13)
+
+[node name="StonyIslandPiece12" parent="rot1/largerIsland6/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -27)
+
+[node name="StonyIslandPiece27" parent="rot1/largerIsland6/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 12.5599, -19.9124, -27)
+
+[node name="StonyIslandPiece13" parent="rot1/largerIsland6/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -27)
+
+[node name="StonyIslandPiece26" parent="rot1/largerIsland6/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -29, -27)
+
+[node name="StonyIslandPiece14" parent="rot1/largerIsland6/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -27)
+
+[node name="StonyIslandPiece25" parent="rot1/largerIsland6/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -45, -27)
+
+[node name="StonyIslandPiece15" parent="rot1/largerIsland6/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -7)
+
+[node name="StonyIslandPiece28" parent="rot1/largerIsland6/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -18.3854, -27.5198, -7)
+
+[node name="StonyIslandPiece29" parent="rot1/largerIsland6/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -37, -29, -7)
+
+[node name="StonyIslandPiece16" parent="rot1/largerIsland6/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -22, -26, 16)
+
+[node name="StonyIslandPiece24" parent="rot1/largerIsland6/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -14, -30, 13)
+
+[node name="StonyIslandPiece17" parent="rot1/largerIsland6/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 33)
+
+[node name="StonyIslandPiece18" parent="rot1/largerIsland6/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 33)
+
+[node name="StonyIslandPiece23" parent="rot1/largerIsland6/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -13, 32)
+
+[node name="StonyIslandPiece19" parent="rot1/largerIsland6/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 33)
+
+[node name="smallIsland12" type="Node3D" parent="rot1/largerIsland6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.1207, 3.53232, -43.9793)
+
+[node name="StonyIslandPiece8" parent="rot1/largerIsland6/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -7)
+
+[node name="StonyIslandPiece9" parent="rot1/largerIsland6/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 13)
+
+[node name="StonyIslandPiece20" parent="rot1/largerIsland6/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -19, -7)
+
+[node name="StonyIslandPiece21" parent="rot1/largerIsland6/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -25, 13)
+
+[node name="StonyIslandPiece10" parent="rot1/largerIsland6/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -7)
+
+[node name="StonyIslandPiece11" parent="rot1/largerIsland6/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 13)
+
+[node name="StonyIslandPiece22" parent="rot1/largerIsland6/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 17.2493, -15.4623, 13)
+
+[node name="StonyIslandPiece12" parent="rot1/largerIsland6/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -27)
+
+[node name="StonyIslandPiece13" parent="rot1/largerIsland6/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -27)
+
+[node name="StonyIslandPiece14" parent="rot1/largerIsland6/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -27)
+
+[node name="StonyIslandPiece15" parent="rot1/largerIsland6/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -7)
+
+[node name="StonyIslandPiece16" parent="rot1/largerIsland6/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 13)
+
+[node name="StonyIslandPiece24" parent="rot1/largerIsland6/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -14, -28, 13)
+
+[node name="StonyIslandPiece17" parent="rot1/largerIsland6/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 33)
+
+[node name="StonyIslandPiece25" parent="rot1/largerIsland6/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -31, 33)
+
+[node name="StonyIslandPiece18" parent="rot1/largerIsland6/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 33)
+
+[node name="StonyIslandPiece23" parent="rot1/largerIsland6/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -29, 32)
+
+[node name="StonyIslandPiece19" parent="rot1/largerIsland6/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 33)
+
+[node name="smallIsland13" type="Node3D" parent="rot1/largerIsland6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.8793, 3.53232, -42.9793)
+
+[node name="StonyIslandPiece8" parent="rot1/largerIsland6/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -7)
+
+[node name="StonyIslandPiece9" parent="rot1/largerIsland6/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 13)
+
+[node name="StonyIslandPiece20" parent="rot1/largerIsland6/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -19, -7)
+
+[node name="StonyIslandPiece21" parent="rot1/largerIsland6/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -25, 13)
+
+[node name="StonyIslandPiece10" parent="rot1/largerIsland6/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -7)
+
+[node name="StonyIslandPiece11" parent="rot1/largerIsland6/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 13)
+
+[node name="StonyIslandPiece22" parent="rot1/largerIsland6/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 18, -27, 13)
+
+[node name="StonyIslandPiece12" parent="rot1/largerIsland6/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -27)
+
+[node name="StonyIslandPiece13" parent="rot1/largerIsland6/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -27)
+
+[node name="StonyIslandPiece14" parent="rot1/largerIsland6/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -27)
+
+[node name="StonyIslandPiece15" parent="rot1/largerIsland6/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -7)
+
+[node name="StonyIslandPiece16" parent="rot1/largerIsland6/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 13)
+
+[node name="StonyIslandPiece24" parent="rot1/largerIsland6/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -14, -14, 13)
+
+[node name="StonyIslandPiece17" parent="rot1/largerIsland6/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 33)
+
+[node name="StonyIslandPiece18" parent="rot1/largerIsland6/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 33)
+
+[node name="StonyIslandPiece23" parent="rot1/largerIsland6/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -28, 32)
+
+[node name="StonyIslandPiece19" parent="rot1/largerIsland6/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 33)
+
+[node name="StonyIslandPiece25" parent="rot1/largerIsland6/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -30, 33)
+
+[node name="rot2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69, 0, -316)
+
+[node name="storypatch" type="Node3D" parent="rot2"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -69, 0, 316)
+
+[node name="StonyIslandPiece" parent="rot2/storypatch" instance=ExtResource("2_5e2s2")]
+
+[node name="StonyIslandPiece2" parent="rot2/storypatch" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.4778, -1, -15.6651)
+
+[node name="StonyIslandPiece3" parent="rot2/storypatch" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.75, 0.5, -15)
+
+[node name="StonyIslandPiece4" parent="rot2/storypatch" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.75, 1, -39.75)
+
+[node name="StonyIslandPiece7" parent="rot2/storypatch" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5, 0.5, -66.5)
+
+[node name="StonyIslandPiece5" parent="rot2/storypatch" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.4654, 0.5, -62.3864)
+
+[node name="StonyIslandPiece8" parent="rot2/storypatch" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.2154, 0.5, -77.1364)
+
+[node name="StonyIslandPiece9" parent="rot2/storypatch" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7846, 0.5, -92.8864)
+
+[node name="StonyIslandPiece10" parent="rot2/storypatch" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.7846, 1.7599, -100.386)
+
+[node name="StonyIslandPiece11" parent="rot2/storypatch" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.7846, 0.5, -106.886)
+
+[node name="StonyIslandPiece12" parent="rot2/storypatch" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0346, 0.5, -109.886)
+
+[node name="StonyIslandPiece13" parent="rot2/storypatch" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.9654, 2.58803, -111.386)
+
+[node name="StonyIslandPiece14" parent="rot2/storypatch" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2154, 0.5, -89.1364)
+
+[node name="StonyIslandPiece6" parent="rot2/storypatch" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.1962, 0.5, -38.7914)
+
+[node name="smallIsland" type="Node3D" parent="rot2"]
+transform = Transform3D(0.874865, 0, -0.484367, 0, 1, 0, 0.484367, 0, 0.874865, -69, 6, 167)
+
+[node name="StonyIslandPiece8" parent="rot2/smallIsland" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -7)
+
+[node name="StonyIslandPiece9" parent="rot2/smallIsland" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 13)
+
+[node name="StonyIslandPiece20" parent="rot2/smallIsland" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -19, -7)
+
+[node name="StonyIslandPiece21" parent="rot2/smallIsland" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -25, 13)
+
+[node name="StonyIslandPiece10" parent="rot2/smallIsland" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -7)
+
+[node name="StonyIslandPiece11" parent="rot2/smallIsland" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 13)
+
+[node name="StonyIslandPiece22" parent="rot2/smallIsland" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 18, -13, 13)
+
+[node name="StonyIslandPiece12" parent="rot2/smallIsland" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -27)
+
+[node name="StonyIslandPiece13" parent="rot2/smallIsland" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -27)
+
+[node name="StonyIslandPiece14" parent="rot2/smallIsland" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -27)
+
+[node name="StonyIslandPiece15" parent="rot2/smallIsland" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -9, -6.99997)
+
+[node name="StonyIslandPiece16" parent="rot2/smallIsland" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -9, 13)
+
+[node name="StonyIslandPiece24" parent="rot2/smallIsland" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -14, -13, 13)
+
+[node name="StonyIslandPiece17" parent="rot2/smallIsland" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 33)
+
+[node name="StonyIslandPiece18" parent="rot2/smallIsland" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 33)
+
+[node name="StonyIslandPiece23" parent="rot2/smallIsland" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -13, 32)
+
+[node name="StonyIslandPiece19" parent="rot2/smallIsland" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 33)
+
+[node name="smallIsland2" type="Node3D" parent="rot2"]
+transform = Transform3D(0.943089, 0, 0.33254, 0, 1, 0, -0.33254, 0, 0.943089, -165.279, 6, 198.87)
+
+[node name="StonyIslandPiece8" parent="rot2/smallIsland2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -7)
+
+[node name="StonyIslandPiece9" parent="rot2/smallIsland2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 13)
+
+[node name="StonyIslandPiece20" parent="rot2/smallIsland2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -19, -7)
+
+[node name="StonyIslandPiece21" parent="rot2/smallIsland2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -25, 13)
+
+[node name="StonyIslandPiece10" parent="rot2/smallIsland2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -7)
+
+[node name="StonyIslandPiece11" parent="rot2/smallIsland2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 13)
+
+[node name="StonyIslandPiece22" parent="rot2/smallIsland2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 18, -13, 13)
+
+[node name="StonyIslandPiece12" parent="rot2/smallIsland2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -27)
+
+[node name="StonyIslandPiece13" parent="rot2/smallIsland2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -27)
+
+[node name="StonyIslandPiece14" parent="rot2/smallIsland2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, -1.19209e-07, 0, 4, 0, 1.19209e-07, 0, 4, -20, -8, -27)
+
+[node name="StonyIslandPiece15" parent="rot2/smallIsland2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, -1.19209e-07, 0, 4, 0, 1.19209e-07, 0, 4, -20, -9, -7)
+
+[node name="StonyIslandPiece16" parent="rot2/smallIsland2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, -1.19209e-07, 0, 4, 0, 1.19209e-07, 0, 4, -20, -9, 13)
+
+[node name="StonyIslandPiece24" parent="rot2/smallIsland2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -14, -14, 13)
+
+[node name="StonyIslandPiece17" parent="rot2/smallIsland2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 33)
+
+[node name="StonyIslandPiece18" parent="rot2/smallIsland2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 33)
+
+[node name="StonyIslandPiece23" parent="rot2/smallIsland2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -13, 32)
+
+[node name="StonyIslandPiece19" parent="rot2/smallIsland2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 33)
+
+[node name="smallIsland3" type="Node3D" parent="rot2"]
+transform = Transform3D(0.993113, 0, 0.117156, 0, 1, 0, -0.117156, 0, 0.993113, -36.7433, 13.5789, 12.8405)
+
+[node name="StonyIslandPiece8" parent="rot2/smallIsland3" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -9, -7)
+
+[node name="StonyIslandPiece9" parent="rot2/smallIsland3" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -9, 12.9999)
+
+[node name="StonyIslandPiece20" parent="rot2/smallIsland3" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -18, -7)
+
+[node name="StonyIslandPiece21" parent="rot2/smallIsland3" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -25, 13)
+
+[node name="StonyIslandPiece10" parent="rot2/smallIsland3" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -9, -7)
+
+[node name="StonyIslandPiece11" parent="rot2/smallIsland3" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 13)
+
+[node name="StonyIslandPiece22" parent="rot2/smallIsland3" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 18, -12, 13)
+
+[node name="StonyIslandPiece12" parent="rot2/smallIsland3" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -9, -27)
+
+[node name="StonyIslandPiece13" parent="rot2/smallIsland3" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -9, -27)
+
+[node name="StonyIslandPiece14" parent="rot2/smallIsland3" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -9, -27.0001)
+
+[node name="StonyIslandPiece15" parent="rot2/smallIsland3" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -9, -7.00006)
+
+[node name="StonyIslandPiece16" parent="rot2/smallIsland3" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 13)
+
+[node name="StonyIslandPiece24" parent="rot2/smallIsland3" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -14, -14, 13)
+
+[node name="StonyIslandPiece17" parent="rot2/smallIsland3" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 33)
+
+[node name="StonyIslandPiece18" parent="rot2/smallIsland3" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 33)
+
+[node name="StonyIslandPiece23" parent="rot2/smallIsland3" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -13, 32)
+
+[node name="StonyIslandPiece19" parent="rot2/smallIsland3" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 33)
+
+[node name="smallIsland4" type="Node3D" parent="rot2"]
+transform = Transform3D(0.835443, 0, -0.549577, 0, 1, 0, 0.549577, 0, 0.835443, -184.738, 3.53232, -25.5611)
+
+[node name="StonyIslandPiece8" parent="rot2/smallIsland4" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -9, -7.00002)
+
+[node name="StonyIslandPiece9" parent="rot2/smallIsland4" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 13)
+
+[node name="StonyIslandPiece20" parent="rot2/smallIsland4" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -18, -7.00002)
+
+[node name="StonyIslandPiece21" parent="rot2/smallIsland4" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -25, 13)
+
+[node name="StonyIslandPiece10" parent="rot2/smallIsland4" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -9, -7.00006)
+
+[node name="StonyIslandPiece11" parent="rot2/smallIsland4" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -9, 13)
+
+[node name="StonyIslandPiece22" parent="rot2/smallIsland4" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 18, -12, 13)
+
+[node name="StonyIslandPiece12" parent="rot2/smallIsland4" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -27)
+
+[node name="StonyIslandPiece13" parent="rot2/smallIsland4" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 6.10352e-05, -9, -27.0001)
+
+[node name="StonyIslandPiece14" parent="rot2/smallIsland4" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -19.9999, -9, -27)
+
+[node name="StonyIslandPiece15" parent="rot2/smallIsland4" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -7)
+
+[node name="StonyIslandPiece16" parent="rot2/smallIsland4" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 13)
+
+[node name="StonyIslandPiece24" parent="rot2/smallIsland4" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -14, -14, 13)
+
+[node name="StonyIslandPiece17" parent="rot2/smallIsland4" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -9, 33)
+
+[node name="StonyIslandPiece18" parent="rot2/smallIsland4" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 33)
+
+[node name="StonyIslandPiece23" parent="rot2/smallIsland4" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -13, 32)
+
+[node name="StonyIslandPiece19" parent="rot2/smallIsland4" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 33)
+
+[node name="smallIsland5" type="Node3D" parent="rot2"]
+transform = Transform3D(0.886001, 0, -0.463683, 0, 1, 0, 0.463683, 0, 0.886001, -49.9235, 3.53232, 258.846)
+
+[node name="StonyIslandPiece8" parent="rot2/smallIsland5" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -7)
+
+[node name="StonyIslandPiece9" parent="rot2/smallIsland5" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 13)
+
+[node name="StonyIslandPiece20" parent="rot2/smallIsland5" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -19, -7)
+
+[node name="StonyIslandPiece21" parent="rot2/smallIsland5" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -25, 13)
+
+[node name="StonyIslandPiece10" parent="rot2/smallIsland5" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -9, -7)
+
+[node name="StonyIslandPiece11" parent="rot2/smallIsland5" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -9, 13)
+
+[node name="StonyIslandPiece22" parent="rot2/smallIsland5" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 18, -13, 13)
+
+[node name="StonyIslandPiece12" parent="rot2/smallIsland5" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -9, -27)
+
+[node name="StonyIslandPiece13" parent="rot2/smallIsland5" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -27)
+
+[node name="StonyIslandPiece14" parent="rot2/smallIsland5" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -27)
+
+[node name="StonyIslandPiece15" parent="rot2/smallIsland5" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -7)
+
+[node name="StonyIslandPiece16" parent="rot2/smallIsland5" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 13)
+
+[node name="StonyIslandPiece24" parent="rot2/smallIsland5" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -14, -14, 13)
+
+[node name="StonyIslandPiece17" parent="rot2/smallIsland5" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 33)
+
+[node name="StonyIslandPiece18" parent="rot2/smallIsland5" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 33)
+
+[node name="StonyIslandPiece23" parent="rot2/smallIsland5" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -13, 32)
+
+[node name="StonyIslandPiece19" parent="rot2/smallIsland5" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 33)
+
+[node name="smallIsland6" type="Node3D" parent="rot2"]
+transform = Transform3D(0.942869, 0, -0.333165, 0, 1, 0, 0.333165, 0, 0.942869, 107.271, 3.53232, 177.164)
+
+[node name="StonyIslandPiece8" parent="rot2/smallIsland6" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -7)
+
+[node name="StonyIslandPiece9" parent="rot2/smallIsland6" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 13)
+
+[node name="StonyIslandPiece20" parent="rot2/smallIsland6" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -19, -7)
+
+[node name="StonyIslandPiece21" parent="rot2/smallIsland6" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -25, 13)
+
+[node name="StonyIslandPiece10" parent="rot2/smallIsland6" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -7)
+
+[node name="StonyIslandPiece11" parent="rot2/smallIsland6" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 13)
+
+[node name="StonyIslandPiece22" parent="rot2/smallIsland6" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 18, -13, 13)
+
+[node name="StonyIslandPiece12" parent="rot2/smallIsland6" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -27)
+
+[node name="StonyIslandPiece13" parent="rot2/smallIsland6" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -27)
+
+[node name="StonyIslandPiece14" parent="rot2/smallIsland6" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -27)
+
+[node name="StonyIslandPiece15" parent="rot2/smallIsland6" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -7)
+
+[node name="StonyIslandPiece16" parent="rot2/smallIsland6" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 13)
+
+[node name="StonyIslandPiece24" parent="rot2/smallIsland6" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -14, -14, 13)
+
+[node name="StonyIslandPiece17" parent="rot2/smallIsland6" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 33)
+
+[node name="StonyIslandPiece18" parent="rot2/smallIsland6" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 33)
+
+[node name="StonyIslandPiece23" parent="rot2/smallIsland6" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -13, 32)
+
+[node name="StonyIslandPiece19" parent="rot2/smallIsland6" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 33)
+
+[node name="smallIsland7" type="Node3D" parent="rot2"]
+transform = Transform3D(0.942869, 0, -0.333165, 0, 1, 0, 0.333165, 0, 0.942869, 91.8758, 3.53232, -82.5812)
+
+[node name="StonyIslandPiece8" parent="rot2/smallIsland7" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -9, -6.99994)
+
+[node name="StonyIslandPiece9" parent="rot2/smallIsland7" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 13)
+
+[node name="StonyIslandPiece20" parent="rot2/smallIsland7" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -19, -7)
+
+[node name="StonyIslandPiece21" parent="rot2/smallIsland7" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -25, 13)
+
+[node name="StonyIslandPiece10" parent="rot2/smallIsland7" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -7)
+
+[node name="StonyIslandPiece11" parent="rot2/smallIsland7" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 13)
+
+[node name="StonyIslandPiece22" parent="rot2/smallIsland7" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 18, -13, 13)
+
+[node name="StonyIslandPiece12" parent="rot2/smallIsland7" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -9, -26.9999)
+
+[node name="StonyIslandPiece13" parent="rot2/smallIsland7" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -7, -27)
+
+[node name="StonyIslandPiece14" parent="rot2/smallIsland7" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -8, -27)
+
+[node name="StonyIslandPiece15" parent="rot2/smallIsland7" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -8, -6.99997)
+
+[node name="StonyIslandPiece16" parent="rot2/smallIsland7" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 13)
+
+[node name="StonyIslandPiece24" parent="rot2/smallIsland7" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -14, -14, 13)
+
+[node name="StonyIslandPiece17" parent="rot2/smallIsland7" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 33)
+
+[node name="StonyIslandPiece18" parent="rot2/smallIsland7" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 33)
+
+[node name="StonyIslandPiece23" parent="rot2/smallIsland7" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -13, 32)
+
+[node name="StonyIslandPiece19" parent="rot2/smallIsland7" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 33)
+
+[node name="smallIsland8" type="Node3D" parent="rot2"]
+transform = Transform3D(0.710247, 0, 0.703953, 0, 1, 0, -0.703953, 0, 0.710247, -143.879, 3.53232, -198.979)
+
+[node name="StonyIslandPiece8" parent="rot2/smallIsland8" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 3.05176e-05, -9, -7.00003)
+
+[node name="StonyIslandPiece9" parent="rot2/smallIsland8" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 13)
+
+[node name="StonyIslandPiece20" parent="rot2/smallIsland8" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 3.05176e-05, -18, -7.00003)
+
+[node name="StonyIslandPiece21" parent="rot2/smallIsland8" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -25, 13)
+
+[node name="StonyIslandPiece10" parent="rot2/smallIsland8" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -9, -6.99997)
+
+[node name="StonyIslandPiece11" parent="rot2/smallIsland8" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 13)
+
+[node name="StonyIslandPiece22" parent="rot2/smallIsland8" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 18, -13, 13)
+
+[node name="StonyIslandPiece12" parent="rot2/smallIsland8" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -9, -27.0001)
+
+[node name="StonyIslandPiece13" parent="rot2/smallIsland8" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -3.05176e-05, -9, -27)
+
+[node name="StonyIslandPiece14" parent="rot2/smallIsland8" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -27)
+
+[node name="StonyIslandPiece15" parent="rot2/smallIsland8" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -9, -7)
+
+[node name="StonyIslandPiece16" parent="rot2/smallIsland8" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -9, 13)
+
+[node name="StonyIslandPiece24" parent="rot2/smallIsland8" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -14, -14, 13)
+
+[node name="StonyIslandPiece17" parent="rot2/smallIsland8" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 33)
+
+[node name="StonyIslandPiece18" parent="rot2/smallIsland8" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 33)
+
+[node name="StonyIslandPiece23" parent="rot2/smallIsland8" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -13, 32)
+
+[node name="StonyIslandPiece19" parent="rot2/smallIsland8" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 33)
+
+[node name="smallIsland9" type="Node3D" parent="rot2"]
+transform = Transform3D(0.703953, 0, -0.710247, 0, 1, 0, 0.710247, 0, 0.703953, 37.1207, 23.3323, -201.979)
+
+[node name="StonyIslandPiece8" parent="rot2/smallIsland9" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 6.10352e-05, -9, -7.00006)
+
+[node name="StonyIslandPiece9" parent="rot2/smallIsland9" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 13)
+
+[node name="StonyIslandPiece20" parent="rot2/smallIsland9" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -19, -7)
+
+[node name="StonyIslandPiece21" parent="rot2/smallIsland9" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -25, 13)
+
+[node name="StonyIslandPiece10" parent="rot2/smallIsland9" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -9, -7)
+
+[node name="StonyIslandPiece11" parent="rot2/smallIsland9" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 13)
+
+[node name="StonyIslandPiece22" parent="rot2/smallIsland9" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 18, -13, 13)
+
+[node name="StonyIslandPiece12" parent="rot2/smallIsland9" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -9, -27)
+
+[node name="StonyIslandPiece13" parent="rot2/smallIsland9" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 3.05176e-05, -9, -27.0001)
+
+[node name="StonyIslandPiece14" parent="rot2/smallIsland9" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -8, -27)
+
+[node name="StonyIslandPiece15" parent="rot2/smallIsland9" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -8, -7.00003)
+
+[node name="StonyIslandPiece16" parent="rot2/smallIsland9" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -19.9999, -9, 13)
+
+[node name="StonyIslandPiece24" parent="rot2/smallIsland9" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -14, -13, 13)
+
+[node name="StonyIslandPiece17" parent="rot2/smallIsland9" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -9, 33)
+
+[node name="StonyIslandPiece18" parent="rot2/smallIsland9" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 33)
+
+[node name="StonyIslandPiece23" parent="rot2/smallIsland9" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -13, 32)
+
+[node name="StonyIslandPiece19" parent="rot2/smallIsland9" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 33)
+
+[node name="largerIsland" type="Node3D" parent="rot2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49, 0, -339)
+
+[node name="smallIsland10" type="Node3D" parent="rot2/largerIsland"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.8793, 3.53232, 36.0207)
+
+[node name="StonyIslandPiece8" parent="rot2/largerIsland/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -7)
+
+[node name="StonyIslandPiece25" parent="rot2/largerIsland/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -6.76934, -16.6711, -7)
+
+[node name="StonyIslandPiece9" parent="rot2/largerIsland/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 13)
+
+[node name="StonyIslandPiece20" parent="rot2/largerIsland/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -34, -7)
+
+[node name="StonyIslandPiece21" parent="rot2/largerIsland/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -25, 13)
+
+[node name="StonyIslandPiece10" parent="rot2/largerIsland/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -7)
+
+[node name="StonyIslandPiece11" parent="rot2/largerIsland/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 13)
+
+[node name="StonyIslandPiece28" parent="rot2/largerIsland/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 40, -10, 13)
+
+[node name="StonyIslandPiece22" parent="rot2/largerIsland/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 18, -29, 13)
+
+[node name="StonyIslandPiece12" parent="rot2/largerIsland/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -27)
+
+[node name="StonyIslandPiece27" parent="rot2/largerIsland/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -29, -27)
+
+[node name="StonyIslandPiece13" parent="rot2/largerIsland/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -9, -27)
+
+[node name="StonyIslandPiece26" parent="rot2/largerIsland/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -29.729, -27)
+
+[node name="StonyIslandPiece14" parent="rot2/largerIsland/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -27)
+
+[node name="StonyIslandPiece15" parent="rot2/largerIsland/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -7)
+
+[node name="StonyIslandPiece16" parent="rot2/largerIsland/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 13)
+
+[node name="StonyIslandPiece24" parent="rot2/largerIsland/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -14, -14, 13)
+
+[node name="StonyIslandPiece17" parent="rot2/largerIsland/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 33)
+
+[node name="StonyIslandPiece18" parent="rot2/largerIsland/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 33)
+
+[node name="StonyIslandPiece23" parent="rot2/largerIsland/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -13, 32)
+
+[node name="StonyIslandPiece19" parent="rot2/largerIsland/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 33)
+
+[node name="smallIsland11" type="Node3D" parent="rot2/largerIsland"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.1207, 3.53232, 36.0207)
+
+[node name="StonyIslandPiece8" parent="rot2/largerIsland/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -9, -7)
+
+[node name="StonyIslandPiece9" parent="rot2/largerIsland/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -9, 13)
+
+[node name="StonyIslandPiece20" parent="rot2/largerIsland/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -26.8068, -7)
+
+[node name="StonyIslandPiece21" parent="rot2/largerIsland/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -24, 13)
+
+[node name="StonyIslandPiece10" parent="rot2/largerIsland/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -9, -7)
+
+[node name="StonyIslandPiece11" parent="rot2/largerIsland/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -9, 13)
+
+[node name="StonyIslandPiece22" parent="rot2/largerIsland/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 18, -12, 13)
+
+[node name="StonyIslandPiece12" parent="rot2/largerIsland/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -9, -27)
+
+[node name="StonyIslandPiece27" parent="rot2/largerIsland/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 12.5599, -18.9124, -27)
+
+[node name="StonyIslandPiece13" parent="rot2/largerIsland/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -9, -27)
+
+[node name="StonyIslandPiece26" parent="rot2/largerIsland/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -28, -27)
+
+[node name="StonyIslandPiece14" parent="rot2/largerIsland/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -27)
+
+[node name="StonyIslandPiece25" parent="rot2/largerIsland/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -44, -27)
+
+[node name="StonyIslandPiece15" parent="rot2/largerIsland/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -7)
+
+[node name="StonyIslandPiece28" parent="rot2/largerIsland/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -18.3854, -26.5198, -7)
+
+[node name="StonyIslandPiece29" parent="rot2/largerIsland/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -37, -29, -7)
+
+[node name="StonyIslandPiece16" parent="rot2/largerIsland/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -22, -25, 16)
+
+[node name="StonyIslandPiece24" parent="rot2/largerIsland/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -14, -29, 13)
+
+[node name="StonyIslandPiece17" parent="rot2/largerIsland/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -9, 33)
+
+[node name="StonyIslandPiece18" parent="rot2/largerIsland/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -9, 33)
+
+[node name="StonyIslandPiece23" parent="rot2/largerIsland/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -12, 32)
+
+[node name="StonyIslandPiece19" parent="rot2/largerIsland/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -9, 33)
+
+[node name="smallIsland12" type="Node3D" parent="rot2/largerIsland"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.1207, 3.53232, -43.9793)
+
+[node name="StonyIslandPiece8" parent="rot2/largerIsland/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -7)
+
+[node name="StonyIslandPiece9" parent="rot2/largerIsland/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 13)
+
+[node name="StonyIslandPiece20" parent="rot2/largerIsland/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -19, -7)
+
+[node name="StonyIslandPiece21" parent="rot2/largerIsland/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -24, 13)
+
+[node name="StonyIslandPiece10" parent="rot2/largerIsland/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -9, -7)
+
+[node name="StonyIslandPiece11" parent="rot2/largerIsland/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -9, 13)
+
+[node name="StonyIslandPiece22" parent="rot2/largerIsland/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 17.2493, -14.4623, 13)
+
+[node name="StonyIslandPiece12" parent="rot2/largerIsland/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -9, -27)
+
+[node name="StonyIslandPiece13" parent="rot2/largerIsland/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -27)
+
+[node name="StonyIslandPiece14" parent="rot2/largerIsland/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -27)
+
+[node name="StonyIslandPiece15" parent="rot2/largerIsland/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -7)
+
+[node name="StonyIslandPiece16" parent="rot2/largerIsland/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 13)
+
+[node name="StonyIslandPiece24" parent="rot2/largerIsland/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -14, -28, 13)
+
+[node name="StonyIslandPiece17" parent="rot2/largerIsland/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 33)
+
+[node name="StonyIslandPiece25" parent="rot2/largerIsland/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -31, 33)
+
+[node name="StonyIslandPiece18" parent="rot2/largerIsland/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -9, 33)
+
+[node name="StonyIslandPiece23" parent="rot2/largerIsland/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -28, 32)
+
+[node name="StonyIslandPiece19" parent="rot2/largerIsland/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -9, 33)
+
+[node name="smallIsland13" type="Node3D" parent="rot2/largerIsland"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.8793, 3.53232, -42.9793)
+
+[node name="StonyIslandPiece8" parent="rot2/largerIsland/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -9, -7)
+
+[node name="StonyIslandPiece9" parent="rot2/largerIsland/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -9, 13)
+
+[node name="StonyIslandPiece20" parent="rot2/largerIsland/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -18, -7)
+
+[node name="StonyIslandPiece21" parent="rot2/largerIsland/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -24, 13)
+
+[node name="StonyIslandPiece10" parent="rot2/largerIsland/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -9, -7)
+
+[node name="StonyIslandPiece11" parent="rot2/largerIsland/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -9, 13)
+
+[node name="StonyIslandPiece22" parent="rot2/largerIsland/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 18, -26, 13)
+
+[node name="StonyIslandPiece12" parent="rot2/largerIsland/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -9, -27)
+
+[node name="StonyIslandPiece13" parent="rot2/largerIsland/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -9, -27)
+
+[node name="StonyIslandPiece14" parent="rot2/largerIsland/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -9, -27)
+
+[node name="StonyIslandPiece15" parent="rot2/largerIsland/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -9, -7)
+
+[node name="StonyIslandPiece16" parent="rot2/largerIsland/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -9, 13)
+
+[node name="StonyIslandPiece24" parent="rot2/largerIsland/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -14, -13, 13)
+
+[node name="StonyIslandPiece17" parent="rot2/largerIsland/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 33)
+
+[node name="StonyIslandPiece18" parent="rot2/largerIsland/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -9, 33)
+
+[node name="StonyIslandPiece23" parent="rot2/largerIsland/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -28, 32)
+
+[node name="StonyIslandPiece19" parent="rot2/largerIsland/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 33)
+
+[node name="StonyIslandPiece25" parent="rot2/largerIsland/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -30, 33)
+
+[node name="largerIsland2" type="Node3D" parent="rot2"]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 263, 0, -26)
+
+[node name="smallIsland10" type="Node3D" parent="rot2/largerIsland2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.8793, 3.53232, 36.0207)
+
+[node name="StonyIslandPiece8" parent="rot2/largerIsland2/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -7)
+
+[node name="StonyIslandPiece25" parent="rot2/largerIsland2/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -6.76934, -16.6711, -7)
+
+[node name="StonyIslandPiece9" parent="rot2/largerIsland2/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 13)
+
+[node name="StonyIslandPiece20" parent="rot2/largerIsland2/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -34, -7)
+
+[node name="StonyIslandPiece21" parent="rot2/largerIsland2/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -25, 13)
+
+[node name="StonyIslandPiece10" parent="rot2/largerIsland2/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -7)
+
+[node name="StonyIslandPiece11" parent="rot2/largerIsland2/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 13)
+
+[node name="StonyIslandPiece28" parent="rot2/largerIsland2/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 40, -9, 12.9999)
+
+[node name="StonyIslandPiece22" parent="rot2/largerIsland2/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 18, -29, 13)
+
+[node name="StonyIslandPiece12" parent="rot2/largerIsland2/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -27)
+
+[node name="StonyIslandPiece27" parent="rot2/largerIsland2/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -29, -27)
+
+[node name="StonyIslandPiece13" parent="rot2/largerIsland2/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -27)
+
+[node name="StonyIslandPiece26" parent="rot2/largerIsland2/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -29.729, -27)
+
+[node name="StonyIslandPiece14" parent="rot2/largerIsland2/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -27)
+
+[node name="StonyIslandPiece15" parent="rot2/largerIsland2/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -7)
+
+[node name="StonyIslandPiece16" parent="rot2/largerIsland2/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 13)
+
+[node name="StonyIslandPiece24" parent="rot2/largerIsland2/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -14, -14, 13)
+
+[node name="StonyIslandPiece17" parent="rot2/largerIsland2/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 33)
+
+[node name="StonyIslandPiece18" parent="rot2/largerIsland2/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 33)
+
+[node name="StonyIslandPiece23" parent="rot2/largerIsland2/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -13, 32)
+
+[node name="StonyIslandPiece19" parent="rot2/largerIsland2/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 33)
+
+[node name="smallIsland11" type="Node3D" parent="rot2/largerIsland2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.1207, 3.53232, 36.0207)
+
+[node name="StonyIslandPiece8" parent="rot2/largerIsland2/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 3.05176e-05, -9, -6.99997)
+
+[node name="StonyIslandPiece9" parent="rot2/largerIsland2/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 1.52588e-05, -9, 13)
+
+[node name="StonyIslandPiece20" parent="rot2/largerIsland2/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 3.05176e-05, -26.8068, -6.99997)
+
+[node name="StonyIslandPiece21" parent="rot2/largerIsland2/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 1.52588e-05, -24, 13)
+
+[node name="StonyIslandPiece10" parent="rot2/largerIsland2/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -8, -6.99997)
+
+[node name="StonyIslandPiece11" parent="rot2/largerIsland2/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -8, 13.0001)
+
+[node name="StonyIslandPiece22" parent="rot2/largerIsland2/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 18, -11, 13)
+
+[node name="StonyIslandPiece12" parent="rot2/largerIsland2/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -8, -27)
+
+[node name="StonyIslandPiece27" parent="rot2/largerIsland2/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 12.5599, -17.9124, -27)
+
+[node name="StonyIslandPiece13" parent="rot2/largerIsland2/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -9, -27)
+
+[node name="StonyIslandPiece26" parent="rot2/largerIsland2/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -28, -27)
+
+[node name="StonyIslandPiece14" parent="rot2/largerIsland2/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -9, -27)
+
+[node name="StonyIslandPiece25" parent="rot2/largerIsland2/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -44, -27)
+
+[node name="StonyIslandPiece15" parent="rot2/largerIsland2/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -9, -7)
+
+[node name="StonyIslandPiece28" parent="rot2/largerIsland2/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -18.3854, -26.5198, -7.00003)
+
+[node name="StonyIslandPiece29" parent="rot2/largerIsland2/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -37, -29, -7)
+
+[node name="StonyIslandPiece16" parent="rot2/largerIsland2/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -22, -25, 16)
+
+[node name="StonyIslandPiece24" parent="rot2/largerIsland2/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -14, -29, 13)
+
+[node name="StonyIslandPiece17" parent="rot2/largerIsland2/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -9, 33)
+
+[node name="StonyIslandPiece18" parent="rot2/largerIsland2/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -1.52588e-05, -9, 33)
+
+[node name="StonyIslandPiece23" parent="rot2/largerIsland2/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -1.52588e-05, -12, 32)
+
+[node name="StonyIslandPiece19" parent="rot2/largerIsland2/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -8, 33)
+
+[node name="smallIsland12" type="Node3D" parent="rot2/largerIsland2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.1207, 3.53232, -43.9793)
+
+[node name="StonyIslandPiece8" parent="rot2/largerIsland2/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 1.52588e-05, -9, -7)
+
+[node name="StonyIslandPiece9" parent="rot2/largerIsland2/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -1.52588e-05, -9, 13)
+
+[node name="StonyIslandPiece20" parent="rot2/largerIsland2/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 1.52588e-05, -18, -7)
+
+[node name="StonyIslandPiece21" parent="rot2/largerIsland2/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -1.52588e-05, -24, 13)
+
+[node name="StonyIslandPiece10" parent="rot2/largerIsland2/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -8, -7)
+
+[node name="StonyIslandPiece11" parent="rot2/largerIsland2/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -8, 13)
+
+[node name="StonyIslandPiece22" parent="rot2/largerIsland2/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 17.2493, -13.4623, 13)
+
+[node name="StonyIslandPiece12" parent="rot2/largerIsland2/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -8, -27)
+
+[node name="StonyIslandPiece13" parent="rot2/largerIsland2/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -9, -27)
+
+[node name="StonyIslandPiece14" parent="rot2/largerIsland2/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -9, -27.0001)
+
+[node name="StonyIslandPiece15" parent="rot2/largerIsland2/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -9, -7)
+
+[node name="StonyIslandPiece16" parent="rot2/largerIsland2/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -9, 13)
+
+[node name="StonyIslandPiece24" parent="rot2/largerIsland2/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -14, -27, 13)
+
+[node name="StonyIslandPiece17" parent="rot2/largerIsland2/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -9, 33)
+
+[node name="StonyIslandPiece25" parent="rot2/largerIsland2/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -30, 33)
+
+[node name="StonyIslandPiece18" parent="rot2/largerIsland2/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -3.05176e-05, -9, 33)
+
+[node name="StonyIslandPiece23" parent="rot2/largerIsland2/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -3.05176e-05, -28, 32)
+
+[node name="StonyIslandPiece19" parent="rot2/largerIsland2/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -8, 33)
+
+[node name="smallIsland13" type="Node3D" parent="rot2/largerIsland2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.8793, 3.53232, -42.9793)
+
+[node name="StonyIslandPiece8" parent="rot2/largerIsland2/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -7)
+
+[node name="StonyIslandPiece9" parent="rot2/largerIsland2/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 13)
+
+[node name="StonyIslandPiece20" parent="rot2/largerIsland2/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -19, -7)
+
+[node name="StonyIslandPiece21" parent="rot2/largerIsland2/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -25, 13)
+
+[node name="StonyIslandPiece10" parent="rot2/largerIsland2/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -9, -7)
+
+[node name="StonyIslandPiece11" parent="rot2/largerIsland2/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 13)
+
+[node name="StonyIslandPiece22" parent="rot2/largerIsland2/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 18, -27, 13)
+
+[node name="StonyIslandPiece12" parent="rot2/largerIsland2/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -9, -27)
+
+[node name="StonyIslandPiece13" parent="rot2/largerIsland2/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -27)
+
+[node name="StonyIslandPiece14" parent="rot2/largerIsland2/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -27)
+
+[node name="StonyIslandPiece15" parent="rot2/largerIsland2/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -7)
+
+[node name="StonyIslandPiece16" parent="rot2/largerIsland2/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 13)
+
+[node name="StonyIslandPiece24" parent="rot2/largerIsland2/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -14, -14, 13)
+
+[node name="StonyIslandPiece17" parent="rot2/largerIsland2/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 33)
+
+[node name="StonyIslandPiece18" parent="rot2/largerIsland2/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 33)
+
+[node name="StonyIslandPiece23" parent="rot2/largerIsland2/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -28, 32)
+
+[node name="StonyIslandPiece19" parent="rot2/largerIsland2/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 33)
+
+[node name="StonyIslandPiece25" parent="rot2/largerIsland2/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -30, 33)
+
+[node name="largerIsland3" type="Node3D" parent="rot2"]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -307, 0, -145)
+
+[node name="smallIsland10" type="Node3D" parent="rot2/largerIsland3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.8793, 3.53232, 36.0207)
+
+[node name="StonyIslandPiece8" parent="rot2/largerIsland3/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -9, -7)
+
+[node name="StonyIslandPiece25" parent="rot2/largerIsland3/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -6.76935, -15.6711, -7)
+
+[node name="StonyIslandPiece9" parent="rot2/largerIsland3/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -9, 13)
+
+[node name="StonyIslandPiece20" parent="rot2/largerIsland3/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -33, -7)
+
+[node name="StonyIslandPiece21" parent="rot2/largerIsland3/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -24, 13)
+
+[node name="StonyIslandPiece10" parent="rot2/largerIsland3/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 19.9999, -9, -7.00006)
+
+[node name="StonyIslandPiece11" parent="rot2/largerIsland3/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -9, 13)
+
+[node name="StonyIslandPiece28" parent="rot2/largerIsland3/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 40, -9, 13)
+
+[node name="StonyIslandPiece22" parent="rot2/largerIsland3/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 18, -28, 13)
+
+[node name="StonyIslandPiece12" parent="rot2/largerIsland3/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -27)
+
+[node name="StonyIslandPiece27" parent="rot2/largerIsland3/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -28, -27)
+
+[node name="StonyIslandPiece13" parent="rot2/largerIsland3/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -27)
+
+[node name="StonyIslandPiece26" parent="rot2/largerIsland3/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -28.729, -27)
+
+[node name="StonyIslandPiece14" parent="rot2/largerIsland3/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -27)
+
+[node name="StonyIslandPiece15" parent="rot2/largerIsland3/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -9, -7)
+
+[node name="StonyIslandPiece16" parent="rot2/largerIsland3/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -9, 13)
+
+[node name="StonyIslandPiece24" parent="rot2/largerIsland3/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -14, -13, 13)
+
+[node name="StonyIslandPiece17" parent="rot2/largerIsland3/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20.0001, -7, 33.0001)
+
+[node name="StonyIslandPiece18" parent="rot2/largerIsland3/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -9, 33)
+
+[node name="StonyIslandPiece23" parent="rot2/largerIsland3/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -3.05176e-05, -12, 32)
+
+[node name="StonyIslandPiece19" parent="rot2/largerIsland3/smallIsland10" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -9, 33)
+
+[node name="smallIsland11" type="Node3D" parent="rot2/largerIsland3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.1207, 3.53232, 36.0207)
+
+[node name="StonyIslandPiece8" parent="rot2/largerIsland3/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, -7)
+
+[node name="StonyIslandPiece9" parent="rot2/largerIsland3/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 13)
+
+[node name="StonyIslandPiece20" parent="rot2/largerIsland3/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -27.8068, -7)
+
+[node name="StonyIslandPiece21" parent="rot2/largerIsland3/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -25, 13)
+
+[node name="StonyIslandPiece10" parent="rot2/largerIsland3/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, -7)
+
+[node name="StonyIslandPiece11" parent="rot2/largerIsland3/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 13)
+
+[node name="StonyIslandPiece22" parent="rot2/largerIsland3/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 18, -13, 13)
+
+[node name="StonyIslandPiece12" parent="rot2/largerIsland3/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 19.9999, -9, -27)
+
+[node name="StonyIslandPiece27" parent="rot2/largerIsland3/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 12.5599, -19.9124, -27)
+
+[node name="StonyIslandPiece13" parent="rot2/largerIsland3/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -3.05176e-05, -9, -27)
+
+[node name="StonyIslandPiece26" parent="rot2/largerIsland3/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -29, -27)
+
+[node name="StonyIslandPiece14" parent="rot2/largerIsland3/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -27)
+
+[node name="StonyIslandPiece25" parent="rot2/largerIsland3/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -44, -27)
+
+[node name="StonyIslandPiece15" parent="rot2/largerIsland3/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, -7)
+
+[node name="StonyIslandPiece28" parent="rot2/largerIsland3/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -18.3855, -26.5198, -6.99997)
+
+[node name="StonyIslandPiece29" parent="rot2/largerIsland3/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -37, -28, -7.00006)
+
+[node name="StonyIslandPiece16" parent="rot2/largerIsland3/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -22.0001, -25, 16)
+
+[node name="StonyIslandPiece24" parent="rot2/largerIsland3/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -14, -30, 13)
+
+[node name="StonyIslandPiece17" parent="rot2/largerIsland3/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 33)
+
+[node name="StonyIslandPiece18" parent="rot2/largerIsland3/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -10, 33)
+
+[node name="StonyIslandPiece23" parent="rot2/largerIsland3/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -13, 32)
+
+[node name="StonyIslandPiece19" parent="rot2/largerIsland3/smallIsland11" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -10, 33)
+
+[node name="smallIsland12" type="Node3D" parent="rot2/largerIsland3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.1207, 3.53232, -43.9793)
+
+[node name="StonyIslandPiece8" parent="rot2/largerIsland3/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -9, -7)
+
+[node name="StonyIslandPiece9" parent="rot2/largerIsland3/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -9, 13)
+
+[node name="StonyIslandPiece20" parent="rot2/largerIsland3/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -18, -7)
+
+[node name="StonyIslandPiece21" parent="rot2/largerIsland3/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -24, 13)
+
+[node name="StonyIslandPiece10" parent="rot2/largerIsland3/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -9, -7.00006)
+
+[node name="StonyIslandPiece11" parent="rot2/largerIsland3/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -9, 13)
+
+[node name="StonyIslandPiece22" parent="rot2/largerIsland3/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 17.2493, -14.4623, 13)
+
+[node name="StonyIslandPiece12" parent="rot2/largerIsland3/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -9, -27)
+
+[node name="StonyIslandPiece13" parent="rot2/largerIsland3/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -9, -27)
+
+[node name="StonyIslandPiece14" parent="rot2/largerIsland3/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -8, -27)
+
+[node name="StonyIslandPiece15" parent="rot2/largerIsland3/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -8, -7)
+
+[node name="StonyIslandPiece16" parent="rot2/largerIsland3/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -8, 13)
+
+[node name="StonyIslandPiece24" parent="rot2/largerIsland3/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -14, -27, 13)
+
+[node name="StonyIslandPiece17" parent="rot2/largerIsland3/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -9, 33)
+
+[node name="StonyIslandPiece25" parent="rot2/largerIsland3/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -30, 33)
+
+[node name="StonyIslandPiece18" parent="rot2/largerIsland3/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -9, 33)
+
+[node name="StonyIslandPiece23" parent="rot2/largerIsland3/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -28, 32)
+
+[node name="StonyIslandPiece19" parent="rot2/largerIsland3/smallIsland12" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -9, 33)
+
+[node name="smallIsland13" type="Node3D" parent="rot2/largerIsland3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.8793, 3.53232, -42.9793)
+
+[node name="StonyIslandPiece8" parent="rot2/largerIsland3/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 3.05176e-05, -8, -7.00003)
+
+[node name="StonyIslandPiece9" parent="rot2/largerIsland3/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -9, 13)
+
+[node name="StonyIslandPiece20" parent="rot2/largerIsland3/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 3.05176e-05, -17, -7.00003)
+
+[node name="StonyIslandPiece21" parent="rot2/largerIsland3/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -24, 13)
+
+[node name="StonyIslandPiece10" parent="rot2/largerIsland3/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -8, -7.00003)
+
+[node name="StonyIslandPiece11" parent="rot2/largerIsland3/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -8, 13)
+
+[node name="StonyIslandPiece22" parent="rot2/largerIsland3/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 18, -26, 13)
+
+[node name="StonyIslandPiece12" parent="rot2/largerIsland3/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -8, -27)
+
+[node name="StonyIslandPiece13" parent="rot2/largerIsland3/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -8, -27)
+
+[node name="StonyIslandPiece14" parent="rot2/largerIsland3/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -8, -27)
+
+[node name="StonyIslandPiece15" parent="rot2/largerIsland3/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -8, -7)
+
+[node name="StonyIslandPiece16" parent="rot2/largerIsland3/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -9, 12.9999)
+
+[node name="StonyIslandPiece24" parent="rot2/largerIsland3/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -14, -13, 12.9999)
+
+[node name="StonyIslandPiece17" parent="rot2/largerIsland3/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -20, -10, 33)
+
+[node name="StonyIslandPiece18" parent="rot2/largerIsland3/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -9, 33)
+
+[node name="StonyIslandPiece23" parent="rot2/largerIsland3/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -28, 32)
+
+[node name="StonyIslandPiece19" parent="rot2/largerIsland3/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -9, 33)
+
+[node name="StonyIslandPiece25" parent="rot2/largerIsland3/smallIsland13" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -30, 33)
+
+[node name="StonyIslandPiece" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(0.921836, 0, -0.38758, 0, 1, 0, 0.38758, 0, 0.921836, -78.0991, 3.53232, 266.87)
+
+[node name="StonyIslandPiece2" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.461, 4.53232, 285.488)
+
+[node name="StonyIslandPiece3" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.3012, 7.03232, 283.654)
+
+[node name="StonyIslandPiece4" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(0.944336, 0, -0.328982, 0, 1, 0, 0.328982, 0, 0.944336, 7.56624, 6, 255.815)
+
+[node name="StonyIslandPiece5" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.92395, 6.00001, 248.123)
+
+[node name="StonyIslandPiece6" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.2822, 3.53232, 221.058)
+
+[node name="StonyIslandPiece7" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(0.44487, 0, 0.895595, 0, 1, 0, -0.895595, 0, 0.44487, -51.6415, 6, 192.457)
+
+[node name="StonyIslandPiece8" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.8551, 8.5, 190.366)
+
+[node name="StonyIslandPiece9" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -95.8996, 7, 159.34)
+
+[node name="StonyIslandPiece10" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93.8424, 9.5, 157.801)
+
+[node name="StonyIslandPiece11" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -94.2849, 14.3632, 157.831)
+
+[node name="StonyIslandPiece12" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.8452, 6, 154.98)
+
+[node name="StonyIslandPiece13" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.7651, 6, 158.859)
+
+[node name="StonyIslandPiece14" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.8375, 8.5, 156.784)
+
+[node name="StonyIslandPiece15" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6627, 13.5789, 42.1882)
+
+[node name="StonyIslandPiece16" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.05358, 15.8512, 45.1991)
+
+[node name="StonyIslandPiece17" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.13843, 10.2956, -36.9769)
+
+[node name="StonyIslandPiece18" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.5866, -2.93834, -45.8002)
+
+[node name="StonyIslandPiece19" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.0866, -2.71972, -48.6857)
+
+[node name="StonyIslandPiece20" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.3946, -1.8522, 141.9)
+
+[node name="StonyIslandPiece21" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -122.736, 7.85444, 60)
+
+[node name="StonyIslandPiece22" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -129.524, 2.45935, 63.8954)
+
+[node name="StonyIslandPiece23" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -192.046, -3.22645, 21.1016)
+
+[node name="StonyIslandPiece24" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(0.587079, 0, -0.80953, 0, 1, 0, 0.80953, 0, 0.587079, -215.096, -7.83485, 5.93839)
+
+[node name="StonyIslandPiece25" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -270.564, 0.648914, -53.4287)
+
+[node name="StonyIslandPiece26" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -278.853, 1.70393, -52.2682)
+
+[node name="StonyIslandPiece27" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -313.131, -4.52873, -64.8345)
+
+[node name="StonyIslandPiece28" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -294.209, 4.53232, -123.692)
+
+[node name="StonyIslandPiece29" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -294.984, 7.03231, -125.357)
+
+[node name="StonyIslandPiece30" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -264.028, 5.53232, -182.164)
+
+[node name="StonyIslandPiece31" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -263.168, 8.03233, -181.829)
+
+[node name="StonyIslandPiece32" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -367.844, 4.53232, -113.45)
+
+[node name="StonyIslandPiece33" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -366.965, 7.03232, -113.446)
+
+[node name="StonyIslandPiece34" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -338.723, 4.53232, -142.148)
+
+[node name="StonyIslandPiece35" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -332.89, 4.53232, -84.1546)
+
+[node name="StonyIslandPiece36" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -338.046, 5.53232, -224.008)
+
+[node name="StonyIslandPiece37" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(0.933198, 0, 0.359362, 0, 1, 0, -0.359362, 0, 0.933198, -147.567, 2.32781, 238.22)
+
+[node name="StonyIslandPiece38" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -134.851, 12, 261.221)
+
+[node name="StonyIslandPiece39" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -136.234, 14.5, 261.408)
+
+[node name="StonyIslandPiece40" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -191.622, 8, 205.787)
+
+[node name="StonyIslandPiece41" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -158.9, 6, 199.707)
+
+[node name="StonyIslandPiece42" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -159.225, 8.5, 197.502)
+
+[node name="StonyIslandPiece43" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -137.314, 6, 222.502)
+
+[node name="StonyIslandPiece44" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -181.627, 8, 185.214)
+
+[node name="StonyIslandPiece45" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -209.915, 14, 160.689)
+
+[node name="StonyIslandPiece46" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -218.827, 9.21292, 167)
+
+[node name="StonyIslandPiece47" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -217.347, 8.11631, 169.5)
+
+[node name="StonyIslandPiece48" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 127.717, 3.53232, 181.96)
+
+[node name="StonyIslandPiece49" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130.811, 3.53232, 184.288)
+
+[node name="StonyIslandPiece50" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128.939, 6.03232, 183.036)
+
+[node name="StonyIslandPiece51" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.639, 3.53232, 168.636)
+
+[node name="StonyIslandPiece52" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.2492, 3.94196, 171.136)
+
+[node name="StonyIslandPiece53" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.2283, 8.11736, 170.361)
+
+[node name="StonyIslandPiece54" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.3343, 3.53232, 206.862)
+
+[node name="StonyIslandPiece55" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.8896, 3.53232, 206.702)
+
+[node name="StonyIslandPiece56" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.4747, 7.79711, 205.457)
+
+[node name="StonyIslandPiece57" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 107.451, 3.53232, 208.604)
+
+[node name="StonyIslandPiece58" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86.8246, 3.53232, 204.946)
+
+[node name="StonyIslandPiece59" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 349.121, 5.53232, -64.4272)
+
+[node name="StonyIslandPiece60" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 348.158, 6.95227, -61.9272)
+
+[node name="StonyIslandPiece61" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 344.711, 5.53232, -45.658)
+
+[node name="StonyIslandPiece62" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 324.978, 5.53232, -67.2794)
+
+[node name="StonyIslandPiece63" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 336.849, 5.53232, -33.7386)
+
+[node name="StonyIslandPiece64" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.9025, 3.53232, -322.038)
+
+[node name="StonyIslandPiece65" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -92.6726, 6.03232, -323.569)
+
+[node name="StonyIslandPiece66" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.5826, 3.53232, -412.503)
+
+[node name="StonyIslandPiece67" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.1174, 6.59696, -411.969)
+
+[node name="StonyIslandPiece68" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.9257, 3.53232, -380.344)
+
+[node name="StonyIslandPiece69" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74.4556, 4.53232, -395.094)
+
+[node name="StonyIslandPiece70" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.69138, 4.53232, -324.712)
+
+[node name="StonyIslandPiece71" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2567, 4.53232, -351.612)
+
+[node name="StonyIslandPiece72" parent="rot2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(0.543541, 0, 0.839383, 0, 1, 0, -0.839383, 0, 0.543541, -142.913, 4.53231, -217.193)
+
+[node name="rot3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69, 0, -316)
+
+[node name="storypatch3" type="Node3D" parent="rot3"]
+transform = Transform3D(3.4641, 0, -2, 0, 4, 0, 2, 0, 3.4641, -110.382, 138.202, 198.018)
+
+[node name="StonyIslandPiece" parent="rot3/storypatch3" instance=ExtResource("2_5e2s2")]
+
+[node name="StonyIslandPiece2" parent="rot3/storypatch3" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.4778, -1.25, -15.6651)
+
+[node name="StonyIslandPiece3" parent="rot3/storypatch3" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.75, 0.5, -15)
+
+[node name="StonyIslandPiece4" parent="rot3/storypatch3" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.75, 0.5, -39.75)
+
+[node name="StonyIslandPiece7" parent="rot3/storypatch3" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5, 0.5, -66.5)
+
+[node name="StonyIslandPiece5" parent="rot3/storypatch3" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.4654, 0.5, -62.3864)
+
+[node name="StonyIslandPiece8" parent="rot3/storypatch3" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.2154, 0.5, -77.1364)
+
+[node name="StonyIslandPiece9" parent="rot3/storypatch3" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7846, 0.5, -92.8864)
+
+[node name="StonyIslandPiece10" parent="rot3/storypatch3" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.7846, 1.7599, -100.386)
+
+[node name="StonyIslandPiece11" parent="rot3/storypatch3" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.7846, 0.5, -106.886)
+
+[node name="StonyIslandPiece12" parent="rot3/storypatch3" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0346, 0.5, -109.886)
+
+[node name="StonyIslandPiece13" parent="rot3/storypatch3" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.9654, 2.58803, -111.386)
+
+[node name="StonyIslandPiece14" parent="rot3/storypatch3" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2154, 0.5, -89.1364)
+
+[node name="StonyIslandPiece6" parent="rot3/storypatch3" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.1962, 0.5, -38.7914)
+
+[node name="rot4" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69, 0, -316)
+
+[node name="storypatch2" type="Node3D" parent="rot4"]
+transform = Transform3D(3.4641, 0, -2, 0, 4, 0, 2, 0, 3.4641, -187, -86.7984, 267)
+
+[node name="StonyIslandPiece" parent="rot4/storypatch2" instance=ExtResource("2_5e2s2")]
+
+[node name="StonyIslandPiece2" parent="rot4/storypatch2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.4778, -1.25, -15.6651)
+
+[node name="StonyIslandPiece3" parent="rot4/storypatch2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.75, 0.5, -15)
+
+[node name="StonyIslandPiece4" parent="rot4/storypatch2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.75, 0.5, -39.75)
+
+[node name="StonyIslandPiece7" parent="rot4/storypatch2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5, 0.5, -66.5)
+
+[node name="StonyIslandPiece5" parent="rot4/storypatch2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.4654, 0.5, -62.3864)
+
+[node name="StonyIslandPiece8" parent="rot4/storypatch2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.2154, 0.5, -77.1364)
+
+[node name="StonyIslandPiece9" parent="rot4/storypatch2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7846, 0.5, -92.8864)
+
+[node name="StonyIslandPiece10" parent="rot4/storypatch2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.7846, 1.7599, -100.386)
+
+[node name="StonyIslandPiece11" parent="rot4/storypatch2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.7846, 0.5, -106.886)
+
+[node name="StonyIslandPiece12" parent="rot4/storypatch2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0346, 0.5, -109.886)
+
+[node name="StonyIslandPiece13" parent="rot4/storypatch2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.9654, 2.58803, -111.386)
+
+[node name="StonyIslandPiece14" parent="rot4/storypatch2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2154, 0.5, -89.1364)
+
+[node name="StonyIslandPiece6" parent="rot4/storypatch2" instance=ExtResource("2_5e2s2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.1962, 0.5, -38.7914)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.761658, -0.258819, 0.594045, 0.0379576, 0.933013, 0.357836, -0.646867, -0.25, 0.720461, 287.376, 105.088, 0)
+
+[connection signal="button_down" from="RichTextLabel/next" to="." method="_on_next_button_down"]
