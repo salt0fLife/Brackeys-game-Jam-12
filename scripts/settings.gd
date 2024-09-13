@@ -17,13 +17,15 @@ const mainLevel = "res://Levels/island_hub.tscn"
 
 
 #chest saving
-var chests = [0, 0, 0, 0, 0, 0]
+var chests = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 var spokeToStanford = false
 var canUseGateways = false
 var toutorial = true
 var hasMined = false
 var hasOpenedInventory = false
 var hasChopped = false
+var hasBossDied = false
+var hasSeenFG = false
 
 var soundEffects = 50
 

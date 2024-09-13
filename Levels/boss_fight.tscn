@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c1d6w84fi84sv"]
+[gd_scene load_steps=11 format=3 uid="uid://c1d6w84fi84sv"]
 
 [ext_resource type="Script" path="res://Levels/boss_fight.gd" id="1_mpmvo"]
 [ext_resource type="PackedScene" uid="uid://6xamiee4w237" path="res://Environment/stony_island_piece.tscn" id="1_smd2w"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c3nsoman3koeg" path="res://Environment/launch_pad.tscn" id="5_qeb46"]
 [ext_resource type="PackedScene" uid="uid://td2a7gmc38w5" path="res://creatures/enemies/boss.tscn" id="6_0dndg"]
 [ext_resource type="PackedScene" uid="uid://6srnwmu5on8x" path="res://Environment/boss_pillar.tscn" id="6_toid1"]
+[ext_resource type="PackedScene" uid="uid://cfbsb16oupec4" path="res://creatures/enemies/blue_slime.tscn" id="7_0chem"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2ixqe"]
 sky_top_color = Color(0.458824, 0.627451, 0.854902, 1)
@@ -13,12 +14,12 @@ sky_energy_multiplier = 1.2
 ground_bottom_color = Color(0.227451, 0.439216, 0.458824, 1)
 ground_horizon_color = Color(0.694118, 0.772549, 0.772549, 1)
 
-[sub_resource type="Sky" id="Sky_s05p6"]
+[sub_resource type="Sky" id="Sky_to0n0"]
 sky_material = SubResource("ProceduralSkyMaterial_2ixqe")
 
 [sub_resource type="Environment" id="Environment_n2ifj"]
 background_mode = 2
-sky = SubResource("Sky_s05p6")
+sky = SubResource("Sky_to0n0")
 
 [node name="BossFight" type="Node3D"]
 script = ExtResource("1_mpmvo")
@@ -27,6 +28,7 @@ script = ExtResource("1_mpmvo")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
 
 [node name="Player" parent="playerHandler" instance=ExtResource("2_c18my")]
+inBossFight = true
 
 [node name="lighting" type="Node" parent="."]
 
@@ -2956,10 +2958,115 @@ transform = Transform3D(-0.622337, 0, 0.782749, 0, 1, 0, -0.782749, 0, -0.622337
 newVelocity = Vector3(-100, 20, 75)
 disabedTime = 4.0
 
-[node name="boss" parent="." instance=ExtResource("6_0dndg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.4892, 15, -284.529)
-
-[node name="LaunchPad" parent="." instance=ExtResource("5_qeb46")]
+[node name="LaunchPad13" parent="launchers" instance=ExtResource("5_qeb46")]
 transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 207.05, 3.53232, -159.84)
 newVelocity = Vector3(30, 20, -60)
 disabedTime = 2.0
+
+[node name="slimes" type="Node" parent="."]
+
+[node name="blueSlime" parent="slimes" instance=ExtResource("7_0chem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -98.0061, 6, -95.3636)
+
+[node name="blueSlime2" parent="slimes" instance=ExtResource("7_0chem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84.4876, 6, -103.111)
+
+[node name="blueSlime3" parent="slimes" instance=ExtResource("7_0chem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -105.018, 6, -132.489)
+
+[node name="blueSlime4" parent="slimes" instance=ExtResource("7_0chem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4006, 6, -127.996)
+
+[node name="blueSlime5" parent="slimes" instance=ExtResource("7_0chem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.02644, 6, -161.286)
+
+[node name="blueSlime6" parent="slimes" instance=ExtResource("7_0chem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -255.238, 4.53232, -415.984)
+
+[node name="blueSlime7" parent="slimes" instance=ExtResource("7_0chem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -229.032, 3.53232, -450.275)
+
+[node name="blueSlime8" parent="slimes" instance=ExtResource("7_0chem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -245.162, 3.53232, -453.165)
+
+[node name="blueSlime9" parent="slimes" instance=ExtResource("7_0chem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -237.131, 4.53232, -463.312)
+
+[node name="blueSlime10" parent="slimes" instance=ExtResource("7_0chem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -246.836, 4.53232, -440.28)
+
+[node name="blueSlime11" parent="slimes" instance=ExtResource("7_0chem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -201.707, 3.53232, -410.527)
+
+[node name="blueSlime12" parent="slimes" instance=ExtResource("7_0chem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.43, 4.53232, -527.245)
+
+[node name="blueSlime13" parent="slimes" instance=ExtResource("7_0chem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90.4801, 4.53231, -524.064)
+
+[node name="blueSlime14" parent="slimes" instance=ExtResource("7_0chem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.5505, 3.53232, -633.906)
+
+[node name="blueSlime15" parent="slimes" instance=ExtResource("7_0chem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.418, 3.53232, -613.349)
+
+[node name="blueSlime16" parent="slimes" instance=ExtResource("7_0chem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.98513, 3.53232, -631.854)
+
+[node name="blueSlime17" parent="slimes" instance=ExtResource("7_0chem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1729, 3.53232, -608)
+
+[node name="blueSlime18" parent="slimes" instance=ExtResource("7_0chem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.9557, 3.53232, -621.766)
+
+[node name="blueSlime19" parent="slimes" instance=ExtResource("7_0chem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 310.76, 3.53232, -321.172)
+
+[node name="blueSlime20" parent="slimes" instance=ExtResource("7_0chem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 302.385, 3.53232, -336.705)
+
+[node name="blueSlime21" parent="slimes" instance=ExtResource("7_0chem")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 317.026, 3.53232, -343.788)
+
+[node name="damagePillars" type="Node" parent="."]
+
+[node name="boss2" parent="damagePillars" instance=ExtResource("6_0dndg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -78.2237, 6, -133.615)
+
+[node name="boss3" parent="damagePillars" instance=ExtResource("6_0dndg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -107.271, 7, -96.8858)
+
+[node name="boss4" parent="damagePillars" instance=ExtResource("6_0dndg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9468, 7, -139.679)
+
+[node name="boss5" parent="damagePillars" instance=ExtResource("6_0dndg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -222.034, 5.53232, -488.6)
+
+[node name="boss6" parent="damagePillars" instance=ExtResource("6_0dndg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -217.379, 3.53232, -406.442)
+
+[node name="boss7" parent="damagePillars" instance=ExtResource("6_0dndg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.32838, 3.53232, -651.017)
+
+[node name="boss8" parent="damagePillars" instance=ExtResource("6_0dndg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.6707, 4.53232, -619.858)
+
+[node name="boss9" parent="damagePillars" instance=ExtResource("6_0dndg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 338.168, 3.53232, -346.989)
+
+[node name="boss10" parent="damagePillars" instance=ExtResource("6_0dndg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 302.135, 3.53232, -296.25)
+
+[node name="boss11" parent="damagePillars" instance=ExtResource("6_0dndg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 334.99, 4.53232, -306.871)
+
+[node name="boss12" parent="damagePillars" instance=ExtResource("6_0dndg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 178.202, 3.53232, -134.891)
+
+[node name="boss" parent="damagePillars" instance=ExtResource("6_0dndg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.4892, 15, -284.529)
+
+[node name="Help" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12, -10)
+text = "Mine the pilars with your
+ paxel to break them"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dcede0qqm4gi8"]
+[gd_scene load_steps=29 format=3 uid="uid://dcede0qqm4gi8"]
 
 [ext_resource type="PackedScene" uid="uid://ble8cirkaq864" path="res://creatures/punching_bag.tscn" id="1_kgxjm"]
 [ext_resource type="Texture2D" uid="uid://cj2tfo0qsi5ga" path="res://textures/DebuggTexture.png" id="1_ulmlh"]
@@ -14,6 +14,14 @@
 [ext_resource type="PackedScene" uid="uid://cqwi5b1kq0u00" path="res://Environment/materials/trees/old_oak.tscn" id="11_7hua2"]
 [ext_resource type="PackedScene" uid="uid://fvrqly6gk72l" path="res://Environment/one_of_three.tscn" id="13_va5w2"]
 [ext_resource type="PackedScene" uid="uid://6ab1mh7ne8yi" path="res://Environment/chest.tscn" id="14_ayw2o"]
+[ext_resource type="PackedScene" uid="uid://6srnwmu5on8x" path="res://Environment/boss_pillar.tscn" id="15_cspc0"]
+[ext_resource type="PackedScene" uid="uid://c3nsoman3koeg" path="res://Environment/launch_pad.tscn" id="16_fo6mu"]
+[ext_resource type="PackedScene" uid="uid://td2a7gmc38w5" path="res://creatures/enemies/boss.tscn" id="17_hmlht"]
+[ext_resource type="PackedScene" uid="uid://c6ut0e4oe3d20" path="res://Environment/materials/ores/iron_ore.tscn" id="18_4vw67"]
+[ext_resource type="PackedScene" uid="uid://b0bnr5ljl0g0k" path="res://Environment/materials/ores/emerald.tscn" id="19_gawlv"]
+[ext_resource type="PackedScene" uid="uid://ct42gfdxjw53n" path="res://Environment/materials/ores/magic_sand_deposit.tscn" id="20_fabgg"]
+[ext_resource type="PackedScene" uid="uid://2m1ile61njh3" path="res://Environment/materials/ores/ruby_deposit.tscn" id="21_2ihb7"]
+[ext_resource type="PackedScene" uid="uid://cu721f35yc12a" path="res://creatures/characters/funny_guy.tscn" id="22_xecey"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lxmof"]
 sky_top_color = Color(0.345098, 0.627451, 0.886275, 1)
@@ -71,7 +79,7 @@ skeleton = NodePath("../..")
 [node name="resources" type="Node" parent="."]
 
 [node name="CopperOre" parent="resources" instance=ExtResource("5_prh66")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9266, 0, 4.53706)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.93675, 0, 9.20733)
 
 [node name="youngBirch" parent="resources" instance=ExtResource("6_y0dma")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1074, 0, 9.73623)
@@ -112,3 +120,32 @@ identityInt = 3
 
 [node name="Chest" parent="." instance=ExtResource("14_ayw2o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -12)
+
+[node name="BossPillar" parent="." instance=ExtResource("15_cspc0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.79153, 0, -28.1304)
+debug = true
+
+[node name="LaunchPad" parent="." instance=ExtResource("16_fo6mu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.855634, 0, -28.0596)
+newVelocity = Vector3(0, 10, 0)
+
+[node name="boss" parent="." instance=ExtResource("17_hmlht")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.15672, 0, -29.2442)
+
+[node name="boss2" parent="." instance=ExtResource("17_hmlht")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5086, -1.90735e-06, -30.2378)
+
+[node name="ironOre" parent="." instance=ExtResource("18_4vw67")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.05487, -2.38419e-07, 10.8221)
+
+[node name="Emerald" parent="." instance=ExtResource("19_gawlv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7742, 0, 12.5437)
+
+[node name="MagicSandDeposit" parent="." instance=ExtResource("20_fabgg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.93701, 0, 14.5719)
+
+[node name="RubyDeposit" parent="." instance=ExtResource("21_2ihb7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.83962, 0, 17.2171)
+
+[node name="FunnyGuy" parent="." instance=ExtResource("22_xecey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.0098, 0, -25.8965)

@@ -1,16 +1,28 @@
-[gd_scene load_steps=24 format=3 uid="uid://qpwafib1h67o"]
+[gd_scene load_steps=28 format=3 uid="uid://qpwafib1h67o"]
 
 [ext_resource type="Script" path="res://scripts/gate_of_the_storm.gd" id="1_omk6q"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_n1mrm"]
 size = Vector3(0.425, 12, 5)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q2m0m"]
+albedo_color = Color(0.643137, 0.282353, 0.298039, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_wosug"]
+material = SubResource("StandardMaterial3D_q2m0m")
 size = Vector3(1, 12, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_enkap"]
+albedo_color = Color(0.662745, 0.247059, 0.243137, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_b8cht"]
+material = SubResource("StandardMaterial3D_enkap")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_criog"]
+albedo_color = Color(0.380392, 0.380392, 0.380392, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_04oxo"]
+material = SubResource("StandardMaterial3D_criog")
 size = Vector3(0.5, 11, 2.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qgp6k"]
@@ -148,7 +160,11 @@ emission = Color(0.588235, 0.376471, 0, 1)
 material = SubResource("StandardMaterial3D_51br1")
 size = Vector3(0.845, 0.5, 0.5)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jo7d2"]
+albedo_color = Color(0.211765, 0.294118, 0.168627, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_73wa2"]
+material = SubResource("StandardMaterial3D_jo7d2")
 size = Vector3(2, 1, 7)
 
 [sub_resource type="Shader" id="Shader_ui1v8"]

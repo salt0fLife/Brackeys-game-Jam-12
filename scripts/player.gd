@@ -58,6 +58,7 @@ var bufferingUse = false
 #preloads (arrows particles and such)
 @onready var hitMarker = preload("res://effects/particles/damage_indicator.tscn")
 @onready var arrow = preload("res://effects/particles/stuck_arrow.tscn")
+@onready var deathSmoke = preload("res://effects/particles/death_smoke.tscn")
 var OpenedInv = Settings.hasOpenedInventory
 
 func update_stats_from_item_tags():
@@ -77,20 +78,20 @@ func update_stats_from_item_tags():
 		if tag == "healthy" or debugMode:
 			maxHealth = maxHealth * 1.5
 	for tag in bowTags:
-		if tag == "speedy" or debugMode:
+		if tag == "speedy":
 			SPEED = SPEED * 1.5
 			pass
-		if tag == "lightFooted" or debugMode:
+		if tag == "lightFooted":
 			JUMP_VELOCITY = JUMP_VELOCITY * 1.5
-		if tag == "healthy" or debugMode:
+		if tag == "healthy":
 			maxHealth = maxHealth * 1.5
 	for tag in paxelTags:
-		if tag == "speedy" or debugMode:
+		if tag == "speedy":
 			SPEED = SPEED * 1.5
 			pass
-		if tag == "lightFooted" or debugMode:
+		if tag == "lightFooted":
 			JUMP_VELOCITY = JUMP_VELOCITY * 1.5
-		if tag == "healthy" or debugMode:
+		if tag == "healthy":
 			maxHealth = maxHealth * 1.5
 	pass
 
@@ -150,13 +151,36 @@ func sword_special_attack():
 		elif tag == "leaping":
 			sword_leaping_attack()
 			return
+		elif tag == "masterful":
+			sword_masterful_attack()
+			return
 		else:
 			actionState = false
 	pass
 
+func sword_masterful_attack():
+	actionState = true
+	var itemGraphics = ItemGraphicsHandler.get_child(0, false)
+	itemGraphics.get_child(1, true).play("Attack3")
+	var damage = swordInfo[2]
+	check_for_hit(damage)
+	await get_tree().create_timer(0.25).timeout
+	check_for_hit(damage)
+	await get_tree().create_timer(0.25).timeout
+	check_for_hit(damage)
+	if bufferedInput == "UseItem":
+		bufferedInput = ""
+		use_sword()
+	else:
+		bufferedInput = ""
+		actionState = false
+		itemGraphics.get_child(1, true).play("idle")
+	
+	pass
+
 func sword_heavy_attack():
 	var itemGraphics = ItemGraphicsHandler.get_child(0, false)
-	itemGraphics.get_child(0, true).play("Attack3")
+	itemGraphics.get_child(1, true).play("Attack3")
 	actionState = true
 	var damage = swordInfo[2] * 2
 	check_for_hit(damage)
@@ -167,11 +191,12 @@ func sword_heavy_attack():
 	else:
 		bufferedInput = ""
 		actionState = false
-		itemGraphics.get_child(0, true).play("idle")
+		itemGraphics.get_child(1, true).play("idle")
 	pass
 
 func sword_leaping_attack():
 	actionState = true
+	add_child(deathSmoke.instantiate())
 	velocity.y = JUMP_VELOCITY*1.5
 	var input_dir = Input.get_vector("left", "right", "up", "down")
 	var direction = (graphics.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
@@ -184,12 +209,24 @@ func sword_leaping_attack():
 	pass
 
 func toggle_bow_aim():
-	printerr("bow aiming not implemented")
+	for tag in bowInfo[4]:
+		if tag == "vanilla":
+			use_bow()
+			pass
+		elif tag == "ancient":
+			bow_ancient_attack()
+			pass
+		else:
+			printerr("bow aiming not implemented")
+	pass
+
+func bow_ancient_attack():
+	
 	pass
 
 func use_sword():
 	var itemGraphics = ItemGraphicsHandler.get_child(0, false)
-	itemGraphics.get_child(0, true).play("Attack1")
+	itemGraphics.get_child(1, true).play("Attack1")
 	actionState = true
 	check_for_hit()
 	await get_tree().create_timer(0.5).timeout
@@ -202,13 +239,13 @@ func use_sword():
 	else:
 		bufferedInput = ""
 		actionState = false
-		itemGraphics.get_child(0, true).play("idle")
+		itemGraphics.get_child(1, true).play("idle")
 	pass
 
 func sword_attack_2():
 	#print("sword attack 2")
 	var itemGraphics = ItemGraphicsHandler.get_child(0, false)
-	itemGraphics.get_child(0, true).play("Attack2")
+	itemGraphics.get_child(1, true).play("Attack2")
 	check_for_hit()
 	await get_tree().create_timer(0.5).timeout
 	if bufferedInput == "UseItem":
@@ -221,13 +258,13 @@ func sword_attack_2():
 	else:
 		bufferedInput = ""
 		actionState = false
-		itemGraphics.get_child(0, true).play("idle")
+		itemGraphics.get_child(1, true).play("idle")
 	pass
 
 func sword_attack_3():
 	#print("sword attack 3")
 	var itemGraphics = ItemGraphicsHandler.get_child(0, false)
-	itemGraphics.get_child(0, true).play("Attack3")
+	itemGraphics.get_child(1, true).play("Attack3")
 	check_for_hit()
 	await get_tree().create_timer(0.5).timeout
 	if bufferedInput == "UseItem":
@@ -240,23 +277,24 @@ func sword_attack_3():
 	else:
 		bufferedInput = ""
 		actionState = false
-		itemGraphics.get_child(0, true).play("idle")
+		itemGraphics.get_child(1, true).play("idle")
 	pass
 
 func use_paxel():
 	actionState = true
 	var itemGraphics = ItemGraphicsHandler.get_child(0, false)
-	itemGraphics.get_child(0, true).play("use")
-	await get_tree().create_timer(0.51).timeout
+	itemGraphics.get_child(1, true).play("use")
+	await get_tree().create_timer(0.2).timeout
 	check_for_hit()
+	await get_tree().create_timer(0.3).timeout
 	actionState = false
-	itemGraphics.get_child(0, true).play("idle")
+	itemGraphics.get_child(1, true).play("idle")
 	pass
 
 func use_bow():
 	actionState = true
 	var itemGraphics = ItemGraphicsHandler.get_child(0, false)
-	itemGraphics.get_child(0, true).play("shoot")
+	itemGraphics.get_child(1, true).play("shoot")
 	if BowRay.is_colliding():
 		var poi = BowRay.get_collision_point()
 		var hit = BowRay.get_collider()
@@ -282,7 +320,7 @@ func use_bow():
 			pass
 	await get_tree().create_timer(1).timeout
 	actionState = false
-	itemGraphics.get_child(0, true).play("idle")
+	itemGraphics.get_child(1, true).play("idle")
 	
 	
 	#printerr("bow not implemented")
@@ -349,17 +387,17 @@ func update_heldItem_graphics():
 	if HeldItem == 1:
 		var sword = load(swordInfo[5]).instantiate()
 		ItemGraphicsHandler.add_child(sword)
-		sword.get_child(0, true).play("Draw")
+		sword.get_child(1, true).play("Draw")
 		pass
 	elif HeldItem == 2:
 		var paxel = load(paxelInfo[5]).instantiate()
 		ItemGraphicsHandler.add_child(paxel)
-		paxel.get_child(0, true).play("Draw")
+		paxel.get_child(1, true).play("Draw")
 		pass
 	elif HeldItem == 3:
 		var bow = load(bowInfo[5]).instantiate()
 		ItemGraphicsHandler.add_child(bow)
-		bow.get_child(0, true).play("Draw")
+		bow.get_child(1, true).play("Draw")
 		pass
 
 func _input(event):
@@ -461,11 +499,7 @@ func sync_HeldItem():
 func _physics_process(delta):
 	#check for void plane
 	if position.y <= -25:
-		if !inBossFight:
-			die()
-		else:
-			alertBoss()
-	
+		die()
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -623,13 +657,17 @@ func _on_weapon_button_pressed(Index = -1):
 	pass
 
 func die():
-	position = Vector3(0,0,0)
-	health = maxHealth
-	update_health_graphics()
-	pass
+	if inBossFight:
+		die_boss()
+	else:
+		position = Vector3(0,0,0)
+		health = maxHealth
+		update_health_graphics()
+		pass
 
 func die_boss():
-	
+	var main = get_tree().get_first_node_in_group("Main")
+	main.load_new_scene("res://Environment/Cutscenes/died_in_boss_room.tscn")
 	pass
 
 func _on_equip_selected_weapon_button_down():
@@ -720,8 +758,3 @@ func take_damage(amount, tag, knockback):
 			die()
 	pass
 
-func alertBoss():
-	var boss = get_tree().get_first_node_in_group("Boss")
-	boss.alert_to_punish()
-	
-	pass

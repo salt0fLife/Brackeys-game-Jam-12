@@ -12,7 +12,6 @@ func play_game():
 	playingGame = true
 	pass
 
-
 func pause_game():
 	if playingGame and !paused:
 		for i in get_tree().get_nodes_in_group("ShopKeeper"):

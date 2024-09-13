@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cd2ei4uu2pq6o"]
+[gd_scene load_steps=16 format=3 uid="uid://cd2ei4uu2pq6o"]
 
 [ext_resource type="PackedScene" uid="uid://cxffo1r8ltcio" path="res://player/player.tscn" id="1_gff50"]
 [ext_resource type="PackedScene" uid="uid://dlh2ponw23gil" path="res://Environment/grassy_island_piece.tscn" id="2_ikf6l"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://cj0jlajxl27pj" path="res://Environment/materials/trees/young_birch.tscn" id="8_7q0t0"]
 [ext_resource type="PackedScene" uid="uid://cqwi5b1kq0u00" path="res://Environment/materials/trees/old_oak.tscn" id="9_ft3gh"]
 [ext_resource type="PackedScene" uid="uid://c8r47hrentfr6" path="res://Environment/materials/trees/young_oak.tscn" id="10_6a120"]
+[ext_resource type="PackedScene" uid="uid://6ab1mh7ne8yi" path="res://Environment/chest.tscn" id="11_tjcl3"]
+[ext_resource type="PackedScene" uid="uid://td2a7gmc38w5" path="res://creatures/enemies/boss.tscn" id="12_7tva4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7umyi"]
 sky_top_color = Color(0.458824, 0.627451, 0.854902, 1)
@@ -1096,7 +1098,7 @@ transform = Transform3D(-1.09278e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.09278e-0
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, -0.5, 3.5)
 
 [node name="OneOfThree" parent="." instance=ExtResource("4_mnsk8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -289.671, 11, -424.559)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -289.671, 10.4951, -424.559)
 identityInt = 3
 
 [node name="oldTrees" type="Node3D" parent="."]
@@ -3386,3 +3388,20 @@ environment = SubResource("Environment_5j37g")
 
 [node name="sun" type="DirectionalLight3D" parent="lighting"]
 transform = Transform3D(1, 0, 0, 0, 0.737041, 0.675848, 0, -0.675848, 0.737041, 0, 0, 0)
+
+[node name="Chest" parent="." instance=ExtResource("11_tjcl3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.8881, 10.505, -575.377)
+ItemToGive = [3, "Spirit Bow", 10, 5, ["ancient", "bow", "healthy", "lightFooted"], "res://imports/spiritBow/SpiritBow.glb"]
+index = 6
+
+[node name="boss" parent="." instance=ExtResource("12_7tva4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.466, 11.505, -284.297)
+
+[node name="boss2" parent="." instance=ExtResource("12_7tva4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.903, 10.505, -328.702)
+
+[node name="boss3" parent="." instance=ExtResource("12_7tva4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.7883, 10.505, -378.236)
+
+[node name="boss4" parent="." instance=ExtResource("12_7tva4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.2257, 10.505, -441.726)

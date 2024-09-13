@@ -1,5 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://d26kfgffb6xp7"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_bsjw2"]
+size = Vector3(0.085, 0.38, 0.76)
+
 [sub_resource type="Animation" id="Animation_xqvdj"]
 resource_name = "Draw"
 length = 0.5
@@ -156,23 +159,20 @@ _data = {
 "shoot": SubResource("Animation_xvm56")
 }
 
-[sub_resource type="BoxMesh" id="BoxMesh_bsjw2"]
-size = Vector3(0.085, 0.38, 0.76)
-
 [sub_resource type="CylinderMesh" id="CylinderMesh_ry6dm"]
 top_radius = 0.05
 bottom_radius = 0.1
 
 [node name="DefaultBow" type="Node3D"]
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
+mesh = SubResource("BoxMesh_bsjw2")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_8mm5g")
 }
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
-mesh = SubResource("BoxMesh_bsjw2")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1, 0, -0.36992)
