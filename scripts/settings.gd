@@ -17,7 +17,7 @@ const mainLevel = "res://Levels/island_hub.tscn"
 
 
 #chest saving
-var chests = [0, 0, 0, 0, 0, 0]
+var chests = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 var spokeToStanford = false
 var canUseGateways = false
 var toutorial = true

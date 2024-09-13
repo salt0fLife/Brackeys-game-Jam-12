@@ -5033,5 +5033,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15859, -0.988482, -371.421)
 [node name="blueSlime" parent="." instance=ExtResource("5_8pmao")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 134.827, 0.0115185, -173.349)
 
-[node name="Chest" parent="." instance=ExtResource("6_se1tr")]
+[node name="PaxelChest" parent="." instance=ExtResource("6_se1tr")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 147.87, 1.01152, -167.506)
+ItemToGive = [2, "Dwarven Paxel", 20, 20, ["vanilla", "Paxel"], "res://imports/defaultPaxel/DefaultPaxel.glb"]
+
+[node name="ShinobiChest" parent="." instance=ExtResource("6_se1tr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -135.685, 0.0115204, -227.271)
+ItemToGive = [1, "Shinobi", 10, 0, ["vanilla", "Sword", "speedy", "lightFooted", "healthy"], "res://imports/shinobiSword/Shinobi.glb"]
+index = 3

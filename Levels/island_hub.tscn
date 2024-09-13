@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://oak3cmybw46b"]
+[gd_scene load_steps=19 format=3 uid="uid://oak3cmybw46b"]
 
 [ext_resource type="PackedScene" uid="uid://dlh2ponw23gil" path="res://Environment/grassy_island_piece.tscn" id="1_wgqij"]
 [ext_resource type="PackedScene" uid="uid://cl8tkoh21qbxm" path="res://Environment/small_bridge.tscn" id="2_iwir3"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://6xamiee4w237" path="res://Environment/stony_island_piece.tscn" id="12_msdvo"]
 [ext_resource type="PackedScene" uid="uid://c6ut0e4oe3d20" path="res://Environment/materials/ores/iron_ore.tscn" id="13_05kv8"]
 [ext_resource type="PackedScene" uid="uid://c5wqllcfmcef2" path="res://Environment/materials/ores/copper_ore.tscn" id="14_c0jo2"]
+[ext_resource type="PackedScene" uid="uid://6ab1mh7ne8yi" path="res://Environment/chest.tscn" id="15_inbi0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mgau6"]
 sky_top_color = Color(0.458824, 0.627451, 0.854902, 1)
@@ -426,3 +427,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2, -28)
 
 [node name="PunchingBag" parent="." instance=ExtResource("6_lca4l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.13485, 2.5, -12.3254)
+
+[node name="chests" type="Node" parent="."]
+
+[node name="Chest" parent="." instance=ExtResource("15_inbi0")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.85438, 2.5, 10.1934)
+ItemToGive = [1, "Leaping Sword", 1, 5, ["leaping", "sword", "speedy"], "res://imports/leapingSword/LeapingSword.glb"]
+index = 2
+
+[node name="Chest2" parent="." instance=ExtResource("15_inbi0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9356, 2.5, -9.97883)
+ItemToGive = [2, "Superior Paxel", 5, 5, ["Vanilla", "paxel"], "res://imports/superiorPaxel/SuperiorPaxel.glb"]
+index = 1

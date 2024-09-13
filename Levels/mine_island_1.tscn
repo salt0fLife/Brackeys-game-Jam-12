@@ -7,10 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c5wqllcfmcef2" path="res://Environment/materials/ores/copper_ore.tscn" id="5_28aj1"]
 [ext_resource type="PackedScene" uid="uid://c6ut0e4oe3d20" path="res://Environment/materials/ores/iron_ore.tscn" id="7_xv3c8"]
 [ext_resource type="PackedScene" uid="uid://ct42gfdxjw53n" path="res://Environment/materials/ores/magic_sand_deposit.tscn" id="8_5qjvw"]
-
-[sub_resource type="Environment" id="Environment_qoprv"]
-background_energy_multiplier = 0.0
-ambient_light_energy = 0.0
+[ext_resource type="PackedScene" uid="uid://6ab1mh7ne8yi" path="res://Environment/chest.tscn" id="8_b2rbl"]
 
 [node name="MineIsland1" type="Node3D"]
 
@@ -96,7 +93,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.75, -3.73482, -32.75)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.25, -3.73482, -29.5)
 
 [node name="StonyIslandPiece50" parent="stonyPatch" instance=ExtResource("2_tmf08")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.75, -3.73482, -30.75)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3377, -3.73482, -30.75)
 
 [node name="StonyIslandPiece51" parent="stonyPatch" instance=ExtResource("2_tmf08")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.25, -3.73482, -31.5)
@@ -447,7 +444,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.75, 1.26518, -25.75)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.75, 1.26518, -26)
 
 [node name="StonyIslandPiece91" parent="stonyPatch" instance=ExtResource("2_tmf08")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 1.26518, -27.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.8377, 0.669327, -27.5)
 
 [node name="StonyIslandPiece92" parent="stonyPatch" instance=ExtResource("2_tmf08")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75, 1.26518, -29.25)
@@ -473,17 +470,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.25, 2.01518, -19.75)
 [node name="TransporterArch" parent="." instance=ExtResource("3_nl5gt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 6, -277)
 pathToLoad = "res://Levels/mine_island_2.tscn"
-
-[node name="lighting" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="lighting"]
-transform = Transform3D(0.762892, 0.392305, 0.513899, -0.558686, -3.62533e-08, 0.829379, 0.32537, -0.919835, 0.219175, 0, -1, 0)
-light_color = Color(0.32549, 0.447059, 0.160784, 1)
-light_energy = 0.1
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="lighting"]
-environment = SubResource("Environment_qoprv")
 
 [node name="creatures" type="Node" parent="."]
 
@@ -940,3 +926,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.40025, 6.06071, -275.685)
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 2, 5)
 text = "use *warp to hub* found in pause 
 menu to go back quickly"
+
+[node name="LesserShinobiChest" parent="." instance=ExtResource("8_b2rbl")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 73.5613, -4.98848, -134.973)
+ItemToGive = [1, "Lesser Shinobi", 5, 0, ["vanilla", "Sword", "lightFooted"], "res://imports/shinobiSword/Shinobi.glb"]
+index = 4

@@ -69,6 +69,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 [node name="Camera3D" type="Camera3D" parent="Graphics/CameraHandler"]
 
 [node name="ItemGraphicsHandler" type="Node3D" parent="Graphics/CameraHandler"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.105492)
 
 [node name="CrosshairRay" type="RayCast3D" parent="Graphics/CameraHandler"]
 target_position = Vector3(0, 0, -5)

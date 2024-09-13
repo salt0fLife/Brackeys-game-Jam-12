@@ -1,5 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://braksras5ppj8"]
 
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_nnsco"]
+radius = 0.12
+height = 1.0
+
 [sub_resource type="Animation" id="Animation_2uiya"]
 resource_name = "Draw"
 length = 0.5
@@ -121,17 +125,13 @@ _data = {
 "use": SubResource("Animation_mnaca")
 }
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_nnsco"]
-radius = 0.12
-height = 1.0
-
 [node name="DefaultPaxel" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
+mesh = SubResource("CapsuleMesh_nnsco")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_o6vhu")
 }
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
-mesh = SubResource("CapsuleMesh_nnsco")

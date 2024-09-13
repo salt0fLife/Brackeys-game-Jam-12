@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cp00b5be14te0"]
+[gd_scene load_steps=13 format=3 uid="uid://cp00b5be14te0"]
 
 [ext_resource type="PackedScene" uid="uid://cxffo1r8ltcio" path="res://player/player.tscn" id="1_dqbcr"]
 [ext_resource type="PackedScene" uid="uid://dlh2ponw23gil" path="res://Environment/grassy_island_piece.tscn" id="2_y0b4c"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cl8tkoh21qbxm" path="res://Environment/small_bridge.tscn" id="6_qmd3s"]
 [ext_resource type="PackedScene" uid="uid://bguuma0i7f3ll" path="res://Environment/materials/trees/standard_birch.tscn" id="7_1b4pk"]
 [ext_resource type="PackedScene" uid="uid://cj8m4fyqakn53" path="res://Environment/materials/trees/standard_oak.tscn" id="8_rrw4h"]
+[ext_resource type="PackedScene" uid="uid://6ab1mh7ne8yi" path="res://Environment/chest.tscn" id="9_24mbu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t70m2"]
 sky_top_color = Color(0.458824, 0.627451, 0.854902, 1)
@@ -448,3 +449,8 @@ transform = Transform3D(1, 0, 0, 0, 0.737041, 0.675848, 0, -0.675848, 0.737041, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 3, -113)
 text = "use *warp to hub* found in pause 
 menu to go back quickly"
+
+[node name="Chest" parent="." instance=ExtResource("9_24mbu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.74918, 4.5, -41.9287)
+ItemToGive = [3, "hidden Bow", 5, 5, ["vanilla", "bow"], "res://imports/hiddenBow/HiddenBow.glb"]
+index = 5
