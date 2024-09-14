@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://cp00b5be14te0"]
+[gd_scene load_steps=15 format=3 uid="uid://cp00b5be14te0"]
 
+[ext_resource type="Script" path="res://scripts/logger_island_1.gd" id="1_bowtu"]
 [ext_resource type="PackedScene" uid="uid://cxffo1r8ltcio" path="res://player/player.tscn" id="1_dqbcr"]
 [ext_resource type="PackedScene" uid="uid://dlh2ponw23gil" path="res://Environment/grassy_island_piece.tscn" id="2_y0b4c"]
 [ext_resource type="PackedScene" uid="uid://ds7esrbelu0af" path="res://Environment/transporter_arch.tscn" id="3_qqmnk"]
@@ -25,6 +26,7 @@ background_mode = 2
 sky = SubResource("Sky_lux73")
 
 [node name="LoggerIsland1" type="Node3D"]
+script = ExtResource("1_bowtu")
 
 [node name="playerHandler" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1.5, -111)
@@ -458,3 +460,17 @@ index = 5
 
 [node name="boss" parent="." instance=ExtResource("10_23axg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.04735, 4.5, -47.627)
+
+[node name="Label" type="Label" parent="."]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -79.0
+offset_top = 23.0
+offset_right = 82.0
+offset_bottom = 46.0
+grow_horizontal = 2
+text = "Press 3 to equip bow"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -13,6 +13,7 @@ var HealthDefault = Settings.playerHealth
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var disabled = false
 var inInventory = false
+var HUB = Settings.hasUsedBow
 
 var SPEED = MaxSPEED
 var JUMP_VELOCITY = MaxJUMP_VELOCITY
@@ -107,6 +108,10 @@ func update_values_from_settings():
 	pass
 
 func _ready():
+	if !Settings.hasPaused:
+		$HUD/help2.visible = true
+		pass
+	
 	$Graphics/CameraHandler/Camera3D.set_fov(Settings.fov)
 	if OpenedInv:
 		$HUD/help.hide()
@@ -292,6 +297,9 @@ func use_paxel():
 	pass
 
 func use_bow():
+	if !HUB:
+		Settings.hasUsedBow = true
+		pass
 	actionState = true
 	var itemGraphics = ItemGraphicsHandler.get_child(0, false)
 	itemGraphics.get_child(1, true).play("shoot")
@@ -654,16 +662,51 @@ func _on_weapon_button_pressed(Index = -1):
 	if selectedWeaponIndex != Index:
 		selectedWeaponIndex = Index
 		update_Inventory_graphics()
-	pass
+	else:
+		_on_equip_selected_weapon_button_down()
+		pass
 
 func die():
 	if inBossFight:
 		die_boss()
 	else:
-		position = Vector3(0,0,0)
-		health = maxHealth
-		update_health_graphics()
+		death_screen()
 		pass
+
+
+var messageOptions = [["hello again!", "well then, as you were"], ["ooh hey!", "I wont keep you,\ncontinue on"], ["frisk", "", "stay determined"], ["we're just going to pretend that didn't happen"], ["no funny message this time\nsorry :("], ["if you see something that vaguely\nresembles a chest", "hit it"], ["the dude in the mines?", "hardly know the guy"], ["ooh hey", "hope your having a good day"], ["you died"], ["dont worry about it", "this kind of stuff happens\nall the time"]]
+
+func death_screen():
+	graphics.rotation_degrees.y = initialRotDegrees
+	CameraHandler.rotation_degrees.x = initialHeadTiltDegrees
+	position = Vector3(0,0,0)
+	health = 10000
+	disabled = true
+	$deathScreen/RichTextLabel.text = ""
+	$deathScreen.visible = true
+	var messages = messageOptions.pick_random()
+	if Settings.hasDied == false:
+		messages = ["hey!", "so you just died there", "the good news is that you wont lose anything", "whenever you die you simply respawn back at the\nstart of whatever room you died in", "unless its a boss room", "but we'll talk about that later", "as you were then!"]
+		Settings.hasDied = true
+	
+	for text in messages:
+		$deathScreen/RichTextLabel.text += "\n"
+		await get_tree().create_timer(1).timeout
+		for i in text.length():
+			print(i)
+			var char = text[i]
+			$deathScreen/RichTextLabel.text += char
+			await get_tree().create_timer(0.025).timeout
+			pass
+	await get_tree().create_timer(2).timeout
+	graphics.rotation_degrees.y = initialRotDegrees
+	CameraHandler.rotation_degrees.x = initialHeadTiltDegrees
+	position = Vector3(0,0,0)
+	health = maxHealth
+	disabled = false
+	$deathScreen.hide()
+	update_health_graphics()
+	pass
 
 func die_boss():
 	var main = get_tree().get_first_node_in_group("Main")
@@ -740,7 +783,14 @@ func _process(delta):
 	pass
 
 func update_health_graphics():
-	$HUD/healthDisplay.text = str(health)
+	var screenSize = get_window().size
+	$HUD/healthBar/healthDisplay.text = str(health)
+	$HUD/healthBar.size.x = (health / maxHealth) * (screenSize.x / 4)
+	$HUD/healthBarBackground.size.x = (screenSize.x/4)
+	#$HUD/healthBarBackground.size.y = (maxHealth/health) * (screenSize.y/60)
+	#$HUD/healthBar.size.y = (maxHealth/health) * (screenSize.y/60)
+	#$HUD/healthBar.position.y = screenSize.y - ($HUD/healthBar.size.y)
+	#$HUD/healthBarBackground.position.y = screenSize.y - ($HUD/healthBar.size.y)
 	pass
 
 func take_damage(amount, tag, knockback):

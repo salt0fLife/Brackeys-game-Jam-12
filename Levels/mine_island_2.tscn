@@ -4151,9 +4151,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.75, 27.75, -146.75)
 [node name="Player" parent="PlayerHandler" instance=ExtResource("2_ohapt")]
 
 [node name="OmniLight3D" type="OmniLight3D" parent="PlayerHandler/Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-light_energy = 4.0
-omni_range = 55.9893
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+light_color = Color(0.854902, 0.882353, 0.890196, 1)
+light_energy = 0.5
+distance_fade_begin = 660.61
+distance_fade_shadow = 587.86
+omni_range = 28.589
+omni_attenuation = 0.203063
 
 [node name="OneOfThree" parent="." instance=ExtResource("3_dwi6a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -0.0226068, -761)
