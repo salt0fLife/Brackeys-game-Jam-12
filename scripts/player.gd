@@ -770,7 +770,7 @@ func _process(delta):
 	if regenCooldownTimer > 0:
 		regenCooldownTimer -= delta
 	elif health != maxHealth:
-		health += delta * 10
+		health += delta * 5
 		if health > maxHealth:
 			health = maxHealth
 		update_health_graphics()
@@ -784,7 +784,7 @@ func _process(delta):
 
 func update_health_graphics():
 	var screenSize = get_window().size
-	$HUD/healthBar/healthDisplay.text = str(health)
+	$HUD/healthBar/healthDisplay.text = str(round(health))
 	$HUD/healthBar.size.x = (health / maxHealth) * (screenSize.x / 4)
 	$HUD/healthBarBackground.size.x = (screenSize.x/4)
 	#$HUD/healthBarBackground.size.y = (maxHealth/health) * (screenSize.y/60)
