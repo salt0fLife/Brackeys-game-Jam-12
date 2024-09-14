@@ -8,7 +8,7 @@ var fov = 90
 
 #player stats
 var playerSpeed = 5.0
-var playerJump = 4.5
+var playerJump = 5.0
 var playerHealth = 100.0
 var currentHealth = 100.0
 
@@ -26,6 +26,9 @@ var hasOpenedInventory = false
 var hasChopped = false
 var hasBossDied = false
 var hasSeenFG = false
+var hasUsedBow = false
+var hasPaused = false
+var hasDied = false
 
 var soundEffects = 50
 

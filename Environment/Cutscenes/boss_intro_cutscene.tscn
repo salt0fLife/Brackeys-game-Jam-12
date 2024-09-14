@@ -3150,7 +3150,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 178.202, 3.53232, -134.891)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.4892, 15, -284.529)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, 0.258819, -302.963, 150.254, -115.539)
+transform = Transform3D(0.258816, 0, -0.965927, 0, 1, 0, 0.965927, 0, 0.258816, -302.963, 150.254, -115.539)
 
 [node name="blackout" type="ColorRect" parent="."]
 anchors_preset = 15

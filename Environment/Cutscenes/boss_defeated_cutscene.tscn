@@ -3093,6 +3093,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2154, 0.5, -89.1364)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.1962, 0.5, -38.7914)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.761658, -0.258819, 0.594045, 0.0379576, 0.933013, 0.357836, -0.646867, -0.25, 0.720461, 287.376, 105.088, 0)
+transform = Transform3D(0.761658, -0.258819, 0.594046, 0.0379576, 0.933013, 0.357836, -0.646867, -0.25, 0.720461, 287.376, 105.088, 0)
 
 [connection signal="button_down" from="RichTextLabel/next" to="." method="_on_next_button_down"]

@@ -7,7 +7,7 @@ var messageOptions = [["Frisk", "", "stay determined"], ["if at first you dont s
 func _ready():
 	var messages = messageOptions.pick_random()
 	if Settings.hasBossDied == false:
-		messages = ["you may have died...", "but you may always try again", "you will never lose anything for trying", "but you must defeat every pillar in order to succeed", "", "good luck"]
+		messages = ["hey so remember when I said that dying in a boss room was different", "well that was a boss room", "and well, you just died", "the good news is you wont lose anything\nreally the only difference is that you will not\nkeep your rooms progress", "so next time you try this room, make sure your prepared", "", "good luck!"]
 		Settings.hasBossDied = true
 	
 	for text in messages:
